@@ -17,4 +17,7 @@ if a == 10:
     print("es 10")
 else:
     print("no es 10")
-    
+
+#decimales y cadenas
+x = 24.45
+y = "hola"
