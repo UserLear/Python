@@ -1,1 +1,0 @@
-#sintaxis python
