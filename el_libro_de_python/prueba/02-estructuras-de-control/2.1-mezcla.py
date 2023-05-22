@@ -47,6 +47,9 @@ else:
     for i in range(x2):
         print("se multiplica por 4 " + str(i*4))
 
+#
+
+
 
 
 
