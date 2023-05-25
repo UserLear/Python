@@ -21,4 +21,6 @@ elif p == "carnivoro":
 else: 
     print("el come de todo, sirvele lo que sea")
 
+
+
  

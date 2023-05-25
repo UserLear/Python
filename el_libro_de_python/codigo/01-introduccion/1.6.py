@@ -15,7 +15,7 @@ x = 0
 while x < 3:
     print(x)
     x += 1
-
+   
 # Salida: 0, 1, 2
 
 for i in range(3):
@@ -29,6 +29,12 @@ for i in range(3):
     print(i)
 
 # Salida: 0, 2
+
+for i in range(5):
+    if i == 3:
+        break
+    print(i)
+# Salida: 0, 1, 2
 
 #.......booleans: False, True, None
 x = (5 == 1)
