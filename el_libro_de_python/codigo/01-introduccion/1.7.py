@@ -50,11 +50,11 @@ test.myfun2()
 #b =  2
 
 #.......alcance global
-# No se pueden cambiar enteros, cadenas, etc.
+# No se pueden cambiar los valores primitivos (enteros, cadenas, etc).
 a = 1  # a es una variable global
 
 def myfun():
-    a = 2  # Variables locales
+    a = 2  # Variables locales 
     a += 1
     print("En la función a =", a)
 
@@ -65,7 +65,7 @@ print("Fuera de la función a =", a)
 #En la función a =  3
 #Fuera de la función a =  1
 
-# Listas, tuplas, etc. se pueden cambiar
+# los objetos (Listas, tuplas, etc) si se pueden cambiar
 a = [1, 2, 3]
 b = {'Idioma': 98, "matemáticas": 101}
 
@@ -74,7 +74,6 @@ def myfun():
     b.update({"Inglés": 103})
     print("En la función a =", a)
     print("En la función b =", b)
-
 
 myfun()
 print("Fuera de la función a =", a)
@@ -90,7 +89,7 @@ print("Función externa b =", b)
 a = 1
 
 def myfun():
-    global a  # Use global antes de usar un
+    global a  # Use global para poder manipular la variable global dentro de la funcion
     a += 1
     print("En la función a =", a)
 
