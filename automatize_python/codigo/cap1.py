@@ -15,13 +15,30 @@
 #tipos de datos
 print(type(2))
 print(type(2.43))
-print(type("o", 'h'))
+print(type("o"))
 
 #concatenacion y replicacion de cadenas
 x1 = "ho"
 print(x1 + "la") #concatenacion
 
 print(x1 * 5) #replicacion
+
+#almacenamiento de valores en variables
+nombre = 3 #declaracion de asignacion
+print(nombre) #3
+
+nombre = 7 #sobre escribir
+print(nombre) #7
+
+#.......round() busqueda documentacion
+x2 = 2.43567
+print(round(x2))
+print(round(x2,1))
+print(round(x2,2))
+print(round(x2,3))
+
+
+
 
 
 
