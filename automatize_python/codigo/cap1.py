@@ -11,6 +11,8 @@
 3*5
 #.......sustraccion
 5-2
+#.......resto
+10%3
 
 #tipos de datos
 print(type(2))
