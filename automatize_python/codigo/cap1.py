@@ -1,31 +1,31 @@
-#operadores matematicos
-#.......suma
+#.......peradores matematicos
+#suma
 2+2
-#.......exponente
+#exponente
 2**2
-#.......resto: devuelve el resto de una division
+#resto: devuelve el resto de una division
 10//3
-#.......division: devuelve el cociente
+#division: devuelve el cociente
 22/8
-#.......multiplicacion
+#multiplicacion
 3*5
-#.......sustraccion
+#sustraccion
 5-2
-#.......resto
+#resto
 10%3
 
-#tipos de datos
+#.......tipos de datos
 print(type(2))
 print(type(2.43))
 print(type("o"))
 
-#concatenacion y replicacion de cadenas
+#.......concatenacion y replicacion de cadenas
 x1 = "ho"
 print(x1 + "la") #concatenacion
 
 print(x1 * 5) #replicacion
 
-#almacenamiento de valores en variables
+#.......almacenamiento de valores en variables
 nombre = 3 #declaracion de asignacion
 print(nombre) #3
 
@@ -38,6 +38,21 @@ print(round(x2))
 print(round(x2,1))
 print(round(x2,2))
 print(round(x2,3))
+
+#.......primer programa
+print("hola mundo")
+print("cual es tu nombre")
+nombre = input()
+print("es un placer conocerte " + nombre)
+longitud = len(nombre)
+print("tu nombre tiene " + str(longitud) + " letras" )
+print("cual es tu edad")
+edad = input()
+edadNumero = int(edad)
+print("dentro de un año tendras " + str(edadNumero + 1) + " años")
+
+
+
 
 
 
