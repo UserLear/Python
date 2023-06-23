@@ -39,9 +39,20 @@ else:
     print("Tu pasas de los 30, para ti tenemos un mundo oportunidades")
 
 #......declaracion while
-nombre = input("Debes ingresar con tu usuario: \n")
+nombre = ""
 while nombre != "Moises":
+    nombre = input("Debes ingresar con tu usuario: \n")
     print("Ese no es tu nombre de usuario")
+
+#.......uso de break
+while True:
+       print('Escriba su nombre.')
+       name = input()
+       if name == 'su nombre':
+           break
+print('¡Gracias!')
+
+
 
 
 

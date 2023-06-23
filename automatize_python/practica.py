@@ -1,4 +1,6 @@
-nombre = ""
-while nombre != "Moises":
-    nombre = input("Debes ingresar con tu usuario: \n")
-    print("Ese no es tu nombre de usuario")
+while True:
+       print('Escriba su nombre.')
+       name = input()
+       if name == 'su nombre':
+           break
+print('¡Gracias!')
