@@ -52,6 +52,28 @@ while True:
            break
 print('¡Gracias!')
 
+#.......uso de continue
+while True:
+    print('¿Quién eres?')
+    nombre = input()
+    if nombre != 'Joe':
+        continue
+    print('Hola, Joe. ¿Cuál es la contraseña? (Es un pez.)')
+    contraseña = input()
+    if contraseña == 'pez espada':
+        break
+print('Acceso concedido.') 
+
+#.......uso de for
+print('Mi nombre es')
+for i in range(5):
+    print('Jimmy Five Times (' + str(i) + ')')
+
+total = 0
+for num in range(101):
+    total = total + num
+print(total)
+
 
 
 
