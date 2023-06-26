@@ -1,5 +1,4 @@
 import random
-
 #.......practica while
 while True:
     print("¿Quién eres?")
@@ -7,7 +6,7 @@ while True:
     if nombre != "Joe":
         print("Tu no eres la persona que esperaba, lo siento no puedes ingresar")
         continue
-    print("Hola Joe, ingresa tu contraseña (es un pez)")
+    print("Hola Joe, ingresa tu contraseña (es un pez que se infla)")
     while True:
         contraseña = input()
         if contraseña == "pezglobo":
@@ -19,3 +18,23 @@ while True:
 print("Ahora Joe puedes ingresar a nuestos datos")
 
 #.......practica for
+print("Estoy pensando en un numero entre 1 y 20")
+maquina = random.randint(1, 20)
+
+try:
+    for i in range(7):
+        oportunidades = 7 - i
+        sobrantes = i + 1
+        print("Adivina, tienes " + str(oportunidades) + ' oportinidades.')
+        numero = input()
+        if int(numero) < maquina:
+            print("'Uf!, andas abajo")
+        elif int(numero) > maquina:
+            print('Uf!, andas muy arriba')
+        else:
+            print('Felicidades!, lo has logrado en '+ str(sobrantes) + ' intentos.')
+            print("Te sobraron " + str(7 - sobrantes) + ' oportunidades')
+            break
+except:
+    print('Error, debes ingresar un numero.')
+
