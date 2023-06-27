@@ -38,3 +38,13 @@ try:
 except:
     print('Error, debes ingresar un numero.')
 
+#.......for: iteracion inversa
+palabra = "hola"
+for i in palabra[::-1]:
+    print(i)
+
+#.......for: iteracion saltando
+palabra = "emprendimiento"
+for i in palabra[::2]:
+    print(i)
+
