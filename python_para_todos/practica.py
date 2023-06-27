@@ -1,7 +1,8 @@
 import random, math
 
-def tipo(a):
-    print(type(a))
+conteo = 5
+while conteo > 0:
+    conteo -= 1
+    print(conteo)
 
-tipo(2)
 

@@ -38,3 +38,18 @@ try:
 except:
     print('Error, debes ingresar un numero.')
 
+#for itera alreves
+def reves(a):
+    for i in a[::-1]:
+        print(i)
+ 
+reves("Otorrinolaringologo") #ogologniralonirrotO
+
+#for itera saltos
+def reves(a):
+    for i in a[::2]:
+        print(i)
+
+reves("Otorrinolaringologo") #Oornlrnooo
+
+#
