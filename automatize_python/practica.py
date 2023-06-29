@@ -32,12 +32,19 @@
 
 #prueba bucle while con def
 def multiplica(n):
-    return n + 3
+    if n % 2 == 0:
+        return n + 3
+    else:
+        return n + 5
+
 
 valor = input()
 conver = int(valor)
+
 while True:
-    multiplica(conver)
+    print(multiplica(conver))
+    
+
 
 
 
