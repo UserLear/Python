@@ -155,8 +155,20 @@ numeros1 = [1, 2, 3, 1, 2, 3]
 print(numeros1.index(1)) #0
 
 letras = ['a', 'b', 'c']
-letras.apped("d")
-print(letras) # 'a', 'b', 'c', 'd'
+letras.append("d")
+print(letras) # ['a', 'b', 'c', 'd'] - agrega al final de la lista
+
+letras.insert(2, 'z')
+print(letras) #['a', 'b', 'z', 'c', 'd']
+
+letras.remove("b")
+print(letras) #['a', 'z', 'c', 'd']
+
+numeros1.remove(1)
+print(numeros1) #[2, 3, 1, 2, 3] - elimina el primero que encuentre
+
+
+
 
 
 
