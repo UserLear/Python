@@ -42,8 +42,10 @@ print(animales) #murcielago, hipopotamo, elefante, gato, perro
 #.......concatenacion de listas y replicacion de listas
 numero = [1, 2, 3, 4, 5]
 letras = ['a', 'b', 'c', 'd', 'e']
-conca = numero + letras
+conca = numero + letras 
+print(conca) #[1, 2, 3, 4, 5, 'a', 'b', 'c', 'd', 'e']
 replica = numero * 2
+print(replica) #[1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
 
 #.......eliminacion de valores
 letras = ['a', 'b', 'c', 'd', 'e']
@@ -166,6 +168,45 @@ print(letras) #['a', 'z', 'c', 'd']
 
 numeros1.remove(1)
 print(numeros1) #[2, 3, 1, 2, 3] - elimina el primero que encuentre
+
+ordenar = [-10, 8, 3, -1, 0, 4, -3]
+ordenar.sort() 
+print(ordenar) # [-10, -3, -1, 0, 3, 4, 8] - ordena los valores
+
+ordenarInverso = [-10, 8, 3, -1, 0, 4, -3]
+ordenarInverso.sort(reverse=True)
+print(ordenarInverso) # [8, 4, 3, 0, -1, -3, -10] - ordena de forma inversa
+
+ordenAlfabetico = ['a', 'z', 'A', 'Z']
+ordenAlfabetico.sort(key=str.lower)
+print(ordenAlfabetico) #['a', 'A', 'z', 'Z'] - ordena alfabeticamente
+
+invertirOrden = ['gato', 'perro', 'alce']
+invertirOrden.reverse()
+print(invertirOrden) #['alce', 'perro', 'gato'] - hace un orden inverso 
+
+#.......lista en varias lineas
+nume = [1, 2, 3, 
+        4, 5, 6, 
+        7, 8, 9]
+
+#.......programita
+import random
+nivelOrdinal = ['Muy bajo', 'Bajo', 'Moderado', 'Normal', 'Poco alto', 'Alto', 'Mul alto', 'Preocupante']
+posicion = random.randint(0, len(nivelOrdinal)-1)
+valor = nivelOrdinal[posicion]
+print('El nivel '+ str(posicion) + ' significa que usted esta ' + valor)
+
+#.......tipos datos de secuencia-lista
+especialidad = 'patologia'
+print(especialidad[2]) #t
+print(especialidad[-2]) #g
+print(especialidad[2:6]) #tolo
+print('lo' in especialidad) #True
+
+
+
+
 
 
 
