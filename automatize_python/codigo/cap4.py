@@ -204,6 +204,58 @@ print(especialidad[-2]) #g
 print(especialidad[2:6]) #tolo
 print('lo' in especialidad) #True
 
+#.......tuplas
+tupl = (1, True, 'Hola')
+tupl1 = (3,)
+
+#.......referencia
+numero = [1, "t", True]
+numero1 = numero
+numero1[1] = 'G'
+print(numero1) #[1, 'G', True]
+print(numero) #[1, 'G', True]
+
+#.......identidad y funcion id()
+print(id("hola")) #333921341232
+
+nombre = "Moises"
+print(id(nombre)) #263968435712
+nombre += 'Ayala'
+print(nombre) #MoisesAyala
+print(id(nombre)) #774031047344 - al modificar la cadena cambia su id
+
+lista = ['hola', 'como', 'esta']
+print(id(lista)) #313363288576
+lista.append('usted')
+print(id(lista)) #313363288576 - modifica a la lista en su lugar por ser mutable
+
+lista1 = lista
+print(lista1) #['hola', 'como', 'esta', 'usted']
+lista1 = ['lunes', 'martes', 'miercoles']
+print(lista) #['hola', 'como', 'esta', 'usted']
+print(id(lista)) #313363288576
+print(lista1) #['lunes', 'martes', 'miercoles']
+print(id(lista1)) #477304643008
+
+#.......pasando referencia
+def saludo(a):
+    a.append('hola')
+
+oracion = ['como', 'esta', 'usted']
+saludo(oracion)
+print(oracion) #['como', 'esta', 'usted', 'hola']
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
