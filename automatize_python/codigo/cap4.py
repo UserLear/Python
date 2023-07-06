@@ -1,4 +1,4 @@
-import random
+import random, copy
 #LISTAS
 #.......valor de lista
 [1, 2, 3, 4, 6]
@@ -244,6 +244,25 @@ def saludo(a):
 oracion = ['como', 'esta', 'usted']
 saludo(oracion)
 print(oracion) #['como', 'esta', 'usted', 'hola']
+
+#.......funciones copy() y deepcopy()
+lista3 = [1, 2, 3, 4, 5, 6]
+print(id(lista3)) #755065836032
+copialista3 = lista3.copy()
+print(copialista3) #[1, 2, 3, 4, 5, 6]
+
+copialista3.append(7)
+print(copialista3) #[1, 2, 3, 4, 5, 6, 7]
+print(id(copialista3)) #755070432064
+
+listaDeListas = [[1, 2, 3], ['a', 'b', 'c'], [4.0, 4.1, 4.2]]
+print(id(listaDeListas))
+copiaListaDeListas = listaDeListas.deepcopy() 
+copiaListaDeListas1 = listaDeListas.copy()
+print(copiaListaDeListas)
+print(copiaListaDeListas1)
+
+
 
 
 
