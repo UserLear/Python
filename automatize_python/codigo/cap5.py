@@ -76,11 +76,12 @@ print('Traigo ' + str(picnicItems.get('huevos', 0)) + ' huevos.') #Traigo 0 huev
 
 #.......metodo setdefault()
 spam = {'nombre': 'Pooka', 'edad': 5}
-spam.setdefault('color', 'negro') #'negro'
+spam.setdefault('color', 'negro') 
+print(spam['color']) #'negro'
 
 spam = {'color': 'negro' , 'edad': 5, 'nombre': 'Pooka'}
-spam.setdefault('color', 'blanco') #'negro'
-spam = {'color': 'negro', 'edad': 5, 'nombre': 'Pooka'}
+spam.setdefault('color', 'blanco') 
+print(spam['color']) #'negro'
 
 #programa cuenta numero de ocurrencias
 mensaje = 'Era un día brillante y frío de abril, y los relojes daban las trece.'

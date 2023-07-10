@@ -1,4 +1,2 @@
-letras = 'Hola mi buen amigo'
-print("Hola" in letras)
-print("" in letras)
-
+#10.......metodo startswith() y endswith()
+animales = {a: 'alce', 'ardilla'}
