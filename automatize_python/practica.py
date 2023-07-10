@@ -1,4 +1,4 @@
-spam5 = r'Say hi to Bob\\ is mother.'
-print(spam5) #Say hi to Bob\\ is mother.
-
+letras = 'Hola mi buen amigo'
+print("Hola" in letras)
+print("" in letras)
 
