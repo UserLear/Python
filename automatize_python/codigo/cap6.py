@@ -41,7 +41,7 @@ print("" in letras) #True
 #7.......poner cadenas dentro de otras cadenas
 nombre ='Moises'
 edad = 32
-print('Mi nombre es %s. tengo %s años' %(nombre, edad)) #Mi nombre es Moises. tengo 32 años
+print('Mi nombre es %s: tengo %s años' %(nombre, edad)) #Mi nombre es Moises. tengo 32 años
 
 print(f'Mi nombre es {nombre}. tengo {edad} años') #Mi nombre es Moises. tengo 32 años
 
@@ -117,6 +117,31 @@ for i in lista5:
 #istitle: pedro: False
 #istitle: lUis: False
 #istitle: JacoBo: False
+
+#10.......metodo startswith() y endswith()
+iniciaCon = 'Hola muchachos'
+lista1 = ['h', 'H', 'Hola', 'muchachos', 'Hola muchachos']
+for i in lista1:
+    valor = iniciaCon.startswith(i)
+    print(f'startwith: {i}: {valor}')
+#startwith: H: True
+#startwith: Hola: True      
+#startwith: muchachos: False
+#startwith: Hola muchachos: True
+
+terminaCon = 'Esta historia comienza en 1991'
+lista2 = ['comienza en 1991', 'en', '1991', 'En 1991', "Esta historia comienza en 1991"]
+for i in lista2:
+    valor = terminaCon.endswith(i)
+    print('endswith: %s: %s' %(i, valor))
+#endswith: en: False
+#endswith: 1991: True
+#endswith: En 1991: False
+#endswith: Esta historia comienza en 1991: True
+
+
+
+
 
 
 
