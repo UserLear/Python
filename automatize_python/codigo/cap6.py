@@ -139,6 +139,95 @@ for i in lista2:
 #endswith: En 1991: False
 #endswith: Esta historia comienza en 1991: True
 
+#11.......metodo join(), split()
+lista = ['Moises', 'Emanuel', 'Ayala', 'Mejia']
+caracter1 = input('Ingresa un caracter: ')
+def separa(caracter, lista):
+    separar = caracter.join(lista)
+    print(separar)
+
+separa(caracter1,lista) #Moises*Emanuel*Ayala*Mejia
+
+cadena = 'Moises-Emanuel-Ayala-Mejia'
+caracter2 = input('Ingresa un caracter: ')
+def une(caracter, cadena):
+    unir = cadena.split(caracter)
+    print(unir)
+
+une(caracter2,cadena) #['Moises', 'Emanuel', 'Ayala', 'Mejia']
+
+spam = '''Querida Alice,
+¿Cómo has estado? Estoy bien.
+Hay un recipiente en el refrigerador
+que tiene la etiqueta "Experimento con leche".
+
+Por favor, no lo beba.
+Atentamente,
+Bob'''
+print(spam.split('\n')) #['Querida Alice,', '¿Cómo has estado? Estoy bien.', 'Hay un recipiente en el refrigerador', 'que tiene la etiqueta "Experimento con leche".', '', 'Por favor, no lo beba.', 'Atentamente,', 'Bob']
+
+#12.......dividir cadenas con metodo partition()
+separaSaludo = 'Hello, world!'.partition('w') #('Hello, ', 'w', 'orld!')
+separaSaludo2 ='Hello, world!'.partition('world') #('Hello, ', 'world', '!')
+
+#13.......justificacion de texto con metodos rjust(), ljust() y center()
+izquierda = 'Hello'.rjust(10) #'     Hello'
+derecha = 'Hello'.ljust(10) #'Hello     '
+centro = 'Hello'.center(20, '=') #'=======Hello========'
+
+print('Ingresa \'i\' izquierda, \'d\' derecha, \'c\' centro.')
+letra = input('Ingresa una de las tres: ')
+caracter = input('Ingresa una cadena: ')
+
+def justifica(valor, cadena):
+    if valor == 'i':
+        numero = int(input('Ingrese un numero: '))
+        caracter = input('Ingrese un caracter: ')
+        print(cadena.rjust(numero, caracter))
+    elif valor == 'd':
+        numero = int(input('Ingrese un numero: '))
+        caracter = input('Ingrese un caracter: ')
+        print(cadena.ljust(numero, caracter))
+    elif valor == 'c':
+        numero = int(input('Ingrese un numero: '))
+        caracter = input('Ingrese un caracter: ')
+        print(cadena.center(numero, caracter))
+    else:
+        print('Debes ingresar de entre \'i\', \'d\' o \'c\'')
+
+justifica(letra, caracter)
+
+#14.......eliminar espacios en blanco con metodos strip(), rstrip(), lstrip()
+spam = '    Hello, World    '
+spam.strip() #'Hello, World'
+spam.lstrip() #'Hello, World    '
+spam.rstrip() #'    Hello, World'
+spam = 'SpamSpamBaconSpamEggsSpamSpam'
+spam.strip('ampS') #'BaconSpamEggs'
+
+#15.......valores numericos funciones ord(), chr()
+ord('A') #65
+ord('4') #52
+ord('!') #33
+chr(65) #'A'  
+ord('B') # 66
+ord('A') < ord('B') #True
+chr(ord('A')) #'A'
+chr(ord('A') + 1) #'B'
+
+while True:
+    conver = input('Introduce un str o int (blanco para salir): ')
+    if conver == '':
+            break
+    try:
+        numero = int(conver)
+        def convertir1(valor):
+            print(chr(valor))
+        convertir1(numero)
+    except:
+        def convertir2(valor):
+            print(ord(valor))
+        convertir2(conver)
 
 
 
