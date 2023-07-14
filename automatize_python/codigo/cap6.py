@@ -222,12 +222,15 @@ while True:
     try:
         numero = int(conver)
         def convertir1(valor):
-            print(chr(valor))
+            convert = chr(valor)
+            print(f'El numero {numero} representa el literal, caracter o numero {convert}')
         convertir1(numero)
     except:
         def convertir2(valor):
-            print(ord(valor))
+            convert = (ord(valor))
+            print(f'La letra o simbolo {valor} se prepresenta como el numero {convert}' )
         convertir2(conver)
+
 
 
 
