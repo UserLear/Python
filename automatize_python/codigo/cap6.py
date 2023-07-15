@@ -174,6 +174,9 @@ separaSaludo2 ='Hello, world!'.partition('world') #('Hello, ', 'world', '!')
 izquierda = 'Hello'.rjust(10) #'     Hello'
 derecha = 'Hello'.ljust(10) #'Hello     '
 centro = 'Hello'.center(20, '=') #'=======Hello========'
+izquierda = 'Hello'.rjust(10,'-') 
+derecha = 'Hello'.ljust(10, '+')
+print(izquierda, derecha) #-----Hello Hello+++++
 
 print('Ingresa \'i\' izquierda, \'d\' derecha, \'c\' centro.')
 letra = input('Ingresa una de las tres: ')
@@ -230,7 +233,7 @@ while True:
             convert = (ord(valor))
             print(f'La letra o simbolo {valor} se prepresenta como el numero {convert}' )
         convertir2(conver)
-
+'''mejora del programa es que no devolvera el numero que representa el literal de otro numero'''
 
 
 
