@@ -68,9 +68,57 @@ batRegex = re.compile(r'Bat(man|mobile|copter|bat)')
 mo = batRegex.search('Batimóvil perdió una rueda')
 mo.group() #'Batimóvil'
 mo.grupo(1) #'móvil'
-\
 
+#.......emparejamiento con signo de interrogacion
+batRegex = re.compile(r'Bat(wo)?man')
+mo1 = batRegex.search('The Adventures of Batman')
+mo1.group() #'Batman'
 
+mo2 = batRegex.search('The Adventures of Batwoman')
+mo2.group() #'Batwoman'
+
+phoneRegex = re.compile(r'(\d\d\d-)?\d\d\d-\d\d\d\d')
+mo1 = phoneRegex.search('Mi número es 415-555-4242')
+mo1.group() #'415-555-4242'
+
+mo2 = phoneRegex.search('Mi número es 555-4242')
+mo2.group() #'555-4242'
+
+#.......coincidencia de cero o mas con la estrella
+batRegex = re.compile(r'Bat(wo)*man')
+mo1 = batRegex.search('The Adventures of Batman')
+mo1.group() #'Batman'
+
+mo2 = batRegex.search('The Adventures of Batwoman')
+mo2.group() #'Batwoman'
+
+mo3 = batRegex.search('The Adventures of Batwowowowoman')
+mo3.group() #'Batwowowowoman'
+
+#.......coincidencia de uno o mas con el plus
+batRegex = re.compile(r'Bat(wo)+man')
+mo1 = batRegex.search('The Adventures of Batwoman')
+mo1.group() #'Batwoman'
+
+mo2 = batRegex.search('The Adventures of Batwowowowoman')
+mo2.group() #'Batwowowowoman'
+
+mo3 = batRegex.search('The Adventures of Batman')
+mo3 == None #True
+
+#.......coincidencia de repeticiones con llaves
+haRegex = re.compile(r'(Ha){3}')
+haRegex1 = re.compile(r'ha{3,5}')
+haRegex2 = re.compile(r'ha{3,}')
+haRegex3 = re.compile(r'ha{,5}')
+mo1 = haRegex.search('HaHaHa')
+mo2 = haRegex1.search('hahahahaha')
+mo3 = haRegex2.search('hahahahahahahaha')
+mo4 = haRegex3.search('haha')
+mo1.group() #'HaHaHa'
+
+mo2 = haRegex.search('Ha')
+mo2 == None #True
 
 
 
