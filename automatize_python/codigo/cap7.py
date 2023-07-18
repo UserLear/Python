@@ -108,19 +108,32 @@ mo3 == None #True
 
 #.......coincidencia de repeticiones con llaves
 haRegex = re.compile(r'(Ha){3}')
-haRegex1 = re.compile(r'ha{3,5}')
-haRegex2 = re.compile(r'ha{3,}')
-haRegex3 = re.compile(r'ha{,5}')
+haRegex1 = re.compile(r'(ha){3,5}')
+haRegex2 = re.compile(r'(ha){3,}')
+haRegex3 = re.compile(r'(ha){,5}')
+haRegex4 = re.compile(r'(ha){3,5}?')
 mo1 = haRegex.search('HaHaHa')
 mo2 = haRegex1.search('hahahahaha')
 mo3 = haRegex2.search('hahahahahahahaha')
 mo4 = haRegex3.search('haha')
-mo1.group() #'HaHaHa'
+mo5 = haRegex4.search('hahahahaha')
+print(mo1.group()) #HaHaHa
+print(mo2.group()) #hahahahaha   
+print(mo3.group()) #hahahahahahahaha
+print(mo4.group()) #haha
+print(mo5.group()) #hahaha
 
-mo2 = haRegex.search('Ha')
-mo2 == None #True
+#.......metodo findall()
+phoneNumRegex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d') # has no groups
+phoneNumRegex.findall('Cell: 415-555-9999 Work: 212-555-0000') #['415-555-9999', '212-555-0000']
 
+phoneNumRegex = re.compile(r'(\d\d\d)-(\d\d\d)-(\d\d\d\d)') # has groups
+phoneNumRegex.findall('Cell: 415-555-9999 Work: 212-555-0000') #[('415', '555', '9999'), ('212', '555', '0000')]
 
+#.......clases de personajes
+regex1 = re.compile(r'(\D){1,}')
+resul = regex1.search('caracteres: " # a A : 3')
+print(resul.group())
 
 
 
