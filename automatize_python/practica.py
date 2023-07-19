@@ -1,5 +1,5 @@
 import re
-regex1 = re.compile(r'(\D){1,}')
-resul = regex1.search('caracteres: " # a A : 3')
-print(resul.group())
+regex1 = re.compile(r'\w+') #imprime caracteres en linea y que sean del mismo tipo
+resul = regex1.search(':{}"#$ 1234 : 3 ] caracter') 
+print(resul)
 

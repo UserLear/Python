@@ -131,10 +131,20 @@ phoneNumRegex = re.compile(r'(\d\d\d)-(\d\d\d)-(\d\d\d\d)') # has groups
 phoneNumRegex.findall('Cell: 415-555-9999 Work: 212-555-0000') #[('415', '555', '9999'), ('212', '555', '0000')]
 
 #.......clases de personajes
-regex1 = re.compile(r'(\D){1,}')
-resul = regex1.search('caracteres: " # a A : 3')
-print(resul.group())
+regex1 = re.compile(r'\D+') #cualquier caracter que no sea un digito numerico del 0 al 9
+resul = regex1.findall('caracteres: "" ## aa AA :: 33') #['caracteres: "" ## aa AA :: ']
+print(resul)
 
+regex1 = re.compile(r'\w+') #imprime caracteres en linea y que sean del mismo tipo
+resul = regex1.search(':{}"#$ 1234 : 3 ] caracter') 
+print(resul)
+
+xmasRegex = re.compile(r'\d+\s\w+')
+xmasRegex.findall('12 drummers, 11 pipers, 10 lords, 9 ladies, 8 maids, 7 swans, 6 geese, 5 rings, 4 birds, 3 hens, 2 doves, 1 partridge') #['12 drummers', '11 pipers', '10 lords', '9 ladies', '8 maids', '7 swans', '6 geese', '5 rings', '4 birds', '3 hens', '2 doves', '1 partridge']
+
+regex1 = re.compile(r'(\S)+') 
+resul = regex1.search('l 2 # , & - _ . : ; % ! | !') #l
+print(resul.group())
 
 
 
