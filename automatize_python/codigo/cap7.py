@@ -111,7 +111,7 @@ haRegex = re.compile(r'(Ha){3}')
 haRegex1 = re.compile(r'(ha){3,5}')
 haRegex2 = re.compile(r'(ha){3,}')
 haRegex3 = re.compile(r'(ha){,5}')
-haRegex4 = re.compile(r'(ha){3,5}?')
+haRegex4 = re.compile(r'(ha){3,5}?') #coincidencia no codiciosa
 mo1 = haRegex.search('HaHaHa')
 mo2 = haRegex1.search('hahahahaha')
 mo3 = haRegex2.search('hahahahahahahaha')
@@ -228,6 +228,16 @@ noNewlineRegex.search('Serve the public trust.\nProtect the innocent.\nUphold th
 newlineRegex = re.compile('.*', re.DOTALL)
 newlineRegex.search('Serve the public trust.\nProtect the innocent.\nUphold the law.').group()
 # 'Serve the public trust.\nProtect the innocent.\nUphold the law.'
+
+#.......coincidencia sin distincion entre mayusculas y minusculas
+robocop = re.compile(r'robocop', re.I)
+robocop.search('RoboCop is part man, part machine, all cop.').group()
+#'RoboCop
+robocop.search('ROBOCOP protects the innocent.').group()
+#'ROBOCOP'
+robocop.search('Al, why does your programming book talk about robocop so much?').group()
+#'robocop'
+
 
 
 
