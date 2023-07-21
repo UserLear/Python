@@ -1,5 +1,5 @@
 import re
-regex1 = re.compile(r'\w+') #imprime caracteres en linea y que sean del mismo tipo
-resul = regex1.search(':{}"#$ 1234 : 3 ] caracter') 
-print(resul)
+regex1 = re.compile(r'\S+') #cualquier caracter que no sea espacio, tabulacion o nueva linea
+resul = regex1.findall(':"|`!@#$%^*() _-+=><#$\{\}1234:3]caracter________\n ') 
+print(resul) #[':"|`!@#$%^*()', '_-+=><#$\\{\\}1234:3]caracter________']
 
