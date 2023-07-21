@@ -154,6 +154,83 @@ print(resul) #[':"|`!@#$%^*()', '_-+=><#$\\{\\}1234:3]caracter________']
 xmasRegex = re.compile(r'\d+\s\w+')
 xmasRegex.findall('12 drummers, 11 pipers, 10 lords, 9 ladies, 8 maids, 7 swans, 6 geese, 5 rings, 4 birds, 3 hens, 2 doves, 1 partridge') #['12 drummers', '11 pipers', '10 lords', '9 ladies', '8 maids', '7 swans', '6 geese', '5 rings', '4 birds', '3 hens', '2 doves', '1 partridge']
 
+#.......hacer tus propias clases
+vowelRegex = re.compile(r'[aeiouAEIOU]')
+vowelRegex.findall('RoboCop eats baby food. BABY FOOD.') #['o', 'o', 'o', 'e', 'a', 'a', 'o', 'o', 'A', 'O', 'O']
+
+vowelRegex = re.compile(r'[a-zA-Z0-9]')
+mo = vowelRegex.findall('RoboCop2 eats3 baby4 food5. BABY2 FOOD .') 
+print(mo)
+#['R', 'o', 'b', 'o', 'C', 'o', 'p', '2', 'e', 'a', 't', 's', '3', 'b', 'a', 'b', 'y', '4', 'f', 'o', 'o', 'd', '5', 'B', 'A', 'B', 'Y', '2', 'F', 'O', 'O', 'D']
+
+consonantRegex = re.compile(r'[^aeiouAEIOU]')
+mo = consonantRegex.findall('RoboCop eats baby food. BABY FOOD.')
+print(mo)
+#['R', 'b', 'C', 'p', ' ', 't', 's', ' ', 'b', 'b', 'y', ' ', 'f', 'd', '.', ' ', 'B', 'B', 'Y', ' ', 'F', 'D', '.']
+
+beginsWithHello = re.compile(r'^Hello')
+mo = beginsWithHello.search('Hello, world!')
+print(mo.group()) #Hello
+mo1 = beginsWithHello.findall('Hello, world!')
+print(mo1) #['Hello']
+#<re.Match object; span=(0, 5), match='Hello'> 
+mo3 = beginsWithHello.search('He said hello.') == None
+print(mo3) #True
+
+beginsWithHello = re.compile(r'\D$')
+mo = beginsWithHello.search('1Hello, 3world!4!')
+print(mo) #<re.Match object; span=(16, 17), match='!'>
+
+beginsWithHello = re.compile(r'\d$')
+mo = beginsWithHello.search('1Hello, 3world!4')
+print(mo) #<re.Match object; span=(15, 16), match='4'>
+
+beginsWithHello = re.compile(r'^14$')
+mo = beginsWithHello.search('123454') 
+print(mo) #None
+mo1 = beginsWithHello.search('14') 
+print(mo1) #<re.Match object; span=(0, 2), match='14'>
+
+beginsWithHello = re.compile(r'^\d+$')
+mo = beginsWithHello.search('123454') 
+print(mo) #<re.Match object; span=(0, 6), match='123454'>
+
+wholeStringIsNum = re.compile(r'^\d+$')
+wholeStringIsNum.search('1234567890') #<re.Match object; span=(0, 10), match='1234567890'>
+wholeStringIsNum.search('12345xyz67890') == None #True
+wholeStringIsNum.search('12  34567890') == None #True
+
+#.......caracter comodin
+atRegex = re.compile(r'.at')
+mo = atRegex.findall('The cat in the hat sat on the flat mat.')
+print(mo) #['cat', 'hat', 'sat', 'lat', 'mat']
+
+#.......combinando todo con Dot-Star
+nameRegex = re.compile(r'First Name: (.*) Last Name: (.*)')
+mo = nameRegex.search('First Name: Al Last Name: Sweigart')
+print(mo.group(1)) #'Al'
+print(mo.group(2)) #'Sweigart'
+#combina con todo excepto con nueva linea de modo codicioso
+
+nongreedyRegex = re.compile(r'<.*?>')
+mo = nongreedyRegex.search('<To serve man> for dinner.>')
+mo.group() #'<To serve man>'
+#combina de forma no codiciosa
+greedyRegex = re.compile(r'<.*>')
+mo = greedyRegex.search('<To serve man> for dinner.>')
+mo.group() #'<To serve man> for dinner.>'
+
+#.......coincidencia de lineas nuevas con el caracter de punto
+noNewlineRegex = re.compile('.*')
+noNewlineRegex.search('Serve the public trust.\nProtect the innocent.\nUphold the law.').group() 
+#'Serve the public trust.'
+
+newlineRegex = re.compile('.*', re.DOTALL)
+newlineRegex.search('Serve the public trust.\nProtect the innocent.\nUphold the law.').group()
+# 'Serve the public trust.\nProtect the innocent.\nUphold the law.'
+
+
+
 
 
 

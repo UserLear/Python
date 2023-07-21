@@ -1,26 +1,16 @@
-while True:
-    print('Enter your age:')
-    age = input()
-    try:
-        age = int(age)
-    except:
-        print('Please use numeric digits.')
-        continue
-    if age < 1:
-        print('Please enter a positive number.')
-        continue
-    break
+import re
+#.......coincidencia de lineas nuevas con el caracter de punto
+noNewlineRegex = re.compile('.*')
+noNewlineRegex.search('Serve the public trust.\nProtect the innocent.\nUphold the law.').group() 
+#'Serve the public trust.'
 
-print(f'Your age is {age}.')
+newlineRegex = re.compile('.*', re.DOTALL)
+newlineRegex.search('Serve the public trust.\nProtect the innocent.\nUphold the law.').group()
+# 'Serve the public trust.\nProtect the innocent.\nUphold the law.'
 
-"""When you run this program, the output could look like this:
 
-Enter your age:
-five
-Please use numeric digits.
-Enter your age:
--2
-Please enter a positive number.
-Enter your age:
-30
-Your age is 30."""
+
+
+
+
+
