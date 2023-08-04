@@ -29,6 +29,18 @@ os.chdir("C:\\Users\\DELL_USER_#1\\Desktop\\plazti") #para cambiar de directorio
 print(Path.cwd) #shell: WindowsPath('C:/Users/DELL_USER_#1/Desktop/plazti')
 #<bound method Path.cwd of <class 'pathlib.Path'>>
 
+#.......obtener un objeto Path llamando Path.home()
+Path.home()
+#shell: WindowsPath('C:/Users/DELL_USER_#1')
+
+#.......creacion de nuevas carpetas con os.makedirs(), mkadir()
+os.makedirs('C:\\Users\\DELL_USER_#1C:\\desktop\\delicious\\walnut\\waffles')
+#acceso denegado
+
+Path(r'C:\Users\DELL_USER_#1\Desktop\ejemplo2').mkdir()
+#shell: WindowsPath('C:\Users\DELL_USER_#1\Desktop\ejemplo2')
+
+
 
 
 
