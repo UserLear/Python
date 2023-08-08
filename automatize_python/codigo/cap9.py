@@ -160,7 +160,38 @@ C:\Users\DELL_USER_#1\Desktop\plazti\Python\automatize_python\codigo\cap7.py
 C:\Users\DELL_USER_#1\Desktop\plazti\Python\automatize_python\codigo\cap8.py
 C:\Users\DELL_USER_#1\Desktop\plazti\Python\automatize_python\codigo\cap9.py
 '''
+#.......comprobacion de validez de ruta
+p = Path('C:\\Users\\DELL_USER_#1\\Desktop\\plazti\\Python\\automatize_python\\codigo\\cap7.py')
+p.exists() #shell: True
 
+p = Path('C:\\Users\\DELL_USER_#1\\Desktop\\plazti\\Python\\automatize_python\\codigo\\cap7.py')
+p.is_file() #shell: True
 
+p = Path('C:\\Users\\DELL_USER_#1\\Desktop\\plazti\\Python\\automatize_python\\codigo\\cap7.py')
+p.is_dir() #shell: False
+
+p = Path('C:\\Users\\DELL_USER_#1\\Desktop\\plazti\\Python\\automatize_python\\codigo')
+p.is_dir() #shell: True
+
+#se debe crear un archivo de texto plano (bloc de notas .txt) para utilizar el modulo Path, nos instalamos en el directorio donde se ubica el archivo
+
+#idenficicamos nuestro directorio actual
+Path().cwd() #WindowsPath('C:/Users/DELL_USER_#1/Desktop/plazti/Python/automatize_python')
+
+#cambiamos de directorio para buscar el archivo
+os.chdir('C:/Users/DELL_USER_#1/Desktop')
+Path().cwd() #WindowsPath('C:/Users/DELL_USER_#1/Desktop')
+
+#una vez creado el documento (.txt) con bloc de notas trazamos la ruta al archivo
+p = Path('numero.txt') 
+os.path.abspath(p) #shell: 'C:\\Users\\DELL_USER_#1\\Desktop\\numero.txt'
+os.path.basename('C:\\Users\\DELL_USER_#1\\Desktop\\numero.txt') #shell: 'numero.txt'
+
+#metodo: read_text() - para leer el archivo
+p.read_text() #'13'
+
+#metodo: write_text() - para sobreescribir o crear un nuevo archivo
+p.write_text('Hola Mundo') #shell: 10 - devuelve el numero de caracteres añadidos en el documento
+p.read_text() #'Hola Mundo'
 
 
