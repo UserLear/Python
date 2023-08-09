@@ -14,7 +14,7 @@ for filename in myFiles:
 #C:\Users\Al\details.csv
 #C:\Users\Al\invite.docx
 
-#.......uso operador / para unit rutas
+#.......uso operador / para unir rutas
 print(Path('spam') / 'bacon' / 'eggs')
 #WindowsPath('spam/bacon/eggs')
 print(Path('spam') / Path('bacon/eggs'))
@@ -162,19 +162,18 @@ C:\Users\DELL_USER_#1\Desktop\plazti\Python\automatize_python\codigo\cap9.py
 '''
 #.......comprobacion de validez de ruta
 p = Path('C:\\Users\\DELL_USER_#1\\Desktop\\plazti\\Python\\automatize_python\\codigo\\cap7.py')
-p.exists() #shell: True
+p.exists() #shell: True - verifica si la ruta existe
 
 p = Path('C:\\Users\\DELL_USER_#1\\Desktop\\plazti\\Python\\automatize_python\\codigo\\cap7.py')
-p.is_file() #shell: True
+p.is_file() #shell: True - verifica si el archivo existe
 
 p = Path('C:\\Users\\DELL_USER_#1\\Desktop\\plazti\\Python\\automatize_python\\codigo\\cap7.py')
-p.is_dir() #shell: False
+p.is_dir() #shell: False - verifica si es un puro directorio
 
 p = Path('C:\\Users\\DELL_USER_#1\\Desktop\\plazti\\Python\\automatize_python\\codigo')
-p.is_dir() #shell: True
+p.is_dir() #shell: True - verifica si es un puro directorio
 
 #se debe crear un archivo de texto plano (bloc de notas .txt) para utilizar el modulo Path, nos instalamos en el directorio donde se ubica el archivo
-
 #idenficicamos nuestro directorio actual
 Path().cwd() #WindowsPath('C:/Users/DELL_USER_#1/Desktop/plazti/Python/automatize_python')
 
@@ -194,4 +193,52 @@ p.read_text() #'13'
 p.write_text('Hola Mundo') #shell: 10 - devuelve el numero de caracteres añadidos en el documento
 p.read_text() #'Hola Mundo'
 
+#.......funcion open(), open(Path, 'w'), open(Path, 'w'), read(), write(), readlines(), close()
+#para abrir un archivo le pasa la ruta de cadena que indica el archivo que desea abrir puede ser absoluta o relativa
+#funcion open() devuelve un objeto File
+Path.cwd() #shell: WindowsPath('C:/Users/DELL_USER_#1/Desktop/plazti/Python/automatize_python') - devuelve el objeto del directorio donde estoy posicionado
+Path.home() #shell: WindowsPath('C:/Users/DELL_USER_#1') - devuelve el objeto del directorio casa
+str(Path.home()) #shell: 'C:\\Users\\DELL_USER_#1' - devuelve una cadena del directorio casa
+os.path.abspath('Desktop/numero.txt') #shell: 'C:\\Users\\DELL_USER_#1\\Desktop\\numero.txt'
+holaNumero = open(os.path.abspath('Desktop/numero.txt'))
+holaNumero = open(Path.home() / 'Desktop/numero.txt') #shell: llamar a la variable devuelve - <_io.TextIOWrapper name='C:\\Users\\DELL_USER_#1\\Desktop\\numero.txt' mode='r' encoding='cp1252'>
+
+holaNumero = open('C:\\Users\\DELL_USER_#1\\Desktop\\numero.txt') #devuelve un objeto File 
+#llamar a la variable holaNumero devuelve: <_io.TextIOWrapper name='C:\\Users\\DELL_USER_#1\\Desktop\\numero.txt' mode='r' encoding='cp1252'>
+
+#funcion read() - lee la cadenas que contiene el archito
+holaNumero.read() #'Hola Mundo'
+
+#funcion readlines() - devuelve una lista de valores de cadena del archivo de varias lineas
+holaCadena = open('C:\\Users\\DELL_USER_#1\\Desktop\\cadenas.txt') 
+holaCadena.read() #'la mayoria de\nlas personas\nse quejan de no\ntener el tiempo ni\nla oportunidad de \ncrecer, olvidando que \nsi fuera facil, todo\nel mundo lo haria\n'
+holaCadena.readlines() #['la mayoria de,\n', 'las personas,\n', 'se quejan de no,\n', 'tener el tiempo ni,\n', 'la oportunidad de,\n', 'crecer, olvidando que,\n', 'si fuera facil, todo,\n', 'el mundo lo haria,\n']
+
+#funcion open(Path, 'w') - modo escritura sobrescribira el archivo existente
+holaNumero = open('C:\\Users\\DELL_USER_#1\\Desktop\\numero.txt', 'w')
+holaNumero.write('1234') #shell: 4
+holaNumero = open('C:\\Users\\DELL_USER_#1\\Desktop\\numero.txt') #devuelve el objeto File
+holaNumero.read() #shell: '1234' 
+
+#funcion open(Path, 'a') - agregara texto al final del archivo existente
+holaCadena = open('C:\\Users\\DELL_USER_#1\\Desktop\\cadenas.txt', 'a') #devuelve el objeto File
+holaCadena.write('Este es un saludo') #shell: 17 - para poder escribir debe estar el objeto File disponible (llamarlo primero - linea arriba)
+holaCadena = open('C:\\Users\\DELL_USER_#1\\Desktop\\cadenas.txt') #devuelve el objeto File
+holaCadena.read() #shell: 'la mayoria de,\nlas personas,\nse quejan de no,\ntener el tiempo ni,\nla oportunidad de,\ncrecer, olvidando que,\nsi fuera facil, todo,\nel mundo lo haria,\nEste es un saludo' - para poder leerlo debe estar el objeto File disponible (llamarlo primero - linea arriba)
+holaCadena = open('C:\\Users\\DELL_USER_#1\\Desktop\\cadenas.txt') #devuelve el objeto File
+holaCadena.readlines() #shell: ['la mayoria de,\n', 'las personas,\n', 'se quejan de no,\n', 'tener el tiempo ni,\n', 'la oportunidad de,\n', 'crecer, olvidando que,\n', 'si fuera facil, todo,\n', 'el mundo lo haria,\n', 'Este es un saludo'] para poder leerlo debe estar el objeto File disponible (llamarlo primero - linea arriba)
+
+#funcion write() para crear un archivo
+saludo = open('saludo.txt', 'w') #shell: devuelve un objeto File
+saludo.write('Hola muchach \n') #shell: 14 - write() crea un archivo para sobreescribir
+saludo.close() #shell: cierra el archivo
+saludo = open('saludo.txt', 'a') #shell: devuelve un objeto File
+saludo.write('como esta Sr tocino') #shell: 19 - escribe al final del archivo
+saludo.close() #shell: cierra el archivo
+saludo = open('saludo.txt') ##shell: devuelve un objeto File
+saludoLargo = saludo.read() #shell: lee el contenido de la variable saludo
+saludo.close() #shell: cierra el archivo saludo
+print(saludoLargo)
+#Hola muchach 
+#como esta Sr tocino
 
