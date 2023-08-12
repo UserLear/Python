@@ -214,7 +214,7 @@ holaCadena = open('C:\\Users\\DELL_USER_#1\\Desktop\\cadenas.txt')
 holaCadena.read() #'la mayoria de\nlas personas\nse quejan de no\ntener el tiempo ni\nla oportunidad de \ncrecer, olvidando que \nsi fuera facil, todo\nel mundo lo haria\n'
 holaCadena.readlines() #['la mayoria de,\n', 'las personas,\n', 'se quejan de no,\n', 'tener el tiempo ni,\n', 'la oportunidad de,\n', 'crecer, olvidando que,\n', 'si fuera facil, todo,\n', 'el mundo lo haria,\n']
 
-#funcion open(Path, 'w') - modo escritura sobrescribira el archivo existente
+#funcion open(Path, 'w') - modo escritura sobrescribira el archivo existente o creara uno nuevo
 holaNumero = open('C:\\Users\\DELL_USER_#1\\Desktop\\numero.txt', 'w')
 holaNumero.write('1234') #shell: 4
 holaNumero = open('C:\\Users\\DELL_USER_#1\\Desktop\\numero.txt') #devuelve el objeto File
@@ -241,4 +241,5 @@ saludo.close() #shell: cierra el archivo saludo
 print(saludoLargo)
 #Hola muchach 
 #como esta Sr tocino
+
 
