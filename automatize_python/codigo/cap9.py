@@ -1,4 +1,4 @@
-from pathlib import Path, os
+from pathlib import Path, os, shelve
 #LECTURA Y ESCRITURA DE ARCHIVOS
 #.......uso Path
 Path('spam', 'bacon', 'eggs')
@@ -242,4 +242,23 @@ print(saludoLargo)
 #Hola muchach 
 #como esta Sr tocino
 
+#.......GUARDAR VARIABLES CON MODULO SHELVE
+#se ejecuta en el directorio actual
+archivoEstante = shelve.open('miDato')
+gatos = ['pelusa', 'dino', 'coco']
+archivoEstante['misGatos'] = gatos
+archivoEstante.close()
+#esto crea 3 archivos con extenciones .bak, .dat, .dir
 
+#abrir archivo de estanteria
+archivoEstante = shelve.open("miDato")
+type(archivoEstante) #<class 'shelve.DbfilenameShelf'>
+archivoEstante['misGatos'] #['pelusa', 'dino', 'coco']
+archivoEstante.close()
+
+#acceder a valores de estante como diccionarios
+archivoEstante = shelve.open('miDato')
+list(archivoEstante.keys()) # ['misGatos']
+list(archivoEstante.values()) #[['pelusa', 'dino', 'coco']]
+archivoEstante.close()
+#si se desea guardar datos de los programas de python con modulo shelve
