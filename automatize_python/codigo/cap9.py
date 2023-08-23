@@ -1,6 +1,7 @@
 from pathlib import Path, os, shelve
 #LECTURA Y ESCRITURA DE ARCHIVOS
 #.......uso Path
+#para unir carpetas como un directorio
 Path('spam', 'bacon', 'eggs')
 #shell: WindowsPath('spam/bacon/eggs')
 str(Path('spam', 'bacon', 'eggs'))
@@ -15,27 +16,50 @@ for filename in myFiles:
 #C:\Users\Al\invite.docx
 
 #.......uso operador / para unir rutas
-print(Path('spam') / 'bacon' / 'eggs')
-#WindowsPath('spam/bacon/eggs')
-print(Path('spam') / Path('bacon/eggs'))
-#WindowsPath('spam/bacon/eggs')
-print(Path('spam') / Path('bacon', 'eggs'))
-#WindowsPath('spam/bacon/eggs')
+Path('spam') / 'bacon' / 'eggs'
+#shell: WindowsPath('spam/bacon/eggs')
+str(Path('spam') / 'bacon' / 'eggs')
+#shell: 'spam\\bacon\\eggs'
+
+Path('spam') / Path('bacon/eggs')
+#shell: WindowsPath('spam/bacon/eggs')
+str(Path('spam') / Path('bacon/eggs'))
+#shell: 'spam\\bacon\\eggs'
+
+Path('spam') / Path('bacon', 'eggs')
+#shell: WindowsPath('spam/bacon/eggs')
+str(Path('spam') / Path('bacon', 'eggs'))
+#shell: 'spam\\bacon\\eggs'
 
 #.......directorio de trabajo actual
-print(Path.cwd()) #directorio actual
+Path.cwd()
 #shell: WindowsPath('C:/Users/DELL_USER_#1/Desktop/plazti/Python/automatize_python')
-os.chdir("C:\\Users\\DELL_USER_#1\\Desktop\\plazti") #para cambiar de directorio
-print(Path.cwd) #shell: WindowsPath('C:/Users/DELL_USER_#1/Desktop/plazti')
-#<bound method Path.cwd of <class 'pathlib.Path'>>
+str(Path.cwd())
+#shell: 'C:\\Users\\DELL_USER_#1\\Desktop'
+
+#.......para cambiar de directorio: os.chdir()
+Path.cwd()
+#shell: WindowsPath('C:/Users/DELL_USER_#1/Desktop/plazti/Python/automatize_python')
+str(Path.cwd()) #llamamos a la funcion str(Path.cwd()) para obtener una cadena de nuestra ubicacion y pasar una parte a path.chdir()
+#shell: 'C:\\Users\\DELL_USER_#1\\Desktop\\plazti\\Python\\automatize_python'
+
+os.chdir('C:\\Users\\DELL_USER_#1\\Desktop\\plazti') 
+Path.cwd() 
+#shell: WindowsPath('C:/Users/DELL_USER_#1/Desktop/plazti')
+#python: <bound method Path.cwd of <class 'pathlib.Path'>>
+
+os.chdir(Path.cwd() / Path('platzi/python'))
+#FileNotFoundError: [WinError 3] El sistema no puede encontrar la ruta especificada: 'C:\\Users\\DELL_USER_#1\\Desktop\\platzi\\python'
 
 #.......obtener un objeto Path llamando Path.home()
 Path.home()
 #shell: WindowsPath('C:/Users/DELL_USER_#1')
+str(Path.home())
+#shell: 'C:\\Users\\DELL_USER_#1'
 
 #.......creacion de nuevas carpetas con os.makedirs(), mkadir()
-os.makedirs('C:\\Users\\DELL_USER_#1C:\\desktop\\delicious\\walnut\\waffles')
-#acceso denegado
+os.makedirs('C:\\Users\\DELL_USER_#1\\desktop\\delicious\\walnut\\waffles')
+#
 
 Path(r'C:\Users\DELL_USER_#1\Desktop\ejemplo2').mkdir()
 #shell: WindowsPath('C:\Users\DELL_USER_#1\Desktop\ejemplo2')
