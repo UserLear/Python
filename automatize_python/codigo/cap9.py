@@ -217,7 +217,7 @@ p.read_text() #'13'
 p.write_text('Hola Mundo') #shell: 10 - devuelve el numero de caracteres añadidos en el documento
 p.read_text() #'Hola Mundo'
 
-#.......funcion open(), open(Path, 'w'), open(Path, 'w'), read(), write(), readlines(), close()
+#.......funcion open(), open(Path, 'w'), open(Path, 'a'), read(), write(), readlines(), close()
 #para abrir un archivo le pasa la ruta de cadena que indica el archivo que desea abrir puede ser absoluta o relativa
 #funcion open() devuelve un objeto File
 Path.cwd() #shell: WindowsPath('C:/Users/DELL_USER_#1/Desktop/plazti/Python/automatize_python') - devuelve el objeto del directorio donde estoy posicionado

@@ -1,21 +1,20 @@
 from pathlib import Path
-import shutil, os
-#1.......copiar archivos y carpetas
-p = Path.home() #WindowsPath('C:/Users/DELL_USER_#1')
-shutil.copy(p/'saludo.txt', p/'nueva_carpeta') #se crea un archivo que al abrirlo contiene los datos copiados
-#shell: WindowsPath('C:/Users/DELL_USER_#1/nueva_carpeta')
-shutil.copy(p/'saludo.txt', p/'practica_automatize_python') #se crea un archivo que al abrirlo contiene los datos copiados
-#shell: WindowsPath('C:/Users/DELL_USER_#1/practica_automatize_python')
-shutil.copy(p/'saludo.txt', p/'desktop/practica_automatize_python') #se hizo una copia del directorio (WindowsPath('C:/Users/DELL_USER_#1')) al directorio 'C:\\Users\\DELL_USER_#1\\desktop\\practica_automatize_python\\saludo.txt' - si ya existe un documento con el mismo nombre solo se sobreescribe
-#shell: 'C:\\Users\\DELL_USER_#1\\desktop\\practica_automatize_python\\saludo.txt'
+import shutil, os, send2trash
+#4.......eliminaciones seguras con modulo send2trash
+#ejemplo: crear un archivo, escribir, añadir mas datos en el,  y ejecutar el modulo send2trash  
+p = Path.home() #llamamos el directorio casa
+p1 = open(p/'desktop/ar_prueba_send2trash.txt', 'w') #paso 1: crea un nuevo archivo en desktop para probar el modulo send2trash, utilizamos la funcion open(ruta-destino/nombrearchivo-extencion, 'w') para crear un nuevo documento,
+p1.write('Esta es una prueba completa de crear y eliminar') #paso 2: escribir algo en el archivo - shell: 47
+p1 = open(p/'desktop/ar_prueba_send2trash.txt') #paso 3: volver a llamarlo para poder leerlo
+p1.read() #paso 4: leer el contenido del archivo - shell: 'Esta es una prueba completa de crear y eliminar'
 
-shutil.copy(p/'saludo.txt', p/'desktop/practica_automatize_python/mihistoria.txt') #se hizo una segunda copia cambiando el nombre del documento - si ya existe un documento con el mismo nombre solo se sobreescribe
-#shell: WindowsPath('C:/Users/DELL_USER_#1/desktop/practica_automatize_python/mihistoria.txt')
+p1 = open(p/'desktop/ar_prueba_send2trash.txt', 'a') #paso 5: llamar al objeto file para añadir mas datos al final del archivo
+p1.write(', esto se añadira al final del documento') #paso 6: añadir mas datos al final - shell: 40
+p1 = open(p/'desktop/ar_prueba_send2trash.txt') #paso 7: volver a llamarlo para poder leerlo
+p1.read() #paso 8: leer el contenido del archivo - shell: 'Esta es una prueba completa de crear y eliminar, esto se añadira al final del documento'
+p1.close() #paso 9: cerramos el documento
 
-shutil.copytree(p/'varios_archivos', p/'desktop/carpe_copytree') #se crea una carpeta nueva - no puede utilizar una carpeta que ya esta creada
-#shell: WindowsPath('C:/Users/DELL_USER_#1/desktop/carpe_copytree')
-
-#2.......mover y cambiar el nombre de archivos y carpetas
+send2trash.send2trash('ar_prueba_send2trash.txt')
 
 
 
