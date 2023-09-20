@@ -140,21 +140,64 @@ for i in lista2:
 #endswith: Esta historia comienza en 1991: True
 
 #11.......metodo join(), split()
+
+#11.1........metodo .join()
+print('metodo de cadena .join se utiliza para unir con un caracter y devuelve una nueva cadena')
+cadena1 = 'Moises Emanuel Ayala Mejia'
+while True:
+    caracter1 = input('Ingresa un caracter: ') 
+#input: # 
+#input: ''
+#input: 
+    if caracter1 == 'q':
+        break
+    def une(caracter, cadena):
+        unir = caracter.join(cadena)
+        print(unir)
+    une(caracter1,cadena1) 
+#ouput: M#o#i#s#e#s# #E#m#a#n#u#e#l# #A#y#a#l#a# #M#e#j#i#a
+#ouput: M''o''i''s''e''s'' ''E''m''a''n''u''e''l'' ''A''y''a''l''a'' ''M''e''j''i''a
+#ouput: Moises Emanuel Ayala Mejia
+
 lista = ['Moises', 'Emanuel', 'Ayala', 'Mejia']
-caracter1 = input('Ingresa un caracter: ')
-def separa(caracter, lista):
-    separar = caracter.join(lista)
-    print(separar)
+d = '----'.join(lista)
+print(d)
+#ouput: Moises----Emanuel----Ayala----Mejia
 
-separa(caracter1,lista) #Moises*Emanuel*Ayala*Mejia
+#11.2.......metodo .split()
+print('metodo de cadena .split se utiliza para separar identificando un caracter y devuelve una lista')
+cadena2 = 'Moises-Emanuel-Ayala-Mejia'
+while True:
+    caracter2 = input('Ingresa un caracter: ')
+#input: -
+#input: 
+    if caracter2 == 'q':
+        break
+    def separa(caracter, cadena):
+        separar = cadena.split(caracter)
+        print(separar)
+    separa(caracter2,cadena2) 
+#ouput: ['Moises', 'Emanuel', 'Ayala', 'Mejia']
+#ouput: devuelve error
 
-cadena = 'Moises-Emanuel-Ayala-Mejia'
-caracter2 = input('Ingresa un caracter: ')
-def une(caracter, cadena):
-    unir = cadena.split(caracter)
-    print(unir)
+print('metodo de cadena .split se utiliza con un segundo parametro para determinar un numero de separaciones')
+cadena3 = 'Moises-Emanuel-Ayala-Mejia'
+while True:
+    caracter3 = input('Ingresa un caracter: ')
+#input: -
+    if caracter3 == 'q':
+        break
+    def separa(caracter, cadena):
+        separar = cadena.split(caracter,2)
+        print(separar)
+    separa(caracter3,cadena3)
+#ouput: ['Moises', 'Emanuel', 'Ayala-Mejia']
 
-une(caracter2,cadena) #['Moises', 'Emanuel', 'Ayala', 'Mejia']
+cadena4 = 'La mayoria de las personas'
+c = cadena4.split()
+print(c)
+#ouput: ['La', 'mayoria', 'de', 'las', 'personas']
+
 
 spam = '''Querida Alice,
 ¿Cómo has estado? Estoy bien.
