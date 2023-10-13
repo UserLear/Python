@@ -90,6 +90,7 @@ cuenta = {}
 for carácter in mensaje:
     cuenta.setdefault(carácter, 0)
     cuenta[carácter] = cuenta[carácter] + 1
+    
 
 print(cuenta) 
 '''{'E': 1, 'r': 6, 'a': 7, ' ': 13, 'u': 1, 'n': 3, 'd': 3, 'í': 2, 'b': 3, 'i': 2, 'l': 6, 't': 2, 'e': 6, 'y': 2, 'f': 1,
