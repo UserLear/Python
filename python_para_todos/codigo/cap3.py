@@ -87,6 +87,10 @@ print(decibelios)
 #decibelios = 10 * math.log10(relacion)
 #OverflowError: math range error
 
+#EJERCICIOS DEL CAPITULO
+#Ejercicio 1
+
+
 
 
 
