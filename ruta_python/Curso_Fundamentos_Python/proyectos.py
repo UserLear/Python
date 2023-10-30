@@ -7,3 +7,5 @@
 #calculo de temperatura farenheit o celcius
 #convertidor de sistema de medidas
 #convertidor de numeros en letras
+#calcular la tasa impositiva de pago de impuest para personas naturales
+#calculo de la balanza de comprobacion (contabilidad)
