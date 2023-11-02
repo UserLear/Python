@@ -22,3 +22,4 @@ print(type(is_single)) #<class 'bool'>
 my_age = input("¿cual es tu edad?: ") #input devuelve simpre un string
 print(my_age) #32
 print(type(my_age)) #<class 'str'>
+
