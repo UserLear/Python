@@ -1,3 +1,4 @@
+import random
 #concatenar datos a una plantilla: presentacion, 
 #piedra papel o tijera
 #zig zag
@@ -9,6 +10,7 @@
 #convertidor de numeros en letras
 #calcular la tasa impositiva de pago de impuest para personas naturales
 #calculo de la balanza de comprobacion (contabilidad)
+#programa convertidor de tipos que explique el uso de cada tipo de dato
 
 #proyecto 7 + 8: creacion de plantillas literales
 print("Hola extraño introduce tus datos")
@@ -90,4 +92,30 @@ while True:
     except:
         print("Lo siento la formula solo trabaja sobre numeros enteros positivos")
 
+#programa 7+8+9+10+11: programa que explica el tipo y como se puede utilizar
+def convertir(tipo_dato):
+        if type(tipo_dato) == int:
+            print("Este tipo de dato lo puedes utilizar para operaciones aritmeticas por ejemlo:")
+        elif type(tipo_dato) == str:
+            print("Este tipo de dato lo puedes utilizar para operaciones con cadenas, por ejemplo:")
+        elif type(tipo_dato) == float:
+            print("Este tipo de dato lo puedes utilizar para operacones aritmeticas decimales")
+        else: 
+            print("Este tipo de dato no esta especificado")
 
+while True:
+    tipo_dato = input("Introduce el dato: \n")
+    numeros = ["1", "2", "3"]
+    aleatorio = random.choice(numeros)
+    try:
+        if aleatorio == "1":
+            conver = int(tipo_dato)
+            convertir(conver)
+        elif aleatorio == "2": 
+            conver = str(tipo_dato)
+            convertir(conver)
+        elif aleatorio == "3":
+            conver = float(tipo_dato)
+            convertir(conver)
+    except:
+        print("No puedes convertir una letra en numero")
