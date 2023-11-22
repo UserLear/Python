@@ -1,3 +1,4 @@
+import random, time, sys
 #.......definicion de funcion
 def hola():
     print('Hola!')
@@ -15,7 +16,6 @@ print(hola('Alice'))
 print(hola('Bob'))
 
 #.......valor de retorno + declaracion de retorno
-import random
 
 def getAnswer(answerNumber):
     if answerNumber == 1:
@@ -131,7 +131,6 @@ print(spam(0))
 print(spam( 1))
 
 #.......zig zag
-import time, sys
 indent = 0 # How many spaces to indent.
 indentIncreasing = True # Whether the indentation is increasing or not.
 
