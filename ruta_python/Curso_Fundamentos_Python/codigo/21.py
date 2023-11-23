@@ -1,4 +1,3 @@
-import time
 #programa: explica la manipulacion de cadenas
 print("\nAcontinuacion te presentamos un programa que te explicara la manipulacion de cadenas.")
 print("Acontinuacion selecciona el numero del tema que deseas aprender.\n")
@@ -6,7 +5,8 @@ while True:
     print('''Pulsa 'q' para salir.
 1. Uso de apostrofe (') o caracter de escape (\\) dentro de cadenas.
 2. Indexacion. 
-. buscar un caracter o cadena dentro de un sting.
+3. Slicing (particion de cadenas).
+4. buscar un caracter o cadena dentro de un sting.
 . \n''')
     numero = input("Introduce el numero: \n")
     if numero == "q":
@@ -68,6 +68,38 @@ Un mejor uso de la indexacion consistiria en asignar primero una cadena a una va
                 print(f"\n\t\tToma en cuenta que los espacios en blanco tambien tiene un indice asignado que en este caso seria {conver_indice}\n")
                 continue
             print(f"\t\tLa sintaxis seria: \"palabra[{conver_indice}]\" y te devolvera el elemento en esa posicion que seria: \"{palabra[conver_indice]}\"\n")
+    elif numero == "3":
+        print("""Definicion: 
+Slicing consiste en partir una cadena y devolver la seccion requerida, utilizando los indices""")
+        print("""Para este ejercicio crearemos una variable llamada "palabra" a la cual le asignaremos un valor de cadena  y
+manipularla con slicing.\n""")
+        while True:
+            print("""\t\tSelecciona el subtema, donde "a" y "b" son numeros enteros:
+                  Ingresa "q" para salir
+                  1. [a:b] => rango.
+                  2. [a:] => indice de inicio definido.
+                  3. [:b] => indice final definido.
+                  4. [:] => sin indices.""")
+            opcion = input("\t\tIntroduce un numero: ")
+            if opcion == "q":
+                break
+            conver_opcion = int(opcion)
+            if opcion == "1":
+                print("""Definicion:
+El rango consiste en utilizar ambos extremos ("a", "b") de los parentesis [a:b] para devolver la cadena que se encuentra entre esos valores,
+el primer numero "a" del rango es considerado, el segundo es ignorado "b"\n.
+                  Ejemplo:""")
+                palabra = input("\t\tIntroduce la cadena: ")
+                print(f"\t\tLa cadena \"{palabra}\" mide de \"0\" a {len(palabra)-1}.")
+                print(f"\t\tSi quieres toda la cadena \"{palabra}\" deberas introducir entre los parentesis [0:{len(palabra)}].\n")
+                print(f"\t\tBueno es hora que tu lo intentes:")
+                for i in range(2):
+                    numero = input("\t\tIntroduce un numero: ")
+
+
+                
+
+        
         
         
 
