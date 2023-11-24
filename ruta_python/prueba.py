@@ -1,6 +1,13 @@
 cadena = "muestra"
-seleccion = cadena[0:7]
-print(seleccion)
+
+print("Dos puntos")
+dos_puntos = input("Dos puntos: ")
+seccion = cadena[dos_puntos]
+print(seccion)
+
+
+
+
 
 
 

@@ -70,8 +70,8 @@ Un mejor uso de la indexacion consistiria en asignar primero una cadena a una va
             print(f"\t\tLa sintaxis seria: \"palabra[{conver_indice}]\" y te devolvera el elemento en esa posicion que seria: \"{palabra[conver_indice]}\"\n")
     elif numero == "3":
         print("""Definicion: 
-Slicing consiste en partir una cadena y devolver la seccion requerida, utilizando los indices""")
-        print("""Para este ejercicio crearemos una variable llamada "palabra" a la cual le asignaremos un valor de cadena  y
+Slicing consiste en partir una cadena y devolver la seccion requerida, utilizando los indices.""")
+        print("""Para este tema crearemos una variable llamada "palabra" a la cual le asignaremos un valor de cadena  y
 manipularla con slicing.\n""")
         while True:
             print("""\t\tSelecciona el subtema, donde "a" y "b" son numeros enteros:
@@ -86,15 +86,70 @@ manipularla con slicing.\n""")
             conver_opcion = int(opcion)
             if opcion == "1":
                 print("""Definicion:
-El rango consiste en utilizar ambos extremos ("a", "b") de los parentesis [a:b] para devolver la cadena que se encuentra entre esos valores,
-el primer numero "a" del rango es considerado, el segundo es ignorado "b"\n.
-                  Ejemplo:""")
+El "rango" consiste en utilizar ambos extremos ("a", "b") de los parentesis [a:b] para devolver la cadena que se 
+encuentra entre esos valores, el primer numero "a" del rango es considerado, el segundo es ignorado "b".\n
+                Ejemplo:""")
                 palabra = input("\t\tIntroduce la cadena: ")
-                print(f"\t\tLa cadena \"{palabra}\" mide de \"0\" a {len(palabra)-1}.")
+                print(f"\t\tLa cadena \"{palabra}\" mide de \"0\" a \"{len(palabra)-1}\".")
                 print(f"\t\tSi quieres toda la cadena \"{palabra}\" deberas introducir entre los parentesis [0:{len(palabra)}].\n")
                 print(f"\t\tBueno es hora que tu lo intentes:")
-                for i in range(2):
-                    numero = input("\t\tIntroduce un numero: ")
+                while True:
+                    print("\t\tIngresa \"q\" o \"\" para salir.")
+                    numero1 = input("\t\tIntroduce \"a\": ")
+                    if numero1 == "q" or numero1 == "":
+                        break
+                    conver_numero1 = int(numero1)
+                    numero2 = input("\t\tIntroduce \"b\": ")
+                    conver_numero2 = int(numero2)
+                    print(f"\t\tLa sintaxis seria: \"palabra[{numero1}:{numero2}]\" y te devolvera los elementos entre ese rango: {palabra[conver_numero1:conver_numero2]}\n")
+            elif opcion == "2":
+                print("""Definicion:
+El "indice de inicio definido" significa que solo definimos de donde comenzara la seleccion y tomara a partir de 
+ese indice todos los demas hasta el final de la cadena.\n
+                Ejemplo:""")
+                palabra = input("\t\tIntroduce la cadena: ")
+                print(f"\t\tLa cadena \"{palabra}\" mide de \"0\" a \"{len(palabra)-1}\".")
+                print(f"\t\tSi quieres iniciar la cadena \"{palabra}\" a partir de un indice especifico deberas introducir el primer indice [\"a\":].\n")
+                print(f"\t\tBueno es hora que tu lo intentes:")
+                while True:
+                    print("\t\tIngresa \"q\" o \"\" para salir.")
+                    numero1 = input("\t\tIntroduce \"a\": ")
+                    if numero1 == "q" or numero1 == "":
+                        break
+                    conver_numero1 = int(numero1)
+                    print(f"\t\tLa sintaxis seria: \"palabra[{numero1}:]\" y te devolvera los elementos entre el indice \"a\" y el ultimo elemento de la cadena: {palabra[conver_numero1:]}\n")
+            elif opcion == "3":
+                print("""Definicion:
+El "indice final definido" consiste en determinar el punto donde terminara la seleccion de los elementos de una
+cadena comenzando desde el indice "0" hasta el indice "b" definido por nosotros.\n
+                Ejemplo:""")
+                palabra = input("\t\tIntroduce la cadena: ")
+                print(f"\t\tLa cadena \"{palabra}\" mide de \"0\" a \"{len(palabra)-1}\".")
+                print(f"\t\tSi quieres devolver la cadena \"{palabra}\" iniciando de \"0\" y que termine hasta \"b\" introduce entre parentesis: [:\"b\"].\n")
+                print(f"\t\tBueno es hora que tu lo intentes:")
+                while True:
+                    print("\t\tIngresa \"q\" o \"\" para salir.")
+                    numero1 = input("\t\tIntroduce \"b\": ")
+                    if numero1 == "q" or numero1 == "":
+                        break
+                    conver_numero1 = int(numero1)
+                    print(f"\t\tLa sintaxis seria: \"palabra[:{numero1}]\" y te devolvera los elementos entre el indice \"0\" y el indice \"b\" de la cadena: {palabra[:conver_numero1]}\n")
+            elif opcion == "4":
+                print("""Definicion:
+"Sin indices" devuelve la cadena entera sin preocuparse cual es el inicio o final de la cadena.\n
+                Ejemplo:""")
+                palabra = input("\t\tIntroduce la cadena: ")
+                print(f"\t\tLa cadena \"{palabra}\" mide de \"0\" a \"{len(palabra)-1}\".")
+                print(f"\t\tSi quieres devolver la cadena \"{palabra}\" iniciando de \"0\" y que termine hasta \"{len(palabra)-1}\" introduce entre parentesis: [:].")
+                print(f"\t\tLa sintaxis seria: \"palabra[:]\" y te devolvera los elementos entre el indice \"0\" y el indice \"{len(palabra)-1}\" de la cadena: {palabra[:]}\n")
+            else:
+                print("\t\tDebes introducir un numero valido de subtema.\n")
+                if True:
+                    continue
+
+                
+                
+                
 
 
                 
