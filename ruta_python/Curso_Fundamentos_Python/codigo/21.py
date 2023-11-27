@@ -2,14 +2,15 @@
 print("\nAcontinuacion te presentamos un programa que te explicara la manipulacion de cadenas.")
 print("Acontinuacion selecciona el numero del tema que deseas aprender.\n")
 while True:
-    print('''Pulsa 'q' para salir.
+    print('''Pulsa 'q' o '' para salir.
 1. Uso de apostrofe (') o caracter de escape (\\) dentro de cadenas.
 2. Indexacion. 
 3. Slicing (particion de cadenas).
-4. buscar un caracter o cadena dentro de un sting.
-. \n''')
+4. Operador "in" y "not in": buscar un caracter o subcadena dentro de otra cadena.
+5. Metodos: booleans
+6. Metodos: modificacion de cadena\n''')
     numero = input("Introduce el numero: \n")
-    if numero == "q":
+    if numero == "q" or numero == "":
         print("Fue un gusto contribuir a su arendizaje, hasta pronto.\n")
         break
     elif numero == "1":     
@@ -75,15 +76,14 @@ Slicing consiste en partir una cadena y devolver la seccion requerida, utilizand
 manipularla con slicing.\n""")
         while True:
             print("""\t\tSelecciona el subtema, donde "a" y "b" son numeros enteros:
-                  Ingresa "q" para salir
+                  Ingresa "q" o "" para salir.
                   1. [a:b] => rango.
                   2. [a:] => indice de inicio definido.
                   3. [:b] => indice final definido.
                   4. [:] => sin indices.""")
             opcion = input("\t\tIntroduce un numero: ")
-            if opcion == "q":
+            if opcion == "q" or "":
                 break
-            conver_opcion = int(opcion)
             if opcion == "1":
                 print("""Definicion:
 El "rango" consiste en utilizar ambos extremos ("a", "b") de los parentesis [a:b] para devolver la cadena que se 
@@ -146,6 +146,122 @@ cadena comenzando desde el indice "0" hasta el indice "b" definido por nosotros.
                 print("\t\tDebes introducir un numero valido de subtema.\n")
                 if True:
                     continue
+    elif numero == "4":
+        print("""Definicion:
+El operador "in" y "not in" se utilizan para verificar si una cadena contiene una sub-cadena o caracter en si misma y 
+devuelve un valor boolean (True, False), si la encuentra o no, "in" devuelve "True" si existe o "False" sino, "not in" 
+devuelve el valor inverso a "in" si la encuentra, si existe devuelve "False" sino devuelve "True".""")
+        print("""Para este tema crearemos una variable llamada "palabra" a la cual le asignaremos un valor de cadena  y
+manipularla con "in" o "not in".\n""")
+        while True:
+            print("""\t\tSelecciona el subtema:
+                  Ingresa "q" o "" para salir.
+                  1. in => verificacion (esta en).
+                  2. not in => negacion (no esta en).""")
+            opcion = input("\t\tIntroduce un numero: ")
+            if opcion == "q" or "":
+                break
+            if opcion == "1":
+                print("""Definicion:
+El operador "in" lo utilizamos para verificar la existencia de una sub-cadena dentro de otra cadena y nos devolvera "True" 
+si la encuentra o "False" si no.\n
+                Ejemplo:""")
+                palabra = input("\t\tIntroduce la cadena: ")
+                print(f"\t\tUna vez inicializada la variable \"palabra\" trabajaremos con la cadena \"{palabra}\"")
+                print(f"\t\tSi quieres verificar si \"{palabra[0:2]}\" esta en la cadena \"{palabra}\" la sintaxis es: \"{palabra[0:2]}\" in palabra")
+                print(f"\t\tBueno es hora que tu lo intentes:\n")
+                while True:
+                    print("\t\tIngresa \"q\" o \"\" para salir.")
+                    subcadena = input(f"\t\tIntroduce la subcadena que buscas en \"{palabra}\": ")
+                    if subcadena == "q" or subcadena == "":
+                        break
+                    verificacion = subcadena in palabra
+                    if verificacion == True:
+                        print(f"\t\tComo puedes ver \"{subcadena}\" si esta contenida en \"{palabra}\" por tanto devuelve: True\n")
+                    elif verificacion == False:
+                        print(f"\t\tComo puedes ver \"{subcadena}\" no esta contenida en \"{palabra}\" por tanto devuelve: False\n")
+            if opcion == "2":
+                print("""Definicion:
+El operador "not in" hace una verificacion inversa de la existencia de un caracter o segmento dentro de otra cadena y devolvera
+"True" si no se encuentra o "False" si esta contenida, es como decir "X caracter no esta en Y palabra" si esta devolvera "False"
+si no devolvera "True".\n
+                      Ejemplo:""")
+                palabra = input("\t\tIntroduce la cadena: ")
+                print(f"\t\tUna vez inicializada la variable \"palabra\" trabajaremos con la cadena \"{palabra}\"")
+                print(f"\t\tSi quieres verificar si \"{palabra[0:2]}\" esta en la cadena {palabra} la sintaxis es: \"{palabra[0:2]}\" not in palabra")
+                print(f"\t\tBueno es hora que tu lo intentes:\n")
+                while True:
+                    print("\t\tIngresa \"q\" o \"\" para salir.")
+                    subcadena = input(f"\t\tIntroduce la subcadena que buscas en \"{palabra}\": ")
+                    if subcadena == "q" or subcadena == "":
+                        break
+                    verificacion = subcadena not in palabra
+                    if verificacion == True:
+                        print(f"")
+                        print(f"\t\tComo puedes ver \"{subcadena}\" si esta contenida en \"{palabra}\" por tanto devuelve: True\n")
+                    elif verificacion == False:
+                        print(f"\t\tComo puedes ver \"{subcadena}\" no esta contenida en \"{palabra}\" por tanto devuelve: False\n")
+    elif numero == "5":
+        print("""Definicion:
+Los "metodos booleans" son metodos que devuelven tipos de datos booleans.
+Para estos metodos utilizaremos listas para evaluar y ver su funcionamiento.""")
+        while True:
+            print("""\n\t\tSelecciona el subtema:
+                  Ingresa "q" o "" para salir.
+                  1. isupper.
+                  2. islower.
+                  3. isalpha.
+                  4. isalnum
+                  5. \n""")
+            opcion = input("\t\tIntroduce un numero: ")
+            if opcion == "q" or opcion == "":
+                break
+            if opcion == "1":
+                print("""Definicion:
+El metodo "isupper" devuelve "True" si la cadena pasada tiene al menos un caracter literal mayuscula y devuelve "False"
+si contiene al menos un caracter literal en minuscula o si esta conformado en totalidad de caracteres no literales.
+                Ejemplo:\n""")
+                lista_prueba = ["Moises", "MOISES", "moises", "moises1", "MOISES1", "12345", "M78654", "9874L", "AYALa", "", " ", "/"] 
+                print(f"\t\tPara este metodo utilizaremos la lista: {lista_prueba}")
+                for i in lista_prueba:
+                    print(f"\t\tmetodo isupper(): {i}: {i.isupper()}")
+            elif opcion == "2":
+                print("""Definicion:
+El metodo "islower" devuelve "True" si la cadena pasada no contiene ningun caracter literal en mayuscula y devuelve "False"
+si contiene al menos un caracter literal en mayuscula o si esta conformado en totalidad de caracteres no literales.
+                Ejemplo:\n""")
+                lista_prueba = ["Moises", "MOISES", "moises", "moises1", "MOISES1", "12345", "m78654", "ayalA", "AYALa"] 
+                print(f"\t\tPara este metodo utilizaremos la lista: {lista_prueba}")
+                for i in lista_prueba:
+                    print(f"\t\tmetodo islower(): {i}: {i.islower()}")
+            elif opcion == "3":
+                print("""Definicion:
+El metodo "isalpha" devuelve "True" si la cadena se compone solo de caracteres literales y devuelve "False" en caso contrario.
+                Ejemplo:\n""")
+                lista_prueba = ["Moises", "MOISES", "moises", "moises1", "Moises1", "12345", "ayalA", "AYALa", "MOISES "] 
+                print(f"\t\tPara este metodo utilizaremos la lista: {lista_prueba}")
+                for i in lista_prueba:
+                    print(f"\t\tmetodo isalpha(): {i}: {i.isalpha()}")
+            elif opcion == "4":
+                print("""Definicion:
+El metodo "isalnum" devuelve "True" si la cadena esta compuesta de caracteres solo de caracteres literales o si incluye
+caracteres numericos, cualquier otro caracter diferente a estos devuelve "False".
+                Ejemplo:\n""")
+                lista_prueba = ["Moises", "MOISES", "moises", "moises1", "Moises1", "12345", " ", "MOISES ", "/"] 
+                print(f"\t\tPara este metodo utilizaremos la lista: {lista_prueba}")
+                for i in lista_prueba:
+                    print(f"\t\tmetodo isalnum(): {i}: {i.isalnum()}")
+            
+            
+                
+                
+
+
+
+                
+                
+
+
 
                 
                 
