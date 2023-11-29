@@ -7,9 +7,8 @@ while True:
 2. Indexacion. 
 3. Slicing (particion de cadenas).
 4. Operador "in" y "not in": buscar un caracter o subcadena dentro de otra cadena.
-5. Metodos: booleans.
-6. Metodos: modificacion de cadena.
-          \n''')
+5. Metodos.
+6. Obtener codigo ASCII.\n''')
     numero = input("Introduce el numero: \n")
     if numero == "q" or numero == "":
         print("Fue un gusto contribuir a su arendizaje, hasta pronto.\n")
@@ -204,178 +203,209 @@ si no devolvera "True".\n
                         print(f"\t\tComo puedes ver \"{subcadena}\" no esta contenida en \"{palabra}\" por tanto devuelve: False\n")
     elif numero == "5":
         print("""Definicion:
+Los "metodos" son funciones que se utilizan ya sea para verificar si una cadena cumple con ciertas caracteristicas "Metodos: booleans" o 
+para modificar una cadena y obtener algo nuevo "Metodos: modificacion de cadena".\n""")
+        while True:
+            print("""\t\tSelecciona el subtema:
+                  Ingresa "q" o "" para salir.
+                  1. Funcion dir().
+                  2. Metodos: booleans.
+                  3. Metodos: modificacion de cadenas.""")
+            opcion = input("\t\tIntroduce un numero: ")
+            if opcion == "q" or "":
+                break
+            elif opcion == "1":
+                print("""Definicion:
+La funcion "dir()" devuelve todos los metodos que se pueden utilizar sobre una cadena, la sintaxis es: "dir(cadena)".
+                Ejemplo:\n""")
+                cadena = ""
+                print(f"\t\tBasta con pasar una cadena vacia ("") para ver los metodos disponibles.")
+                metodos = dir(cadena)
+                print(f"\t\t{metodos}")
+            elif opcion == "2":
+                print("""Definicion:
 Los "metodos booleans" son metodos que devuelven tipos de datos booleans.
 Para estos metodos utilizaremos listas para evaluar y ver su funcionamiento.""")
-        while True:
-            print("""\n\t\tSelecciona el subtema:
-                  Ingresa "q" o "" para salir.
-                  1. isupper().
-                  2. islower().
-                  3. isalpha().
-                  4. isalnum().
-                  5. isdecimal().
-                  6. isspace().
-                  7. istitle().
-                  8. startswith().
-                  9. endswith().\n""")
-            opcion = input("\t\tIntroduce un numero: ")
-            if opcion == "q" or opcion == "":
-                break
-            if opcion == "1":
-                print("""Definicion:
+                while True:
+                    print("""\n\t\tSelecciona el subtema:
+                        Ingresa "q" o "" para salir.
+                        1. isupper().
+                        2. islower().
+                        3. isalpha().
+                        4. isalnum().
+                        5. isdecimal().
+                        6. isspace().
+                        7. istitle().
+                        8. startswith().
+                        9. endswith().\n""")
+                    opcion = input("\t\tIntroduce un numero: ")
+                    if opcion == "q" or opcion == "":
+                        break
+                    if opcion == "1":
+                        print("""Definicion:
 El metodo "isupper()" devuelve "True" si la cadena pasada tiene al menos un caracter literal mayuscula y devuelve "False"
 si contiene al menos un caracter literal en minuscula o si esta conformado en totalidad de caracteres no literales.
                 Ejemplo:\n""")
-                lista_prueba = ["Moises", "MOISES", "moises", "moises1", "MOISES1", "12345", "M78654", "9874L", "AYALa", "", " ", "/"] 
-                print(f"\t\tPara este metodo utilizaremos la lista: {lista_prueba}")
-                for i in lista_prueba:
-                    print(f"\t\tmetodo isupper(): {i}: {i.isupper()}")
-            elif opcion == "2":
-                print("""Definicion:
+                        lista_prueba = ["Moises", "MOISES", "moises", "moises1", "MOISES1", "12345", "M78654", "9874L", "AYALa", "", " ", "/"] 
+                        print(f"\t\tPara este metodo utilizaremos la lista: {lista_prueba}")
+                        for i in lista_prueba:
+                            print(f"\t\tmetodo isupper(): {i}: {i.isupper()}")
+                    elif opcion == "2":
+                        print("""Definicion:
 El metodo "islower()" devuelve "True" si la cadena pasada no contiene ningun caracter literal en mayuscula y devuelve "False"
 si contiene al menos un caracter literal en mayuscula o si esta conformado en totalidad de caracteres no literales.
                 Ejemplo:\n""")
-                lista_prueba = ["Moises", "MOISES", "moises", "moises1", "MOISES1", "12345", "m78654", "ayalA", "AYALa"] 
-                print(f"\t\tPara este metodo utilizaremos la lista: {lista_prueba}")
-                for i in lista_prueba:
-                    print(f"\t\tmetodo islower(): {i}: {i.islower()}")
-            elif opcion == "3":
-                print("""Definicion:
+                        ista_prueba = ["Moises", "MOISES", "moises", "moises1", "MOISES1", "12345", "m78654", "ayalA", "AYALa"] 
+                        print(f"\t\tPara este metodo utilizaremos la lista: {lista_prueba}")
+                        for i in lista_prueba:
+                            print(f"\t\tmetodo islower(): {i}: {i.islower()}")
+                    elif opcion == "3":
+                        print("""Definicion:
 El metodo "isalpha()" devuelve "True" si la cadena se compone solo de caracteres literales y devuelve "False" en caso contrario.
                 Ejemplo:\n""")
-                lista_prueba = ["Moises", "MOISES", "moises", "moises1", "Moises1", "12345", "ayalA", "AYALa", "MOISES "] 
-                print(f"\t\tPara este metodo utilizaremos la lista: {lista_prueba}")
-                for i in lista_prueba:
-                    print(f"\t\tmetodo isalpha(): {i}: {i.isalpha()}")
-            elif opcion == "4":
-                print("""Definicion:
+                        lista_prueba = ["Moises", "MOISES", "moises", "moises1", "Moises1", "12345", "ayalA", "AYALa", "MOISES "] 
+                        print(f"\t\tPara este metodo utilizaremos la lista: {lista_prueba}")
+                        for i in lista_prueba:
+                            print(f"\t\tmetodo isalpha(): {i}: {i.isalpha()}")
+                    elif opcion == "4":
+                        print("""Definicion:
 El metodo "isalnum()" devuelve "True" si la cadena esta compuesta de caracteres solo de caracteres literales o si incluye
 caracteres numericos, cualquier otro caracter diferente a estos devuelve "False".
                 Ejemplo:\n""")
-                lista_prueba = ["Moises", "MOISES", "moises", "moises1", "Moises1", "12345", " ", "MOISES ", "/"] 
-                print(f"\t\tPara este metodo utilizaremos la lista: {lista_prueba}")
-                for i in lista_prueba:
-                    print(f"\t\tmetodo isalnum(): {i}: {i.isalnum()}")
-            elif opcion == "5":
-                print("""Definicion:
+                        lista_prueba = ["Moises", "MOISES", "moises", "moises1", "Moises1", "12345", " ", "MOISES ", "/"] 
+                        print(f"\t\tPara este metodo utilizaremos la lista: {lista_prueba}")
+                        for i in lista_prueba:
+                            print(f"\t\tmetodo isalnum(): {i}: {i.isalnum()}")
+                    elif opcion == "5":
+                        print("""Definicion:
 El metodo "isdecimal()" devuelve "True" solo cuando la cadena esta compuesta por caracteres numericos, devuelve "False" en caso
 contrario.
                 Ejemplo:\n""")
-                lista_prueba = ["Moises", "MOISES", "moises", "moises1", "Moises1", "12345", " ", "MOISES ", "/"] 
-                print(f"\t\tPara este metodo utilizaremos la lista: {lista_prueba}")
-                for i in lista_prueba:
-                    print(f"\t\tmetodo isdecimal(): {i}: {i.isdecimal()}")
-            elif opcion == "6":
-                print("""Definicion:
+                        lista_prueba = ["Moises", "MOISES", "moises", "moises1", "Moises1", "12345", " ", "MOISES ", "/"] 
+                        print(f"\t\tPara este metodo utilizaremos la lista: {lista_prueba}")
+                        for i in lista_prueba:
+                            print(f"\t\tmetodo isdecimal(): {i}: {i.isdecimal()}")
+                    elif opcion == "6":
+                        print("""Definicion:
 El metodo "isspace()" devuelve "True" solo cuando la cadena esta compuesta por espacio o caracter de escape de nueva linea, en
 caso contrario devuelve "False".
                 Ejemplo:\n""")
-                lista_prueba = ["Moises", "MOISES", "moises", "moises1", "Moises1", "12345", " ", "MOISES ", "/", "\n"] 
-                print(f"\t\tPara este metodo utilizaremos la lista: {lista_prueba}")
-                for i in lista_prueba:
-                    print(f"\t\tmetodo isspace(): {i}: {i.isspace()}")
-            elif opcion == "7":
-                print("""Definicion:
+                        lista_prueba = ["Moises", "MOISES", "moises", "moises1", "Moises1", "12345", " ", "MOISES ", "/", "\n"] 
+                        print(f"\t\tPara este metodo utilizaremos la lista: {lista_prueba}")
+                        for i in lista_prueba:
+                            print(f"\t\tmetodo isspace(): {i}: {i.isspace()}")
+                    elif opcion == "7":
+                        print("""Definicion:
 El metodo "istitle()" devuelve "True" cuando la cadena comienza con un literal en mayuscula sin importar los demas elementos, 
 caso contrario devolvera "False".
                 Ejemplo:\n""")
-                lista_prueba = ["Moises", "MOISES", "moises", "moises1", "Moises1", "12345", " ", "MOISES ", "/", "\n", "M34567", "J43/"] 
-                print(f"\t\tPara este metodo utilizaremos la lista: {lista_prueba}")
-                for i in lista_prueba:
-                    print(f"\t\tmetodo istitle(): {i}: {i.istitle()}")
-            elif opcion == "8":
-                print("""Definicion:
+                        lista_prueba = ["Moises", "MOISES", "moises", "moises1", "Moises1", "12345", " ", "MOISES ", "/", "\n", "M34567", "J43/"] 
+                        print(f"\t\tPara este metodo utilizaremos la lista: {lista_prueba}")
+                        for i in lista_prueba:
+                            print(f"\t\tmetodo istitle(): {i}: {i.istitle()}")
+                    elif opcion == "8":
+                        print("""Definicion:
 El metodo "startswith()" devuelve "True" al verificar que una cadena comienza de forma totalmente identica con el valor que pasamos, caso
 contrario devuelve "False".
                 Ejemplo:\n""")
-                cadena = "Era una epoca muy dificil."
-                lista_prueba = ["E", "Era", "ra", "una", "era", "dificil", "Era una epoca muy dificil"]
-                print(f"\t\tLa cadena de comparacion seria: \"{cadena}\"")
-                print(f"\t\tPara este metodo utilizaremos la lista: {lista_prueba}")
-                for i in lista_prueba:
-                    print(f"\t\tmetodo startswith(): {i}: {cadena.startswith(i)}")
-            elif opcion == "9":
-                print("""Definicion:
+                        cadena = "Era una epoca muy dificil."
+                        lista_prueba = ["E", "Era", "ra", "una", "era", "dificil", "Era una epoca muy dificil"]
+                        print(f"\t\tLa cadena de comparacion seria: \"{cadena}\"")
+                        print(f"\t\tPara este metodo utilizaremos la lista: {lista_prueba}")
+                        for i in lista_prueba:
+                            print(f"\t\tmetodo startswith(): {i}: {cadena.startswith(i)}")
+                    elif opcion == "9":
+                        print("""Definicion:
 El metodo "endswith()" devuelve "True" al verificar que una cadena termina de forma totalmente identica con el valor que le pasamos, caso
 contrario devuelve "False".
                 Ejemplo:\n""")
-                cadena = "Esta historia comenzo en 1991."
-                lista_prueba = ["Esta", "en", ".", "1991.", "Esta historia comenzo en 1991.", "1."]
-                print(f"\t\tLa cadena de comparacion seria: \"{cadena}\"")
-                print(f"\t\tPara este metodo utilizaremos la lista: {lista_prueba}")
-                for i in lista_prueba:
-                    print(f"\t\tmetodo endswith(): {i}: {cadena.endswith(i)}")
-    elif numero == "6":
-        print("""Definicion:
-Los "metodos de modificacion" son metodos que modifican las cadenas.
-Para estos metodos utilizaremos listas para evaluar y ver su funcionamiento.""") 
-        while True:
-            print("""\n\t\tSelecciona el subtema:
-                  Ingresa "q" o "" para salir.
-                  1. join().
-                  2. split().
-                  3. split(): con doble parametro\n""")
-            opcion = input("\t\tIntroduce un numero: ")
-            if opcion == "q" or opcion == "":
-                break 
-            if opcion == "1":
+                        cadena = "Esta historia comenzo en 1991."
+                        lista_prueba = ["Esta", "en", ".", "1991.", "Esta historia comenzo en 1991.", "1."]
+                        print(f"\t\tLa cadena de comparacion seria: \"{cadena}\"")
+                        print(f"\t\tPara este metodo utilizaremos la lista: {lista_prueba}")
+                        for i in lista_prueba:
+                            print(f"\t\tmetodo endswith(): {i}: {cadena.endswith(i)}")
+            elif numero == "3":
                 print("""Definicion:
+Los "metodos de modificacion" son metodos que modifican las cadenas.
+Para estos metodos utilizaremos listas para evaluar y ver su funcionamiento.""")
+                while True:
+                    print("""\n\t\tSelecciona el subtema:
+                        Ingresa "q" o "" para salir.
+                        1. join().
+                        2. split().
+                        3. split(): con doble parametro
+                        4. partition().
+                        5. rjust().
+                        6. ljust().
+                        7. center().
+                        8. strip().
+                        9. rstrip().
+                        10. lstrip().\n""")
+                    opcion = input("\t\tIntroduce un numero: ")
+                    if opcion == "q" or opcion == "":
+                        break 
+                    if opcion == "1":
+                        print("""Definicion:
 El metodo "join()" se utiliza para incrustar un caracter en los espacios en blanco de una cadena y asi devolver
 una nueva cadena, la sintaxis es: "caracter.join(cadena)", devuelve una cadena.
                 Ejemplo:\n""")
-                cadena = "Moises Emanuel Ayala Mejia"
-                caracter = ["!", "#", "$", "%"]
-                print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
-                print(f"\t\tLos caracteres que utilizaremos son: {caracter}")
-                for k in caracter:
-                    join = k.join(cadena)
-                    print(f"\t\t{join}")
-                print("\t\tEs momento que lo intentes.\n")
-                while True:
-                    print("\t\tIngresa \"q\" p \"\" para salir.")
-                    cadena = input("\t\tIntroduce la cadena: ")
-                    if cadena == "q" or cadena == "":
-                        break
-                    caracter = input("\t\tIntoduce el caracter: ")
-                    print(f"\t\tLa cadena es: \"{cadena}\" y el caracter es: \"{caracter}\"\n")
-                    join = caracter.join(cadena)
-                    print(f"\t\t{join}\n")
-            if opcion == "2":
-                print("""Definicion:
+                    cadena = "Moises Emanuel Ayala Mejia"
+                    caracter = ["!", "#", "$", "%"]
+                    print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
+                    print(f"\t\tLos caracteres que utilizaremos son: {caracter}")
+                    for k in caracter:
+                       join = k.join(cadena)
+                       print(f"\t\t{join}")
+                       print("\t\tEs momento que lo intentes.\n")
+                    while True:
+                       print("\t\tIngresa \"q\" p \"\" para salir.")
+                       cadena = input("\t\tIntroduce la cadena: ")
+                       if cadena == "q" or cadena == "":
+                           break
+                       caracter = input("\t\tIntoduce el caracter: ")
+                       print(f"\t\tLa cadena es: \"{cadena}\" y el caracter es: \"{caracter}\"\n")
+                       join = caracter.join(cadena)
+                       print(f"\t\t{join}\n")
+                    if opcion == "2":
+                        print("""Definicion:
 El metodo "split()" se utiliza para identificar un caracter dentro de una cadena al identificarlo lo elimina y 
 devuelve una lista, la sintaxis es: "cadena.split(caracter)".
                 Ejemplo:\n""")
-                cadena = "Moises-Emanuel-Ayala-Mejia"
-                caracter = "-"
-                print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
-                print(f"\t\tEl caracter que eliminariamos es: \"{caracter}\"")
-                lista = cadena.split(caracter)
-                print(f"\t\t{lista}")
-                print("\t\tEs momento que lo intentes.\n")
-                while True:
-                    print("\t\tIngresa \"q\" p \"\" para salir.")
-                    cadena = input("\t\tIntroduce la cadena: ")
-                    if cadena == "q" or cadena == "":
-                        break
-                    caracter = input("\t\tIntoduce el caracter: ")
-                    print(f"\t\tLa cadena es: \"{cadena}\" y el caracter a eliminar es: \"{caracter}\"\n")
-                    split = cadena.split(caracter)
-                    print(f"\t\t{split}\n")
-            if opcion == "3":
-                print("""Definicion:
+                        cadena = "Moises-Emanuel-Ayala-Mejia"
+                        caracter = "-"
+                        print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
+                        print(f"\t\tEl caracter que eliminariamos es: \"{caracter}\"")
+                        lista = cadena.split(caracter)
+                        print(f"\t\t{lista}")
+                        print("\t\tEs momento que lo intentes.\n")
+                        while True:
+                           print("\t\tIngresa \"q\" p \"\" para salir.")
+                           cadena = input("\t\tIntroduce la cadena: ")
+                           if cadena == "q" or cadena == "":
+                               break
+                           caracter = input("\t\tIntoduce el caracter: ")
+                           print(f"\t\tLa cadena es: \"{cadena}\" y el caracter a eliminar es: \"{caracter}\"\n")
+                           split = cadena.split(caracter)
+                           print(f"\t\t{split}\n")
+                    if opcion == "3":
+                        print("""Definicion:
 El metodo "split() con doble parametro" se utiliza para identificar un caracter dentro de una cadena y el otro
 parametro debe ser un numero que sera la cantidad de esos caracteres que se eliminaran, la sintaxis es: 
-            "cadena.split(caracter, numero)." 
+"cadena.split(caracter, numero)."
+Caracteristicas: 
+        1. Devolvera "Error" si el numero que introduces es mayor que los caracteres existentes.
+        2. Devolvera "Error" si el caracter que introduces no existe. 
                 Ejemplo:\n""")
-                cadena = "Moises-Emanuel-Ayala-Mejia-03-05-1991"
-                caracter = "-"
-                veces = 4
-                print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
-                print(f"\t\tEl caracter a eliminar es: \"{caracter}\"")
-                print(f"\t\tEl numero de veces a eliminar es: \"{veces}\"\n")
-                lista = cadena.split(caracter,4)
-                print(f"\tOuput: {lista}\n")
-                print("\t\tEs momento que lo intentes.")
+                        cadena = "Moises-Emanuel-Ayala-Mejia-03-05-1991"
+                        caracter = "-"
+                        veces = 4
+                        print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
+                        print(f"\t\tEl caracter a eliminar es: \"{caracter}\"")
+                        print(f"\t\tEl numero de veces a eliminar es: \"{veces}\"\n")
+                        lista = cadena.split(caracter,4)
+                        print(f"\tOuput: {lista}\n")
+                print("\t\tEs momento que lo intentes.") #me quede por aqui hay que arreglar
                 while True:
                     print("\t\tIngresa \"q\" p \"\" para salir.")
                     cadena = input("\t\tIntroduce la cadena: ")
@@ -387,9 +417,282 @@ parametro debe ser un numero que sera la cantidad de esos caracteres que se elim
                     print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
                     print(f"\t\tEl caracter a eliminar es: \"{caracter}\"")
                     print(f"\t\tEl numero de veces a eliminar es: \"{conver_numero}\".")
-                    print(f"\t\tDevolvera Error si introduces un numero mayor de los caracteres existentes o si introduces un caracter que no existe.\n")
                     split = cadena.split(caracter,conver_numero)
-                    print(f"\t\t{split}\n")                    
+                    print(f"\t\t{split}\n") 
+            elif opcion == "4":
+                print("""Definicion:
+El metodo "partition" es utilizado para dividir la candena en tres secciones tomando como centro la palabra que se le
+pase como entrada, la sintaxis de este metodo es: "cadena.partition(caracter)", este metodo devolvera una lista.
+Caracteristicas:
+        1. Este metodo hara la division a partir del primer caracter identico que encuentre en la cadena, evaluando 
+           de izquierda a derecha.
+        2. El caracter que introduzcas aparecera en el centro de la lista.
+        3. Si introduces el primer caracter de la cadena como primer elemento de la lista aparecera un espacio en blanco.
+                Ejemplo:\n""")      
+                cadena = "Este texto es de prueba."
+                caracter = "e"
+                print(f"\t\tLa cadena que dividiremos es: \"{cadena}\"")
+                print(f"\t\tEl caracter que buscaremos es: \"{caracter}\"\n")
+                lista = cadena.partition(caracter)
+                print(f"\tOuput: {lista}\n")
+                print("\t\tEs momento que lo intentes.")
+                while True:
+                    print("\t\tIngresa \"q\" p \"\" para salir.")
+                    cadena = input("\t\tIntroduce la cadena: ")
+                    if cadena == "q" or cadena == "":
+                        break
+                    caracter = input("\t\tIntoduce el caracter: ")
+                    print(f"\t\tLa cadena que dividiremos es: \"{cadena}\"")
+                    print(f"\t\tEl caracter que buscaremos es: \"{caracter}\"\n")
+                    split = cadena.partition(caracter)
+                    print(f"\tOuput: {split}\n")
+            elif opcion == "5":
+                print("""Definicion:
+El metodo "rjust()" puede tomar 2 parametros de entrada, el primero un numero que representara las veces que se repetira
+un caracter y como segundo parametro el caracter en si que se añadira a la cadena el numero de veces señaladas, esto del 
+lado izquierdo de la cadena, este metodo devolvera una cadena, la sintaxis es: "cadena.rjust(numero,caracter)".
+Caracteristicas:
+        1. Si le pasa solo el parametro numero tomara por defecto el caracter espacio en blanco para añadirlo a la cadena.
+        2. El numero determinara el tamaño total de la cadena (caracteres de la cadena + caracteres añadidos).
+        3. Si el numero es menor que el tamaño de la cadena se devolvera la cadena misma.
+                Ejemplo:\n""")
+                cadena = "Hola"
+                conta_cadena = len(cadena)
+                caracter = "-"
+                numero = 7
+                print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
+                print(f"\t\tEl numero de veces que se repetira el caracter es \"numero-len(cadena)\" => \"{numero}\"-\"{conta_cadena}\"=> \"{numero - conta_cadena}\"")
+                print(f"\t\tEl caracter que añadiremos es: \"{caracter}\"\n")
+                cadena1 = cadena.rjust(numero,caracter)
+                print(f"\tOuput: {cadena1}\n")
+                print("\t\tEs momento que lo intentes.")
+                while True:
+                    print("\t\tIngresa \"q\" p \"\" para salir.")
+                    cadena = input("\t\tIntroduce la cadena: ")
+                    conta_cadena = len(cadena)
+                    if cadena == "q" or cadena == "":
+                        break
+                    numero = input("\t\tIntoduce el numero: ")
+                    conver_numero = int(numero)
+                    caracter = input("\t\tIntoduce el caracter: ")
+                    print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
+                    print(f"\t\tEl numero de veces que se repetira el caracter es \"numero-len(cadena)\" => \"{numero}\"-\"{conta_cadena}\"=> \"{conver_numero - conta_cadena}\"")
+                    print(f"\t\tEl caracter que añadiremos es: \"{caracter}\"\n")
+                    cadena1 = cadena.rjust(conver_numero,caracter)
+                    print(f"\tOuput: {cadena1}\n")
+            elif opcion == "6":
+                print("""Definicion:
+El metodo "ljust()" puede tomar 2 parametros de entrada, el primero un numero que representara las veces que se repetira
+un caracter y como segundo parametro el caracter en si que se añadira a la cadena el numero de veces señaladas, esto del 
+lado derecho de la cadena, este metodo devolvera una cadena, la sintaxis es: "cadena.ljust(numero,caracter)".
+Caracteristicas:
+        1. Si le pasa solo el parametro numero tomara por defecto el caracter espacio en blanco para añadirlo a la cadena.
+        2. El numero determinara el tamaño total de la cadena (caracteres de la cadena + caracteres añadidos).
+        3. Si el numero es menor que el tamaño de la cadena se devolvera la cadena misma.
+                Ejemplo:\n""")
+                cadena = "Salmon"
+                conta_cadena = len(cadena)
+                caracter = "*"
+                numero = 7
+                print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
+                print(f"\t\tEl numero de veces que se repetira el caracter es \"numero-len(cadena)\" => \"{numero}\"-\"{conta_cadena}\"=> \"{numero - conta_cadena}\"")
+                print(f"\t\tEl caracter que añadiremos es: \"{caracter}\"\n")
+                cadena1 = cadena.ljust(numero,caracter)
+                print(f"\tOuput: {cadena1}\n")
+                print("\t\tEs momento que lo intentes.")
+                while True:
+                    print("\t\tIngresa \"q\" p \"\" para salir.")
+                    cadena = input("\t\tIntroduce la cadena: ")
+                    conta_cadena = len(cadena)
+                    if cadena == "q" or cadena == "":
+                        break
+                    numero = input("\t\tIntoduce el numero: ")
+                    conver_numero = int(numero)
+                    caracter = input("\t\tIntoduce el caracter: ")
+                    print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
+                    print(f"\t\tEl numero de veces que se repetira el caracter es \"numero-len(cadena)\" => \"{numero}\"-\"{conta_cadena}\"=> \"{conver_numero - conta_cadena}\"")
+                    print(f"\t\tEl caracter que añadiremos es: \"{caracter}\"\n")
+                    cadena1 = cadena.ljust(conver_numero,caracter)
+                    print(f"\tOuput: {cadena1}\n")
+            elif opcion == "7":
+                print("""Definicion:
+El metodo "center()" puede tomar 2 parametros de entrada, el primero un numero que representara las veces que se repetira
+un caracter y como segundo parametro el caracter en si que se añadira a la cadena el numero de veces señaladas, esto pasara 
+a ambos lados de la cadena, la sintaxis es: "cadena.center(numero,caracter)".
+Caracteristicas:
+        1. Si le pasa solo el parametro numero tomara por defecto el caracter espacio en blanco para añadirlo a la cadena.
+        2. El numero determinara el tamaño total de la cadena (caracteres de la cadena + caracteres añadidos).
+        3. Si el numero es menor que el tamaño de la cadena se devolvera la cadena misma.
+        4. El numero de caracteres que se añadiran a cada extremo puede ser algunas veces igual o diferente, esto dependera
+           de la longitud de la cadena y del valor que quede disponible despues de restar.
+                Ejemplo:\n""")
+                cadena = "Montaña"
+                conta_cadena = len(cadena)
+                caracter = "#"
+                numero = 30
+                print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
+                print(f"\t\tEl numero de veces que se repetira el caracter es \"numero-len(cadena)\" => \"{numero}\"-\"{conta_cadena}\"=> \"{numero - conta_cadena}\"")
+                print(f"\t\tEl caracter que añadiremos es: \"{caracter}\"\n")
+                cadena1 = cadena.center(numero,caracter)
+                print(f"\tOuput: {cadena1}\n")
+                print("\t\tEs momento que lo intentes.")
+                while True:
+                    print("\t\tIngresa \"q\" p \"\" para salir.")
+                    cadena = input("\t\tIntroduce la cadena: ")
+                    conta_cadena = len(cadena)
+                    if cadena == "q" or cadena == "":
+                        break
+                    numero = input("\t\tIntoduce el numero: ")
+                    conver_numero = int(numero)
+                    caracter = input("\t\tIntoduce el caracter: ")
+                    print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
+                    print(f"\t\tEl numero de veces que se repetira el caracter es \"numero-len(cadena)\" => \"{numero}\"-\"{conta_cadena}\"=> \"{conver_numero - conta_cadena}\"")
+                    print(f"\t\tEl caracter que añadiremos es: \"{caracter}\"\n")
+                    cadena1 = cadena.center(conver_numero,caracter)
+                    print(f"\tOuput: {cadena1}\n")
+            elif opcion == "8":
+                print("""Definicion:
+El metodo "strip" elimina espacios en blanco que existen a ambos extremos de la cadena, la sintaxis es: "cadena.strip()".
+                Ejemplo:\n""")
+                cadena = " Esperanza    "
+                print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
+                print(f"\t\tEl tamaño de esta cadena es: \"{len(cadena)}\"\n")
+                cadena1 = cadena.strip()
+                print(f"\tOuput: {cadena1}\n")
+                print(f"\t\tEl nuevo tamaño es: {len(cadena1)}")
+                print("\t\tEs momento que lo intentes.")
+                while True:
+                    print("\t\tIngresa \"q\" p \"\" para salir.")
+                    cadena = input("\t\tIntroduce la cadena: ")
+                    if cadena == "q" or cadena == "":
+                        break
+                    print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
+                    print(f"\t\tEl tamaño de esta cadena es: \"{len(cadena)}\"\n")
+                    cadena1 = cadena.strip()
+                    print(f"\tOuput: {cadena1}\n")
+                    print(f"\t\tEl nuevo tamaño es: {len(cadena1)}")
+            elif opcion == "9":
+                print("""Definicion:
+El metodo "rstrip" elimina espacios en blanco que existen al extremo derecho de la cadena, la sintaxis es: "cadena.rtrip()".
+                Ejemplo:\n""")
+                cadena = "  Bondad    "
+                print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
+                print(f"\t\tEl tamaño de esta cadena es: \"{len(cadena)}\"\n")
+                cadena1 = cadena.rstrip()
+                print(f"\tOuput: {cadena1}\n")
+                print(f"\t\tEl nuevo tamaño es: {len(cadena1)}")
+                print("\t\tEs momento que lo intentes.")
+                while True:
+                    print("\t\tIngresa \"q\" p \"\" para salir.")
+                    cadena = input("\t\tIntroduce la cadena: ")
+                    if cadena == "q" or cadena == "":
+                        break
+                    print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
+                    print(f"\t\tEl tamaño de esta cadena es: \"{len(cadena)}\"\n")
+                    cadena1 = cadena.rstrip()
+                    print(f"\tOuput: {cadena1}\n")
+                    print(f"\t\tEl nuevo tamaño es: {len(cadena1)}")
+            elif opcion == "10":
+                print("""Definicion:
+El metodo "lstrip" elimina espacios en blanco que existen al extremo izquierdo de la cadena, la sintaxis es: "cadena.ltrip()".
+                Ejemplo:\n""")
+                cadena = "  Gloria    "
+                print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
+                print(f"\t\tEl tamaño de esta cadena es: \"{len(cadena)}\"\n")
+                cadena1 = cadena.lstrip()
+                print(f"\tOuput: {cadena1}\n")
+                print(f"\t\tEl nuevo tamaño es: {len(cadena1)}")
+                print("\t\tEs momento que lo intentes.")
+                while True:
+                    print("\t\tIngresa \"q\" p \"\" para salir.")
+                    cadena = input("\t\tIntroduce la cadena: ")
+                    if cadena == "q" or cadena == "":
+                        break
+                    print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
+                    print(f"\t\tEl tamaño de esta cadena es: \"{len(cadena)}\"\n")
+                    cadena1 = cadena.lstrip()
+                    print(f"\tOuput: {cadena1}\n")
+                    print(f"\t\tEl nuevo tamaño es: {len(cadena1)}")
+    elif numero == "7":
+            print("""Definicion:
+Las funciones "ord()" y "chr()" se utilizan para obtener informacion ASCII manipulando caracteres y numeros.""")
+            while True:
+                print("""\t\tSelecciona el subtema:
+                  Ingresa "q" o "" para salir.
+                  1. ord().
+                  2. chr().\n""")
+                opcion = input("\t\tIntroduce un numero: ")
+                if opcion == "q" or opcion == "":
+                    break
+                elif opcion == "1":
+                    print("""Definicion:
+El metodo "ord()" permite obtener el numero ordinal que esta asociado a ese caracter en el codigo ASCII, la sintaxis es: "ord(caracter)".
+                Ejemplo:\n""")
+                    while True:
+                        print("\t\tIngresa \"q\" o \"\" para salir.")
+                        cadena = input("\t\tIntroduce el caracter: ")
+                        if cadena == "q" or cadena == "":
+                            break
+                        cadena1 = ord(cadena)
+                        print(f"\n\tOuput: {cadena1}")
+                        print(f"\tEl caracter \"{cadena}\" en codigo ASCII representa el entero: \"{cadena1}\"\n")
+                elif opcion == "2":
+                    print("""Definicion:
+El metodo "chr()" permite obtener el caracter asociado con el numero en el codigo ASCII, la sintaxis es:
+"chr(caracter)".
+                Ejemplo:\n""")
+                while True:
+                    print("\t\tIngresa \"q\" o \"\" para salir.")
+                    cadena = input("\t\tIntroduce el numero: ")
+                    if cadena == "q" or cadena == "":
+                        break
+                    conver_cadena = int(cadena)
+                    ordinal = chr(conver_cadena)
+                    print(f"\n\tOuput: {ordinal}")
+                    print(f"\tEl numero \"{cadena}\" en codigo ASCII representa el caracter: \"{ordinal}\"\n")
+    elif numero == "8":
+        print("""Definicion:
+La funcion integrada "dir()" se le pasa una cadena y devuelve una lista de metodos dispoblibles para los objetos cadena""")
+                
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+            
+                
+                
+
+
+
+                
+                
+
+
+
+                
+                
+                
+
+
+                
+
+        
+        
+        
+
+                            
 
 
 
