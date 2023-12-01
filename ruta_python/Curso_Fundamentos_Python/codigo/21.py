@@ -4,12 +4,12 @@ print("Acontinuacion selecciona el numero del tema que deseas aprender.\n")
 while True:
     print('''Pulsa 'q' o '' para salir.
 1. Uso de apostrofe (') o caracter de escape (\\) dentro de cadenas.
-2. Indexacion. 
-3. Slicing (particion de cadenas).
+2. Indexacion de cadena. 
+3. Slicing de cadenas.
 4. Operador "in" y "not in": buscar un caracter o subcadena dentro de otra cadena.
 5. Metodos.
 6. Obtener codigo ASCII.\n''')
-    numero = input("Introduce el numero: \n")
+    numero = input("Introduce el numero del tema:\n")
     if numero == "q" or numero == "":
         print("Fue un gusto contribuir a su arendizaje, hasta pronto.\n")
         break
@@ -49,26 +49,39 @@ El caracter de escape (\\) se utiliza para introducir caracteres especiales en l
             
     elif numero == "2":
         print("""Definicion:
-La indexacion consiste en acceder a los elementos de una cadena utilizando un indice (numero).""")
-        print("""Cada elemento que compone una cadena tiene un numero asignado comenzando del cero (0) hasta el ultimo elemento. 
-Un mejor uso de la indexacion consistiria en asignar primero una cadena a una variable para luego usar esa variable con indexacion.\n
-                Ejemplo:""")
-        palabra = input("\t\tCreamos la variable llamada \"palabra\" y guardamos la siguiente cadena: ")
-        print(f"""\n\t\tLa sintaxis para acceder a cada elemento de la variable llamada \"palabra\" es palabra[indice] (llamada notacion corchete), 
-                Ejemplo:
-                Si quieres acceder al elemento cero que es \"{palabra[0]}\" en la cadena basta con escribir \"palabra[0]\" \n""")
-        print(f"\t\tAhora practica con otros indices de la cadena \"{palabra}\"")
+La indexacion consiste en acceder a los elementos de una cadena utilizando un indice (numero) de izquierda a derecha, cada elemento que compone 
+una cadena tiene un numero asignado comenzando del cero (0) hasta el ultimo elemento, como mejor uso de la indexacion se inicializa una variable 
+con la cadena que vamos a manipular, la sintaxis es: "variable[indice]".
+Caracteristicas:
+        1. Podemos utilizar indices negativos para acceder a la cadena de derecha a izquierda.
+        2. Genera "Error" si ingresamos un indice mayor a la longitud de cadena, por tanto midamos la cadena
+           para determinar su longitud y evitar errores con la funcion len().
+        3. Los espacios en blanco tambien tienen su indice asignado.
+                Ejemplo:\n""")
+        cadena = "manipulacion"
+        indice = 2
+        print("\tPara indices enteros no negativos (0, 1, 2, 3, ...)")
+        print(f"\t\tLa cadena que vamos a manipular es: \"{cadena}\"")
+        print(f"\t\tLa longitud de la cadena es: \"{len(cadena)}\"")
+        print(f"\t\tEl indice que vamos a buscar es: \"{indice}\"\n")
+        indice1 = cadena[indice]
+        print(f"\tOuput: \"{indice1}\"\n")
+        indicen = -2
+        print("\tPara indices enteros negativos (-1, -2, -3, ...)")
+        print(f"\t\tLa cadena que vamos a manipular es: \"{cadena}\"")
+        print(f"\t\tLa longitud de la cadena es: \"{len(cadena)}\"")
+        print(f"\t\tEl indice que vamos a buscar es: \"{indicen}\"\n")
+        indice1 = cadena[indicen]
+        print(f"\tOuput: \"{indice1}\"\n")
+        print("\t\tEs momento que tu lo intentes.")
         while True:
             print("\t\tIngresa \"q\" para salir")
-            print(f"\t\tLa longitud de la cadena \"{palabra}\" es de \"0\" a \"{(len(palabra)-1)}\" prueba entre esos numeros.")
+            cadena = input("\t\tIngresa la cadena: ")
             indice = input("\t\tIntroduce un numero: ")
-            if indice == "q":
+            if cadena == "q" or cadena == "":
                 break
             conver_indice = int(indice)
-            if palabra[conver_indice] == " ":
-                print(f"\n\t\tToma en cuenta que los espacios en blanco tambien tiene un indice asignado que en este caso seria {conver_indice}\n")
-                continue
-            print(f"\t\tLa sintaxis seria: \"palabra[{conver_indice}]\" y te devolvera el elemento en esa posicion que seria: \"{palabra[conver_indice]}\"\n")
+            print(f"\n\tOuput: \"{cadena[conver_indice]}\"\n")
     elif numero == "3":
         print("""Definicion: 
 Slicing consiste en partir una cadena y devolver la seccion requerida, utilizando los indices.""")
@@ -80,7 +93,9 @@ manipularla con slicing.\n""")
                   1. [a:b] => rango.
                   2. [a:] => indice de inicio definido.
                   3. [:b] => indice final definido.
-                  4. [:] => sin indices.""")
+                  4. [:] => sin indices.
+                  5. [a:b:c] => saltos. 
+                  6. [::c] => iteracion inversa.""") #pendiente agregar 5, 6
             opcion = input("\t\tIntroduce un numero: ")
             if opcion == "q" or "":
                 break
@@ -212,7 +227,7 @@ para modificar una cadena y obtener algo nuevo "Metodos: modificacion de cadena"
                   2. Metodos: booleans.
                   3. Metodos: modificacion de cadenas.""")
             opcion = input("\t\tIntroduce un numero: ")
-            if opcion == "q" or "":
+            if opcion == "q" or opcion == "":
                 break
             elif opcion == "1":
                 print("""Definicion:
@@ -325,7 +340,7 @@ contrario devuelve "False".
                         print(f"\t\tPara este metodo utilizaremos la lista: {lista_prueba}")
                         for i in lista_prueba:
                             print(f"\t\tmetodo endswith(): {i}: {cadena.endswith(i)}")
-            elif numero == "3":
+            elif opcion == "3":
                 print("""Definicion:
 Los "metodos de modificacion" son metodos que modifican las cadenas.
 Para estos metodos utilizaremos listas para evaluar y ver su funcionamiento.""")
@@ -349,24 +364,29 @@ Para estos metodos utilizaremos listas para evaluar y ver su funcionamiento.""")
                         print("""Definicion:
 El metodo "join()" se utiliza para incrustar un caracter en los espacios en blanco de una cadena y asi devolver
 una nueva cadena, la sintaxis es: "caracter.join(cadena)", devuelve una cadena.
+Caracteristicas:
+        1. El caracter se añade desde el primer elemento al lado derecho y ternina al lado izquierdo del ultimo 
+           elemento.
+        2. El caracter se añade a ambos lados de los elementos que estan entre los extremos.
+        3. El caracter ignora los espacios en blanco.
                 Ejemplo:\n""")
-                    cadena = "Moises Emanuel Ayala Mejia"
-                    caracter = ["!", "#", "$", "%"]
-                    print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
-                    print(f"\t\tLos caracteres que utilizaremos son: {caracter}")
-                    for k in caracter:
-                       join = k.join(cadena)
-                       print(f"\t\t{join}")
-                       print("\t\tEs momento que lo intentes.\n")
-                    while True:
-                       print("\t\tIngresa \"q\" p \"\" para salir.")
-                       cadena = input("\t\tIntroduce la cadena: ")
-                       if cadena == "q" or cadena == "":
-                           break
-                       caracter = input("\t\tIntoduce el caracter: ")
-                       print(f"\t\tLa cadena es: \"{cadena}\" y el caracter es: \"{caracter}\"\n")
-                       join = caracter.join(cadena)
-                       print(f"\t\t{join}\n")
+                        cadena = "Moises Emanuel Ayala Mejia"
+                        caracter = ["!", "#", "$", "%"]
+                        print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
+                        print(f"\t\tLos caracteres que utilizaremos son: {caracter}\n")
+                        for k in caracter:
+                           join = k.join(cadena)
+                           print(f"\tOuput: {join}\n")
+                        print("\t\tEs momento que lo intentes.")
+                        while True:
+                           print("\t\tIngresa \"q\" p \"\" para salir.")
+                           cadena = input("\t\tIntroduce la cadena: ")
+                           if cadena == "q" or cadena == "":
+                              break
+                           caracter = input("\t\tIntoduce el caracter: ")
+                           print(f"\t\tLa cadena es: \"{cadena}\" y el caracter es: \"{caracter}\"\n")
+                           join = caracter.join(cadena)
+                           print(f"\tOuput: {join}\n")
                     if opcion == "2":
                         print("""Definicion:
 El metodo "split()" se utiliza para identificar un caracter dentro de una cadena al identificarlo lo elimina y 
@@ -375,10 +395,10 @@ devuelve una lista, la sintaxis es: "cadena.split(caracter)".
                         cadena = "Moises-Emanuel-Ayala-Mejia"
                         caracter = "-"
                         print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
-                        print(f"\t\tEl caracter que eliminariamos es: \"{caracter}\"")
+                        print(f"\t\tEl caracter que eliminariamos es: \"{caracter}\"\n")
                         lista = cadena.split(caracter)
-                        print(f"\t\t{lista}")
-                        print("\t\tEs momento que lo intentes.\n")
+                        print(f"\tOuput: {lista}\n")
+                        print("\t\tEs momento que lo intentes.")
                         while True:
                            print("\t\tIngresa \"q\" p \"\" para salir.")
                            cadena = input("\t\tIntroduce la cadena: ")
@@ -393,9 +413,10 @@ devuelve una lista, la sintaxis es: "cadena.split(caracter)".
 El metodo "split() con doble parametro" se utiliza para identificar un caracter dentro de una cadena y el otro
 parametro debe ser un numero que sera la cantidad de esos caracteres que se eliminaran, la sintaxis es: 
 "cadena.split(caracter, numero)."
-Caracteristicas: 
-        1. Devolvera "Error" si el numero que introduces es mayor que los caracteres existentes.
-        2. Devolvera "Error" si el caracter que introduces no existe. 
+Caracteristicas:
+        1. Puedes pasar solo el parametro caracter y eliminara todos los caracteres que esten en la cadena. 
+        2. Devolvera "Error" si el numero que introduces es mayor que los caracteres existentes.
+        3. Devolvera "Error" si el caracter que introduces no existe. 
                 Ejemplo:\n""")
                         cadena = "Moises-Emanuel-Ayala-Mejia-03-05-1991"
                         caracter = "-"
@@ -405,22 +426,22 @@ Caracteristicas:
                         print(f"\t\tEl numero de veces a eliminar es: \"{veces}\"\n")
                         lista = cadena.split(caracter,4)
                         print(f"\tOuput: {lista}\n")
-                print("\t\tEs momento que lo intentes.") #me quede por aqui hay que arreglar
-                while True:
-                    print("\t\tIngresa \"q\" p \"\" para salir.")
-                    cadena = input("\t\tIntroduce la cadena: ")
-                    if cadena == "q" or cadena == "":
-                        break
-                    caracter = input("\t\tIntoduce el caracter: ")
-                    numero = input("\t\tIntoduce el numero: ")
-                    conver_numero = int(numero)
-                    print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
-                    print(f"\t\tEl caracter a eliminar es: \"{caracter}\"")
-                    print(f"\t\tEl numero de veces a eliminar es: \"{conver_numero}\".")
-                    split = cadena.split(caracter,conver_numero)
-                    print(f"\t\t{split}\n") 
-            elif opcion == "4":
-                print("""Definicion:
+                        print("\t\tEs momento que lo intentes.")
+                        while True:
+                            print("\t\tIngresa \"q\" p \"\" para salir.")
+                            cadena = input("\t\tIntroduce la cadena: ")
+                            if cadena == "q" or cadena == "":
+                               break
+                            caracter = input("\t\tIntoduce el caracter: ")
+                            numero = input("\t\tIntoduce el numero: ")
+                            conver_numero = int(numero)
+                            print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
+                            print(f"\t\tEl caracter a eliminar es: \"{caracter}\"")
+                            print(f"\t\tEl numero de veces a eliminar es: \"{conver_numero}\".")
+                            split = cadena.split(caracter,conver_numero)
+                            print(f"\t\t{split}\n") 
+                    elif opcion == "4":
+                       print("""Definicion:
 El metodo "partition" es utilizado para dividir la candena en tres secciones tomando como centro la palabra que se le
 pase como entrada, la sintaxis de este metodo es: "cadena.partition(caracter)", este metodo devolvera una lista.
 Caracteristicas:
@@ -429,25 +450,25 @@ Caracteristicas:
         2. El caracter que introduzcas aparecera en el centro de la lista.
         3. Si introduces el primer caracter de la cadena como primer elemento de la lista aparecera un espacio en blanco.
                 Ejemplo:\n""")      
-                cadena = "Este texto es de prueba."
-                caracter = "e"
-                print(f"\t\tLa cadena que dividiremos es: \"{cadena}\"")
-                print(f"\t\tEl caracter que buscaremos es: \"{caracter}\"\n")
-                lista = cadena.partition(caracter)
-                print(f"\tOuput: {lista}\n")
-                print("\t\tEs momento que lo intentes.")
-                while True:
-                    print("\t\tIngresa \"q\" p \"\" para salir.")
-                    cadena = input("\t\tIntroduce la cadena: ")
-                    if cadena == "q" or cadena == "":
-                        break
-                    caracter = input("\t\tIntoduce el caracter: ")
-                    print(f"\t\tLa cadena que dividiremos es: \"{cadena}\"")
-                    print(f"\t\tEl caracter que buscaremos es: \"{caracter}\"\n")
-                    split = cadena.partition(caracter)
-                    print(f"\tOuput: {split}\n")
-            elif opcion == "5":
-                print("""Definicion:
+                       cadena = "Este texto es de prueba."
+                       caracter = "e"
+                       print(f"\t\tLa cadena que dividiremos es: \"{cadena}\"")
+                       print(f"\t\tEl caracter que buscaremos es: \"{caracter}\"\n")
+                       lista = cadena.partition(caracter)
+                       print(f"\tOuput: {lista}\n")
+                       print("\t\tEs momento que lo intentes.")
+                       while True:
+                          print("\t\tIngresa \"q\" p \"\" para salir.")
+                          cadena = input("\t\tIntroduce la cadena: ")
+                          if cadena == "q" or cadena == "":
+                             break
+                          caracter = input("\t\tIntoduce el caracter: ")
+                          print(f"\t\tLa cadena que dividiremos es: \"{cadena}\"")
+                          print(f"\t\tEl caracter que buscaremos es: \"{caracter}\"\n")
+                          split = cadena.partition(caracter)
+                          print(f"\tOuput: {split}\n")
+                    elif opcion == "5":
+                       print("""Definicion:
 El metodo "rjust()" puede tomar 2 parametros de entrada, el primero un numero que representara las veces que se repetira
 un caracter y como segundo parametro el caracter en si que se añadira a la cadena el numero de veces señaladas, esto del 
 lado izquierdo de la cadena, este metodo devolvera una cadena, la sintaxis es: "cadena.rjust(numero,caracter)".
@@ -456,32 +477,33 @@ Caracteristicas:
         2. El numero determinara el tamaño total de la cadena (caracteres de la cadena + caracteres añadidos).
         3. Si el numero es menor que el tamaño de la cadena se devolvera la cadena misma.
                 Ejemplo:\n""")
-                cadena = "Hola"
-                conta_cadena = len(cadena)
-                caracter = "-"
-                numero = 7
-                print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
-                print(f"\t\tEl numero de veces que se repetira el caracter es \"numero-len(cadena)\" => \"{numero}\"-\"{conta_cadena}\"=> \"{numero - conta_cadena}\"")
-                print(f"\t\tEl caracter que añadiremos es: \"{caracter}\"\n")
-                cadena1 = cadena.rjust(numero,caracter)
-                print(f"\tOuput: {cadena1}\n")
-                print("\t\tEs momento que lo intentes.")
-                while True:
-                    print("\t\tIngresa \"q\" p \"\" para salir.")
-                    cadena = input("\t\tIntroduce la cadena: ")
-                    conta_cadena = len(cadena)
-                    if cadena == "q" or cadena == "":
-                        break
-                    numero = input("\t\tIntoduce el numero: ")
-                    conver_numero = int(numero)
-                    caracter = input("\t\tIntoduce el caracter: ")
-                    print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
-                    print(f"\t\tEl numero de veces que se repetira el caracter es \"numero-len(cadena)\" => \"{numero}\"-\"{conta_cadena}\"=> \"{conver_numero - conta_cadena}\"")
-                    print(f"\t\tEl caracter que añadiremos es: \"{caracter}\"\n")
-                    cadena1 = cadena.rjust(conver_numero,caracter)
-                    print(f"\tOuput: {cadena1}\n")
-            elif opcion == "6":
-                print("""Definicion:
+                       cadena = "Hola"
+                       conta_cadena = len(cadena)
+                       caracter = "-"
+                       numero = 7
+                       print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
+                       print(f"\t\tLa longitud de la cadena es: \"{len(cadena)}\"")
+                       print(f"\t\tEl numero que pasaremos es: \"{numero}\" y el numero de veces que se añadira el caracter es: \"{numero-conta_cadena}\"")
+                       print(f"\t\tEl caracter que añadiremos es: \"{caracter}\"\n")
+                       cadena1 = cadena.rjust(numero,caracter)
+                       print(f"\tOuput: {cadena1}\n")
+                       print("\t\tEs momento que lo intentes.")
+                       while True:
+                          print("\t\tIngresa \"q\" p \"\" para salir.")
+                          cadena = input("\t\tIntroduce la cadena: ")
+                          conta_cadena = len(cadena)
+                          if cadena == "q" or cadena == "":
+                            break
+                          numero = input("\t\tIntoduce el numero: ")
+                          conver_numero = int(numero)
+                          caracter = input("\t\tIntoduce el caracter: ")
+                          print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
+                          print(f"\t\tEl numero de veces que se repetira el caracter es \"numero-len(cadena)\" => \"{numero}\"-\"{conta_cadena}\"=> \"{conver_numero - conta_cadena}\"")
+                          print(f"\t\tEl caracter que añadiremos es: \"{caracter}\"\n")
+                          cadena1 = cadena.rjust(conver_numero,caracter)
+                          print(f"\tOuput: {cadena1}\n")
+                    elif opcion == "6":
+                       print("""Definicion:
 El metodo "ljust()" puede tomar 2 parametros de entrada, el primero un numero que representara las veces que se repetira
 un caracter y como segundo parametro el caracter en si que se añadira a la cadena el numero de veces señaladas, esto del 
 lado derecho de la cadena, este metodo devolvera una cadena, la sintaxis es: "cadena.ljust(numero,caracter)".
@@ -490,32 +512,32 @@ Caracteristicas:
         2. El numero determinara el tamaño total de la cadena (caracteres de la cadena + caracteres añadidos).
         3. Si el numero es menor que el tamaño de la cadena se devolvera la cadena misma.
                 Ejemplo:\n""")
-                cadena = "Salmon"
-                conta_cadena = len(cadena)
-                caracter = "*"
-                numero = 7
-                print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
-                print(f"\t\tEl numero de veces que se repetira el caracter es \"numero-len(cadena)\" => \"{numero}\"-\"{conta_cadena}\"=> \"{numero - conta_cadena}\"")
-                print(f"\t\tEl caracter que añadiremos es: \"{caracter}\"\n")
-                cadena1 = cadena.ljust(numero,caracter)
-                print(f"\tOuput: {cadena1}\n")
-                print("\t\tEs momento que lo intentes.")
-                while True:
-                    print("\t\tIngresa \"q\" p \"\" para salir.")
-                    cadena = input("\t\tIntroduce la cadena: ")
-                    conta_cadena = len(cadena)
-                    if cadena == "q" or cadena == "":
-                        break
-                    numero = input("\t\tIntoduce el numero: ")
-                    conver_numero = int(numero)
-                    caracter = input("\t\tIntoduce el caracter: ")
-                    print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
-                    print(f"\t\tEl numero de veces que se repetira el caracter es \"numero-len(cadena)\" => \"{numero}\"-\"{conta_cadena}\"=> \"{conver_numero - conta_cadena}\"")
-                    print(f"\t\tEl caracter que añadiremos es: \"{caracter}\"\n")
-                    cadena1 = cadena.ljust(conver_numero,caracter)
-                    print(f"\tOuput: {cadena1}\n")
-            elif opcion == "7":
-                print("""Definicion:
+                       cadena = "Salmon"
+                       conta_cadena = len(cadena)
+                       caracter = "*"
+                       numero = 7
+                       print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
+                       print(f"\t\tEl numero de veces que se repetira el caracter es \"numero-len(cadena)\" => \"{numero}\"-\"{conta_cadena}\"=> \"{numero - conta_cadena}\"")
+                       print(f"\t\tEl caracter que añadiremos es: \"{caracter}\"\n")
+                       cadena1 = cadena.ljust(numero,caracter)
+                       print(f"\tOuput: {cadena1}\n")
+                       print("\t\tEs momento que lo intentes.")
+                       while True:
+                          print("\t\tIngresa \"q\" p \"\" para salir.")
+                          cadena = input("\t\tIntroduce la cadena: ")
+                          conta_cadena = len(cadena)
+                          if cadena == "q" or cadena == "":
+                             break
+                          numero = input("\t\tIntoduce el numero: ")
+                          conver_numero = int(numero)
+                          caracter = input("\t\tIntoduce el caracter: ")
+                          print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
+                          print(f"\t\tEl numero de veces que se repetira el caracter es \"numero-len(cadena)\" => \"{numero}\"-\"{conta_cadena}\"=> \"{conver_numero - conta_cadena}\"")
+                          print(f"\t\tEl caracter que añadiremos es: \"{caracter}\"\n")
+                          cadena1 = cadena.ljust(conver_numero,caracter)
+                          print(f"\tOuput: {cadena1}\n")
+                    elif opcion == "7":
+                       print("""Definicion:
 El metodo "center()" puede tomar 2 parametros de entrada, el primero un numero que representara las veces que se repetira
 un caracter y como segundo parametro el caracter en si que se añadira a la cadena el numero de veces señaladas, esto pasara 
 a ambos lados de la cadena, la sintaxis es: "cadena.center(numero,caracter)".
@@ -526,94 +548,94 @@ Caracteristicas:
         4. El numero de caracteres que se añadiran a cada extremo puede ser algunas veces igual o diferente, esto dependera
            de la longitud de la cadena y del valor que quede disponible despues de restar.
                 Ejemplo:\n""")
-                cadena = "Montaña"
-                conta_cadena = len(cadena)
-                caracter = "#"
-                numero = 30
-                print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
-                print(f"\t\tEl numero de veces que se repetira el caracter es \"numero-len(cadena)\" => \"{numero}\"-\"{conta_cadena}\"=> \"{numero - conta_cadena}\"")
-                print(f"\t\tEl caracter que añadiremos es: \"{caracter}\"\n")
-                cadena1 = cadena.center(numero,caracter)
-                print(f"\tOuput: {cadena1}\n")
-                print("\t\tEs momento que lo intentes.")
-                while True:
-                    print("\t\tIngresa \"q\" p \"\" para salir.")
-                    cadena = input("\t\tIntroduce la cadena: ")
-                    conta_cadena = len(cadena)
-                    if cadena == "q" or cadena == "":
-                        break
-                    numero = input("\t\tIntoduce el numero: ")
-                    conver_numero = int(numero)
-                    caracter = input("\t\tIntoduce el caracter: ")
-                    print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
-                    print(f"\t\tEl numero de veces que se repetira el caracter es \"numero-len(cadena)\" => \"{numero}\"-\"{conta_cadena}\"=> \"{conver_numero - conta_cadena}\"")
-                    print(f"\t\tEl caracter que añadiremos es: \"{caracter}\"\n")
-                    cadena1 = cadena.center(conver_numero,caracter)
-                    print(f"\tOuput: {cadena1}\n")
-            elif opcion == "8":
-                print("""Definicion:
+                       cadena = "Montaña"
+                       conta_cadena = len(cadena)
+                       caracter = "#"
+                       numero = 30
+                       print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
+                       print(f"\t\tEl numero de veces que se repetira el caracter es \"numero-len(cadena)\" => \"{numero}\"-\"{conta_cadena}\"=> \"{numero - conta_cadena}\"")
+                       print(f"\t\tEl caracter que añadiremos es: \"{caracter}\"\n")
+                       cadena1 = cadena.center(numero,caracter)
+                       print(f"\tOuput: {cadena1}\n")
+                       print("\t\tEs momento que lo intentes.")
+                       while True:
+                          print("\t\tIngresa \"q\" p \"\" para salir.")
+                          cadena = input("\t\tIntroduce la cadena: ")
+                          conta_cadena = len(cadena)
+                          if cadena == "q" or cadena == "":
+                             break
+                          numero = input("\t\tIntoduce el numero: ")
+                          conver_numero = int(numero)
+                          caracter = input("\t\tIntoduce el caracter: ")
+                          print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
+                          print(f"\t\tEl numero de veces que se repetira el caracter es \"numero-len(cadena)\" => \"{numero}\"-\"{conta_cadena}\"=> \"{conver_numero - conta_cadena}\"")
+                          print(f"\t\tEl caracter que añadiremos es: \"{caracter}\"\n")
+                          cadena1 = cadena.center(conver_numero,caracter)
+                          print(f"\tOuput: {cadena1}\n")
+                    elif opcion == "8":
+                      print("""Definicion:
 El metodo "strip" elimina espacios en blanco que existen a ambos extremos de la cadena, la sintaxis es: "cadena.strip()".
                 Ejemplo:\n""")
-                cadena = " Esperanza    "
-                print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
-                print(f"\t\tEl tamaño de esta cadena es: \"{len(cadena)}\"\n")
-                cadena1 = cadena.strip()
-                print(f"\tOuput: {cadena1}\n")
-                print(f"\t\tEl nuevo tamaño es: {len(cadena1)}")
-                print("\t\tEs momento que lo intentes.")
-                while True:
-                    print("\t\tIngresa \"q\" p \"\" para salir.")
-                    cadena = input("\t\tIntroduce la cadena: ")
-                    if cadena == "q" or cadena == "":
-                        break
-                    print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
-                    print(f"\t\tEl tamaño de esta cadena es: \"{len(cadena)}\"\n")
-                    cadena1 = cadena.strip()
-                    print(f"\tOuput: {cadena1}\n")
-                    print(f"\t\tEl nuevo tamaño es: {len(cadena1)}")
-            elif opcion == "9":
-                print("""Definicion:
+                      cadena = " Esperanza    "
+                      print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
+                      print(f"\t\tEl tamaño de esta cadena es: \"{len(cadena)}\"\n")
+                      cadena1 = cadena.strip()
+                      print(f"\tOuput: {cadena1}\n")
+                      print(f"\t\tEl nuevo tamaño es: {len(cadena1)}")
+                      print("\t\tEs momento que lo intentes.")
+                      while True:
+                         print("\t\tIngresa \"q\" p \"\" para salir.")
+                         cadena = input("\t\tIntroduce la cadena: ")
+                         if cadena == "q" or cadena == "":
+                            break
+                         print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
+                         print(f"\t\tEl tamaño de esta cadena es: \"{len(cadena)}\"\n")
+                         cadena1 = cadena.strip()
+                         print(f"\tOuput: {cadena1}\n")
+                         print(f"\t\tEl nuevo tamaño es: {len(cadena1)}")
+                    elif opcion == "9":
+                       print("""Definicion:
 El metodo "rstrip" elimina espacios en blanco que existen al extremo derecho de la cadena, la sintaxis es: "cadena.rtrip()".
                 Ejemplo:\n""")
-                cadena = "  Bondad    "
-                print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
-                print(f"\t\tEl tamaño de esta cadena es: \"{len(cadena)}\"\n")
-                cadena1 = cadena.rstrip()
-                print(f"\tOuput: {cadena1}\n")
-                print(f"\t\tEl nuevo tamaño es: {len(cadena1)}")
-                print("\t\tEs momento que lo intentes.")
-                while True:
-                    print("\t\tIngresa \"q\" p \"\" para salir.")
-                    cadena = input("\t\tIntroduce la cadena: ")
-                    if cadena == "q" or cadena == "":
-                        break
-                    print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
-                    print(f"\t\tEl tamaño de esta cadena es: \"{len(cadena)}\"\n")
-                    cadena1 = cadena.rstrip()
-                    print(f"\tOuput: {cadena1}\n")
-                    print(f"\t\tEl nuevo tamaño es: {len(cadena1)}")
-            elif opcion == "10":
-                print("""Definicion:
+                       cadena = "  Bondad    "
+                       print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
+                       print(f"\t\tEl tamaño de esta cadena es: \"{len(cadena)}\"\n")
+                       cadena1 = cadena.rstrip()
+                       print(f"\tOuput: {cadena1}\n")
+                       print(f"\t\tEl nuevo tamaño es: {len(cadena1)}")
+                       print("\t\tEs momento que lo intentes.")
+                       while True:
+                          print("\t\tIngresa \"q\" p \"\" para salir.")
+                          cadena = input("\t\tIntroduce la cadena: ")
+                          if cadena == "q" or cadena == "":
+                             break
+                          print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
+                          print(f"\t\tEl tamaño de esta cadena es: \"{len(cadena)}\"\n")
+                          cadena1 = cadena.rstrip()
+                          print(f"\tOuput: {cadena1}\n")
+                          print(f"\t\tEl nuevo tamaño es: {len(cadena1)}")
+                    elif opcion == "10":
+                       print("""Definicion:
 El metodo "lstrip" elimina espacios en blanco que existen al extremo izquierdo de la cadena, la sintaxis es: "cadena.ltrip()".
                 Ejemplo:\n""")
-                cadena = "  Gloria    "
-                print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
-                print(f"\t\tEl tamaño de esta cadena es: \"{len(cadena)}\"\n")
-                cadena1 = cadena.lstrip()
-                print(f"\tOuput: {cadena1}\n")
-                print(f"\t\tEl nuevo tamaño es: {len(cadena1)}")
-                print("\t\tEs momento que lo intentes.")
-                while True:
-                    print("\t\tIngresa \"q\" p \"\" para salir.")
-                    cadena = input("\t\tIntroduce la cadena: ")
-                    if cadena == "q" or cadena == "":
-                        break
-                    print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
-                    print(f"\t\tEl tamaño de esta cadena es: \"{len(cadena)}\"\n")
-                    cadena1 = cadena.lstrip()
-                    print(f"\tOuput: {cadena1}\n")
-                    print(f"\t\tEl nuevo tamaño es: {len(cadena1)}")
-    elif numero == "7":
+                       cadena = "  Gloria    "
+                       print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
+                       print(f"\t\tEl tamaño de esta cadena es: \"{len(cadena)}\"\n")
+                       cadena1 = cadena.lstrip()
+                       print(f"\tOuput: {cadena1}\n")
+                       print(f"\t\tEl nuevo tamaño es: {len(cadena1)}")
+                       print("\t\tEs momento que lo intentes.")
+                       while True:
+                          print("\t\tIngresa \"q\" p \"\" para salir.")
+                          cadena = input("\t\tIntroduce la cadena: ")
+                          if cadena == "q" or cadena == "":
+                             break
+                          print(f"\t\tLa cadena que modificaremos es: \"{cadena}\"")
+                          print(f"\t\tEl tamaño de esta cadena es: \"{len(cadena)}\"\n")
+                          cadena1 = cadena.lstrip()
+                          print(f"\tOuput: {cadena1}\n")
+                          print(f"\t\tEl nuevo tamaño es: {len(cadena1)}")
+    elif numero == "6":
             print("""Definicion:
 Las funciones "ord()" y "chr()" se utilizan para obtener informacion ASCII manipulando caracteres y numeros.""")
             while True:
@@ -626,7 +648,8 @@ Las funciones "ord()" y "chr()" se utilizan para obtener informacion ASCII manip
                     break
                 elif opcion == "1":
                     print("""Definicion:
-El metodo "ord()" permite obtener el numero ordinal que esta asociado a ese caracter en el codigo ASCII, la sintaxis es: "ord(caracter)".
+El metodo "ord()" permite obtener el numero ordinal que esta asociado a ese caracter en el codigo ASCII, la sintaxis es:
+"ord(caracter)".
                 Ejemplo:\n""")
                     while True:
                         print("\t\tIngresa \"q\" o \"\" para salir.")
@@ -635,11 +658,11 @@ El metodo "ord()" permite obtener el numero ordinal que esta asociado a ese cara
                             break
                         cadena1 = ord(cadena)
                         print(f"\n\tOuput: {cadena1}")
-                        print(f"\tEl caracter \"{cadena}\" en codigo ASCII representa el entero: \"{cadena1}\"\n")
+                        print(f"\tEl caracter \"{cadena}\" en codigo ASCII representa el entero: \" {cadena1} \"\n")
                 elif opcion == "2":
                     print("""Definicion:
 El metodo "chr()" permite obtener el caracter asociado con el numero en el codigo ASCII, la sintaxis es:
-"chr(caracter)".
+"chr(numero)".
                 Ejemplo:\n""")
                 while True:
                     print("\t\tIngresa \"q\" o \"\" para salir.")
@@ -649,11 +672,8 @@ El metodo "chr()" permite obtener el caracter asociado con el numero en el codig
                     conver_cadena = int(cadena)
                     ordinal = chr(conver_cadena)
                     print(f"\n\tOuput: {ordinal}")
-                    print(f"\tEl numero \"{cadena}\" en codigo ASCII representa el caracter: \"{ordinal}\"\n")
-    elif numero == "8":
-        print("""Definicion:
-La funcion integrada "dir()" se le pasa una cadena y devuelve una lista de metodos dispoblibles para los objetos cadena""")
-                
+                    print(f"\tEl numero \"{cadena}\" en codigo ASCII representa el caracter: \" {ordinal} \"\n")
+
 
 
 
@@ -676,6 +696,10 @@ La funcion integrada "dir()" se le pasa una cadena y devuelve una lista de metod
 
 
 
+
+
+
+            
                 
                 
 
@@ -683,23 +707,12 @@ La funcion integrada "dir()" se le pasa una cadena y devuelve una lista de metod
 
                 
                 
+
+
+
                 
-
-
                 
-
-        
-        
-        
-
-                            
-
-
-
-
-
-
-
+            
             
                 
                 
