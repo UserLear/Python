@@ -8,7 +8,8 @@ while True:
 3. Slicing de cadenas.
 4. Operador "in" y "not in": buscar un caracter o subcadena dentro de otra cadena.
 5. Metodos.
-6. Obtener codigo ASCII.\n''')
+6. Obtener codigo ASCII.
+7. Iteracion.\n''') #pendiente agregar 7
     numero = input("Introduce el numero del tema:\n")
     if numero == "q" or numero == "":
         print("Fue un gusto contribuir a su arendizaje, hasta pronto.\n")
@@ -356,7 +357,10 @@ Para estos metodos utilizaremos listas para evaluar y ver su funcionamiento.""")
                         7. center().
                         8. strip().
                         9. rstrip().
-                        10. lstrip().\n""")
+                        10. lstrip().
+                        11. find().
+                        12. count().
+                        13. metodos concatenados.\n""")#pendiente agregar 11, 12, 13
                     opcion = input("\t\tIntroduce un numero: ")
                     if opcion == "q" or opcion == "":
                         break 
