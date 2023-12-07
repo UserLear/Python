@@ -1,18 +1,18 @@
 import random
-#concatenar datos a una plantilla: presentacion, 
-#piedra papel o tijera
-#zig zag
-#generacion de un presupuesto
-#calcular el dia de nacimiento de una persona
-#calcular un promedio: notas, ventas
-#calculo de temperatura farenheit o celcius
-#convertidor de sistema de medidas
-#convertidor de numeros en letras
-#calcular la tasa impositiva de pago de impuest para personas naturales
-#calculo de la balanza de comprobacion (contabilidad)
-#programa convertidor de tipos que explique el uso de cada tipo de dato
+#1. concatenar datos a una plantilla: presentacion, 
+#2. piedra papel o tijera
+#3. zig zag
+#4. generacion de un presupuesto
+#5. calcular el dia de nacimiento de una persona
+#6. calcular un promedio: notas, ventas
+#7. calculo de temperatura farenheit o celcius
+#8. convertidor de sistema de medidas
+#9. convertidor de numeros en letras
+#10. calcular la tasa impositiva de pago de impuesto para personas naturales
+#11. calculo de la balanza de comprobacion (contabilidad)
+#12. programa convertidor de tipos que explique el uso de cada tipo de dato
 
-#proyecto 7 + 8: creacion de plantillas literales
+#1. creacion de plantillas literales
 print("Hola extraño introduce tus datos")
 nombre = input("Introduce tu nombre: \n")
 print("Hola {} es un gusto conocerte como te apellidas".format(nombre))
@@ -22,7 +22,7 @@ edad = input("Introduce tu edad: \n")
 nueva_edad = str(int(edad)+1)
 print("Que maravilla %s aprenderas a programar en tus %s años cuanto tengas %s años ya lo habras logrado" %(nombre, edad, nueva_edad))
 
-#proyecto 7 + 8 + 9: programa que calcula el promedio de ventas 
+#6. programa que calcula el promedio de ventas 
 def conj_ingresos(*arg):
     ventas_totales = 0
     for i in arg:
@@ -49,7 +49,13 @@ while True:
             print(promedio)
             break
 
-#proyecto 7 + 8 + 9 + 10: calculo de una tasa impositiva en relacion a un salario mensual
+#6. crear un registro para ventas y gastos que permita calcular ganancias
+ventas = {}
+gastos = {}
+ganancias = {}
+
+
+#10. calculo de una tasa impositiva en relacion a un salario mensual
 def impuesto_sr(salario):
     if salario >= 0.01 and salario <= 19919.96:
         return "Exento"
@@ -92,30 +98,3 @@ while True:
     except:
         print("Lo siento la formula solo trabaja sobre numeros enteros positivos")
 
-#programa 7+8+9+10+11: programa que explica el tipo y como se puede utilizar
-def convertir(tipo_dato):
-        if type(tipo_dato) == int:
-            print("Este tipo de dato lo puedes utilizar para operaciones aritmeticas por ejemlo:")
-        elif type(tipo_dato) == str:
-            print("Este tipo de dato lo puedes utilizar para operaciones con cadenas, por ejemplo:")
-        elif type(tipo_dato) == float:
-            print("Este tipo de dato lo puedes utilizar para operacones aritmeticas decimales")
-        else: 
-            print("Este tipo de dato no esta especificado")
-
-while True:
-    tipo_dato = input("Introduce el dato: \n")
-    numeros = ["1", "2", "3"]
-    aleatorio = random.choice(numeros)
-    try:
-        if aleatorio == "1":
-            conver = int(tipo_dato)
-            convertir(conver)
-        elif aleatorio == "2": 
-            conver = str(tipo_dato)
-            convertir(conver)
-        elif aleatorio == "3":
-            conver = float(tipo_dato)
-            convertir(conver)
-    except:
-        print("No puedes convertir una letra en numero")
