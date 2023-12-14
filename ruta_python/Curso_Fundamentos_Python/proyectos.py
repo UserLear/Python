@@ -11,6 +11,7 @@ import random
 #10. calcular la tasa impositiva de pago de impuesto para personas naturales
 #11. calculo de la balanza de comprobacion (contabilidad)
 #12. programa convertidor de tipos que explique el uso de cada tipo de dato
+#13. creacion de formas geometricas
 
 #1. creacion de plantillas literales
 print("Hola extraño introduce tus datos")
