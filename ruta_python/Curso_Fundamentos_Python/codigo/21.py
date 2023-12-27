@@ -24,7 +24,7 @@ while True:
 El apostrofe se utiliza en el idioma ingles para realizar contracciones utilizando el verbo To Be.
 Para esto debes recordar que existen dos formas que crear cadenas, una es utilizando comillas simple (') otra es utilizando comilla doble (").
               1. comilla simple (\'): consiste en crear una cadena con comilla doble (\") e introducir la comilla simple (\"I\'m Moises\").
-              2. commilla doble (\"): consiste en crear una cadena con comilla si (\'Le decian el \"Holandez\"\').
+              2. commilla doble (\"): consiste en crear una cadena con comilla simple e introducir la comilla doble (\'Le decian el \"Holandez\"\').
                \n""")
         elif opcion == "2": 
             print("""\nDefinicion:
@@ -259,7 +259,7 @@ Para estos metodos utilizaremos listas para evaluar y ver su funcionamiento.""")
                         break
                     if opcion == "1":
                         print("""Definicion:
-El metodo "isupper()" devuelve "True" si la cadena pasada tiene al menos un caracter literal mayuscula y devuelve "False"
+El metodo "isupper()" devuelve "True" si la cadena pasada esta completamente en mayuscula y devuelve "False" 
 si contiene al menos un caracter literal en minuscula o si esta conformado en totalidad de caracteres no literales.
                 Ejemplo:\n""")
                         lista_prueba = ["Moises", "MOISES", "moises", "moises1", "MOISES1", "12345", "M78654", "9874L", "AYALa", "", " ", "/"] 

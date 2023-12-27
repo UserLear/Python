@@ -16,7 +16,7 @@ Although practicality beats purity. sin embargo la practicidad le gana a la pure
 Errors should never pass silently. los errores nunca deberian pasar silenciosamente
 Unless explicitly silenced. a menos que se silencien de forma explicita
 In the face of ambiguity, refuse the temptation to guess. frente a la ambiguedad evita la tentacion de adivinar
-There should be one-- and preferably only one --obvious way to do it. deveria haber una y preferiblemente una manera obvia de hacerlo
+There should be one-- and preferably only one --obvious way to do it. deberia haber una y preferiblemente una manera obvia de hacerlo
 Although that way may not be obvious at first unless you're Dutch. a pesar de que eso no sea obvio al principio a menos que seas holandes
 Now is better than never. ahora es mejor que nunca
 Although never is often better than *right* now. a pesar que nunca es muchas veces mejor que ahora mismo 

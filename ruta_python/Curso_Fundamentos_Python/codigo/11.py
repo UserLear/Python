@@ -1,3 +1,4 @@
+import random
 #TRANSFORMACION DE TIPOS caracteristica de python es un tipado dinamico
 name = "Nicolas"
 print(type(name)) #<class 'str'>
