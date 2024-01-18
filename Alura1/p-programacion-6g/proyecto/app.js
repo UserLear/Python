@@ -8,9 +8,11 @@ console.log(numeroUsuario);
 realiza una comparacion*/
 if(numeroUsuario == numeroSecreto){
     //devuelve el mensaje alert si a condicion se cumple
+    console.log("Acertaste el numero")
     alert("Acertaste el numero")
 } else {
-    alert("Lo siento, no acertaste el numero.")
+    console.log(`Lo siento, el numero secreto era: ${numeroSecreto} y elegiste el numero: ${numeroUsuario}.`)
+    alert("Lo siento, el numero secreto era: "+ numeroSecreto + " y elegiste el numero:"+ numeroUsuario)
     //devuelve el mensaje si la condicion no se cumple
 }
 
