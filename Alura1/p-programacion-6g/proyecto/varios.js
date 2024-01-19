@@ -100,3 +100,55 @@ Luego, muestra una alerta de bienvenida usando ese nombre.*/
 alert("Hola usuario ingresa por favor tu nombre");
 nombre = prompt("Dinos tu nombre: ");
 alert(`Valla te estabamos esperando ${nombre}.`);
+
+//DESAFIOS: LOOPS Y TENTATIVAS: 07
+/*1. Crea un contador que comience en 1 y vaya hasta 10 usando un 
+bucle 'while'. Muestra cada número. */
+nombre = prompt("Cual es tu nombre: ");
+alert(`Hola ${nombre} este programa es un contador de numeros`)
+
+numero = 0;
+while (numero <=10) {
+    alert("Ahora el numero vale: " + numero)
+    numero ++
+}
+
+/*2. Crea un contador que comience en 10 y vaya hasta 0 usando un 
+bucle 'while'. Muestra cada número. */
+nombre = prompt("Cual es tu nombre: ");
+alert(`Hola ${nombre} este programa es un contador de numeros`)
+
+numero = 10;
+while (numero > 0) {
+    alert("Ahora el numero vale: " + numero)
+    numero --
+}
+
+/*3. Crea un programa de cuenta regresiva. Pide un número y cuenta 
+desde 0 hasta ese número utilizando un bucle 'while' en la consola 
+del navegador. */
+nombre = prompt("Cual es tu nombre: ");
+alert(`Hola ${nombre} este programa es un contador de numeros`)
+
+ingresaNumero = prompt("Ingresa un numero: ");
+numeroInicio = 0;
+
+while (numeroInicio < ingresaNumero) {
+    console.log(`Empieza en: ${numeroInicio}`);
+    numeroInicio++;
+}
+console.log(`¡Y es asi como comienza este espectaculo, Bienvenidos! al ${numeroInicio} `);
+
+/*4. Crea un programa de cuenta progresiva. Pide un número y cuenta 
+desde ese numero hasta 0 número utilizando un bucle 'while' en la consola 
+del navegador. */
+nombre = prompt("Cual es tu nombre: ");
+alert(`Hola ${nombre} este programa es un contador de numeros`);
+
+ingresaNumero = prompt("Ingresa un numero: ");
+
+while (ingresaNumero > 0) {
+    console.log(`Empieza en: ${ingresaNumero}`);
+    ingresaNumero--;
+}
+console.log(`¡Y es asi como comienza este espectaculo, Bienvenidos!.`);
