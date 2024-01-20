@@ -152,3 +152,107 @@ while (ingresaNumero > 0) {
     ingresaNumero--;
 }
 console.log(`¡Y es asi como comienza este espectaculo, Bienvenidos!.`);
+
+//DESAFIOS: BUENAS PRACTICAS DE PROGRAMACION: 09
+/*1. Crea un programa que utilice console.log para mostrar un 
+mensaje de bienvenida.*/
+console.log("Un gusto saludarte");
+
+/*2. Crea una variable llamada "nombre" y asígnale tu nombre. Luego, 
+utiliza console.log para mostrar el mensaje "¡Hola, [tu nombre]!" en 
+la consola del navegador.  */
+nombre = "Moises";
+console.log(`Un gusto saludarte ${nombre}`);
+
+/*3. Crea una variable llamada "nombre" y asígnale tu nombre. Luego, 
+utiliza alert para mostrar el mensaje "¡Hola, [tu nombre]!".*/
+nombre = "Moises";
+console.log(`Un gusto saludarte ${nombre}`);
+alert(`Hola ${nombre}`)
+
+/*4. Utiliza prompt y haz la siguiente pregunta: ¿Cuál es el lenguaje 
+de programación que más te gusta?. Luego, almacena la respuesta en una
+ variable y muestra la respuesta en la consola del navegador.*/
+lenguaje = prompt("Cual es tu lenguaje de programacion favorito: ")
+console.log(lenguaje)
+
+/*5. Crea una variable llamada "valor1" y otra llamada "valor2", 
+asignándoles valores numéricos de tu elección. Luego, realiza la suma 
+de estos dos valores y almacena el resultado en una tercera variable 
+llamada "resultado". Utiliza console.log para mostrar el mensaje "La 
+suma de [valor1] y [valor2] es igual a [resultado]." en la consola.*/
+valor1 = 4;
+valor2 = 7;
+resultado = valor1 + valor2;
+console.log(`La suma de ${valor1} y ${valor2} es igual a ${resultado}`);
+
+/*6. Crea una variable llamada "valor1" y otra llamada "valor2", 
+asignándoles valores numéricos de tu elección. Luego, realiza la resta
+de estos dos valores y almacena el resultado en una tercera variable 
+llamada "resultado". Utiliza console.log para mostrar el mensaje "La 
+diferencia entre [valor1] y [valor2] es igual a [resultado]." en la 
+consola.*/
+valor1 = 4;
+valor2 = 7;
+resultado = valor1 - valor2;
+console.log(`La diferencia de ${valor1} y ${valor2} es igual a ${resultado}`);
+
+/*7. Pide al usuario que ingrese su edad con prompt. Con base en la 
+edad ingresada, utiliza un if para verificar si la persona es mayor o 
+menor de edad y muestra un mensaje apropiado en la consola.*/
+edad = prompt("Ingresa tu edad: ");
+if (edad >= 18) {
+    console.log("¡Ingreso permitido!");
+} else {
+    console.log("!Ingreso denegado¡");
+}
+
+/*8. Crea una variable "numero" y solicita un valor con prompt. Luego, 
+verifica si es positivo, negativo o cero utilizando un if-else y muestra el 
+mensaje correspondiente. */
+numero = prompt("Ingresa cualquier numero real: ");
+if (numero == 0) {
+    console.log("El numero que ingresaste fue el 0")
+} else if (numero >0) {
+    console.log("El numero que ingresaste es mayor que 0")
+} else {
+    console.log("el numero que ingresaste es menor que 0")
+}
+
+/*9. Utiliza un bucle while para mostrar los números del 1 al 10 en la consola.*/
+numero = 1;
+while (numero < 11) {
+    console.log("El numero es "+ numero);
+    numero++;
+}
+
+/*10. Crea una variable "nota" y asígnale un valor numérico. Utiliza 
+un if-else para determinar si la nota es mayor o igual a 7 y muestra 
+"Aprobado" o "Reprobado" en la consola. */
+nota = 7;
+if (numero >= 7) {
+    console.log("Aprobado")
+} else {
+    console.log("Reprobado")
+}
+
+/*11. Utiliza Math.random para generar cualquier número aleatorio y
+muestra ese número en la consola. */
+numeroAleatorio = Math.random();
+console.log(numeroAleatorio);
+
+/*12. Utiliza Math.random para generar un número entero entre 1 y 
+10 y muestra ese número en la consola.*/
+numeroAleatorio = Math.floor(Math.random()*10+1);
+console.log(numeroAleatorio);
+
+/*13. Utiliza Math.random para generar un número entero entre 1 y
+1000 y muestra ese número en la consola. */
+numeroAleatorio = Math.floor(Math.random()*1000+1);
+console.log(numeroAleatorio);
+
+
+
+
+
+

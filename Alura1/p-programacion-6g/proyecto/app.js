@@ -1,14 +1,15 @@
 
 //variables
-let numeroSecreto = 6;
+let eligeSecreto = prompt("Elige el numero maximo ")
+let numeroSecreto = Math.floor(Math.random()*10+1);
 let numeroUsuario;
 let intentos = 1;
 //let palabraVeces = "vez";
 let maximosIntentos = 4;
 
 while (numeroUsuario != numeroSecreto){
-    numeroUsuario = prompt("Me indicas un numero entre 1 y 10 por favor: ");
-    console.log(numeroUsuario);
+    numeroUsuario = parseInt(prompt("Me indicas un numero entre 1 y 10 por favor: "));
+    console.log(typeof(numeroUsuario));
 
     /*Este codigo 
     realiza una comparacion*/
