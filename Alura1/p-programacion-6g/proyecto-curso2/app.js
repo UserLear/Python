@@ -1,14 +1,16 @@
 //CONEXION CON HTML
-let titulo = document.querySelector('h1');
-titulo.innerHTML = 'Juego del numero secreto';
-let parrafo = document.querySelector('p');
-parrafo.innerHTML = 'Indica un numero del 1 al 10'
 
 /*definimos la funcion para introducirla al html y actue sobre el boton
 intentar*/
 function intentoDeUsuario() {
     alert('click desde el boton')
 }
+function asignarTextoElemento1(elemento,texto) {
+    let elementoHTML = document.querySelector(elemento);
+    elementoHTML.innerHTML = texto;
+}
+asignarTextoElemento1("h1", "Juego del numero secreto")
+asignarTextoElemento1('p', 'Indica un numero del 1 al 10')
 
 //variables
 let eligeSecreto = prompt("Elige el numero maximo ")
