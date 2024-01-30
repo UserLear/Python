@@ -142,3 +142,53 @@ function numero(n1) {
     return numero
 }
 
+//ejercicio a mejorar
+function calcularDobleTriple(numero) {
+    const doble = numero * 2;
+    const triple = numero * 3;
+  
+    return `El doble de ${numero} es ${doble} y el triple es ${triple}.`;
+  }
+  
+  const numero = 5;
+  convertir = parseInt(numero)
+  const resultado = calcularDobleTriple(convertir);
+  console.log(resultado);
+
+//forma 1
+function calcularDobleTriple1(numero) {
+    return numero * 2 + " es el doble y " + numero * 3 + " es el triple."
+}
+
+const numero1 = 5;
+convertir = parseInt(numero1)
+const resultado1 = calcularDobleTriple1(convertir);
+console.log(resultado1);
+
+//forma 2 opcion correcta
+function calcularDoble(numero) {
+    return numero * 2; 
+}
+function calcularTriple(numero) {
+    return numero * 3; 
+}
+
+const numero2 = 5;
+convertir = parseInt(numero2)
+const doble = calcularDoble(convertir);
+const triple = calcularTriple(convertir);
+console.log(`El doble de ${numero2} es ${doble} y el triple es ${triple}`);
+
+//forma 3
+function calcularDobleTriple(numero) {
+    const resultado = {};
+    resultado.doble = numero * 2;
+    resultado.triple = numero * 3;
+    return resultado;
+  }
+  
+  const numero3 = 5;
+  const resultado2 = calcularDobleTriple(numero3);
+  
+  console.log(`El doble de ${numero} es ${resultado2.doble} y el triple es ${resultado2.triple}.`);
+  

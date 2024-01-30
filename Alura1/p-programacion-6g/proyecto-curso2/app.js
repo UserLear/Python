@@ -43,6 +43,7 @@ function reiniciarJuego() {
     //inicializar numero de intentos
     condicionesIniciales();
     //deshabilitar el boton de nuevo juego
+    //document.querySelector("#reiniciar").setAttribute("disabled", "true");
 
     
 }
