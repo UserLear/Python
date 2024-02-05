@@ -7,13 +7,11 @@ function asignarTextoElemento1(elemento,texto) {
     return;
 }
 
-
 function verificarIntento() {
     let numeroDeUsuario = parseInt(document.getElementById('valorUsuario').value);
     if (numeroDeUsuario === numeroSecreto) {
         asignarTextoElemento1("p", `Acertaste el numero en ${intentos} ${intentos === 1 ? 'vez' : 'veces'}`)
         document.getElementById('reiniciar').removeAttribute('disabled');
-
 
     } else {
         if(numeroDeUsuario > numeroSecreto) {

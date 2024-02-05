@@ -191,4 +191,102 @@ function calcularDobleTriple(numero) {
   const resultado2 = calcularDobleTriple(numero3);
   
   console.log(`El doble de ${numero} es ${resultado2.doble} y el triple es ${resultado2.triple}.`);
-  
+
+//DESAFIO: REINICIANDO JUEGO: 09
+/*1. Crea una función que calcule el índice de masa 
+corporal (IMC) de una persona a partir de su altura en 
+metros y peso en kilogramos, que se recibirán como 
+parámetros.*/
+function indiceMasaCorporal (peso, altura) {
+    let iMc = peso / (altura**2);
+
+    return iMc;
+}
+console.log(indiceMasaCorporal(180, 1.78));
+
+/*2.  Crea una función que calcule el valor del factorial 
+de un número pasado como parámetro.*/
+function factorial(numero) {
+    let valor = parseInt(numero);
+    let factorial = 1;
+    while (true) {
+        if (valor > 0) {
+            factorial *= valor;
+            valor--;
+        } else {
+            break;
+        }
+    }
+    return factorial;
+}
+let valor1 = factorial(6);
+console.log(valor1);
+
+/*3. Crea una función que convierta un valor en dólares, pasado 
+como parámetro, y devuelva el valor equivalente en reales(moneda
+brasileña,si deseas puedes hacerlo con el valor del dólar en 
+tu país). Para esto, considera la cotización del dólar igual a 
+R$4,80 */
+function conversion(divisa,lempiras) {
+    let conversion = lempiras / divisa;
+    return conversion;
+}
+function tipoCambio(divisa,lempiras) {
+    if (divisa == "$") {
+        let dolar = 24.84;
+        return conversion(dolar,lempiras);
+    } else if (divisa == "€") {
+        let euro = 26.85;
+        return conversion(euro,lempiras);
+    } else if (divisa == "¥") {
+        let yen = 0.17;
+        return conversion(yen,lempiras);
+    } else {
+        return "moneda no especificada";
+    }
+}
+
+let lempiras = 50000;
+console.log(`El cambio de ${lempiras} lempiras a dolares es ${tipoCambio("$",lempiras)}`);
+console.log(`El cambio de ${lempiras} lempiras a euros es ${tipoCambio("€",lempiras)}`);
+console.log(`El cambio de ${lempiras} lempiras a dolares es ${tipoCambio("¥",lempiras)}`);
+console.log(`El cambio de ${lempiras} lempiras a otra es ${tipoCambio("%",lempiras)}`);
+
+/*4. Crea una función que muestre en pantalla el área y el perímetro 
+de una sala rectangular, utilizando la altura y la anchura que se 
+proporcionarán como parámetros. */
+function areaPerimetro(altura,anchura) {
+    let area = altura * anchura;
+    let perimetro = (2*altura) + (2*anchura);
+    return [area,perimetro];
+}
+
+let [a, b] = areaPerimetro(3,7);
+console.log(`El area del rectangulo es ${a} y su perimetro es ${b}`);
+
+/*5. Crea una función que muestre en pantalla el área y el perímetro 
+de una sala circular, utilizando su radio que se proporcionará como 
+parámetro. Considera Pi = 3,14. */
+function areaPerimetro(radio) {
+    let area = 3.14*(radio**2);
+    let perimetro = 3.14*(2*radio);
+    return [area,perimetro];
+}
+
+let radio = 5;
+let [c,d] = areaPerimetro(radio);
+console.log(`El area de un circulo con radio ${radio} es ${c} y su perimetro es ${d}.`)
+
+/*6. Crea una función que muestre en pantalla la tabla de multiplicar
+ de un número dado como parámetro. */
+function tablaMultiplicar(numero,secuencia) {
+    let tabla = `${numero} x ${secuencia} = ${numero*secuencia}`;
+    return tabla;
+}
+let numero = 1;
+while (numero < 11) {
+    console.log(tablaMultiplicar(3,numero))
+    numero++;
+}
+
+
