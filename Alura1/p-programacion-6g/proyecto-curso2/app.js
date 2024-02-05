@@ -1,5 +1,7 @@
 let numeroSecreto = 0;
 let intentos = 0;
+let listaNumerosSorteados = [];
+let numeroMaximo = 10;
 
 function asignarTextoElemento1(elemento,texto) {
     let elementoHTML = document.querySelector(elemento);
@@ -12,7 +14,6 @@ function verificarIntento() {
     if (numeroDeUsuario === numeroSecreto) {
         asignarTextoElemento1("p", `Acertaste el numero en ${intentos} ${intentos === 1 ? 'vez' : 'veces'}`)
         document.getElementById('reiniciar').removeAttribute('disabled');
-
     } else {
         if(numeroDeUsuario > numeroSecreto) {
             asignarTextoElemento1("p",'El numero secreto es menor.')
@@ -27,10 +28,9 @@ function verificarIntento() {
 
 function condicionesIniciales() {
     asignarTextoElemento1("h1", "Juego del numero secreto");
-    asignarTextoElemento1('p', 'Indica un numero del 1 al 10');
+    asignarTextoElemento1('p', `Indica un numero del 1 al ${numeroMaximo}`);
     numeroSecreto = generarNumeroSecreto();
     intentos = 1;
-
 }
 
 function reiniciarJuego() {
@@ -41,9 +41,7 @@ function reiniciarJuego() {
     //inicializar numero de intentos
     condicionesIniciales();
     //deshabilitar el boton de nuevo juego
-    //document.querySelector("#reiniciar").setAttribute("disabled", "true");
-
-    
+    document.querySelector("#reiniciar").setAttribute("disabled", "true");    
 }
 condicionesIniciales()
 
@@ -54,7 +52,21 @@ function limpiarCaja() {
 }
 
 function generarNumeroSecreto() {
-    return Math.floor(Math.random()*10+1);
+    let numeroGenerado = Math.floor(Math.random()*numeroMaximo+1);
+    console.log(numeroGenerado);
+    console.log(listaNumerosSorteados);
+    //si ya sortemos todos los numeros
+    if (listaNumerosSorteados.length == numeroMaximo) {
+        asignarTextoElemento1("p", "Ya se sortearon todos los numeros posibles");
+    }else {
+        //si el numero generado esta en la lista hace algo si no hace otra cosa
+        if (listaNumerosSorteados.includes(numeroGenerado)) {
+            return generarNumeroSecreto();
+        }else {
+            listaNumerosSorteados.push(numeroGenerado);
+            return numeroGenerado;  
+        }
+}
 }
 
 
