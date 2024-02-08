@@ -1,5 +1,5 @@
 //codificador y decodificador
-/*Requisitoso visuales
+/*Requisitos visuales
 1. area de escritura de la parabra a codificar
 2. boton que ejecuta la codificacion y borra el cuadro de texto
 3. al codificar el resultado se envia a otra seccion dentro de la pantalla 
@@ -8,6 +8,9 @@ donde esta ya codificado.
 secundaria a la pantalla de inicio ya descodificado.
 5. boton de copiar texto encriptado para pegarlo y desencriptar y borrar el cuadro de texto
 */
+
+/*Requisitos de codigo
+1. */
 
 
 

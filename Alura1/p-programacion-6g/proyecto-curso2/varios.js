@@ -288,5 +288,122 @@ while (numero < 11) {
     console.log(tablaMultiplicar(3,numero))
     numero++;
 }
+/*DESAFIOS: LISTAS: 09*/
+/*1. Crea una lista vacía llamada "listaGenerica".*/
+let listaGenerica = [];
 
+/*2. Crea una lista de lenguajes de programación llamada 
+"lenguagesDeProgramacion con los siguientes elementos: 
+'JavaScript', 'C', 'C++', 'Kotlin' y 'Python'. */
+let lenguajesDeProgramacion = ['JavaScript', 'C', 'C++', 'Kotlin', 'Python'];
+
+/*3. Agrega a la lista "lenguagesDeProgramacion los siguientes 
+elementos: 'Java', 'Ruby' y 'GoLang'.  */
+let lenguajesDeProgramacion1 = ['JavaScript', 'C', 'C++', 'Kotlin', 'Python'];
+lenguajesDeProgramacion1.push('Java', 'Ruby', 'GoLang')
+
+/*4. Crea una función que muestre en la consola todos los 
+elementos de la lista "lenguagesDeProgramacion. */
+let lenguajesDeProgramacion2  = ['JavaScript', 'C', 'C++', 'Kotlin', 'Python'];
+for (let i = 0; i < lenguajesDeProgramacion2.length; i++) {
+    console.log(lenguajesDeProgramacion2[i]);
+}
+/*4. Crea una función que muestre en la consola todos los 
+elementos de la lista "lenguagesDeProgramacion. */
+let lenguajesDeProgramacion7  = ['JavaScript', 'C', 'C++', 'Kotlin', 'Python'];
+for (let i = 0; i < lenguajesDeProgramacion7.length; i++) {
+    console.log(lenguajesDeProgramacion7[i]);
+}
+/*5. Crea una función que muestre en la consola todos 
+los elementos de la lista "lenguagesDeProgramacion en 
+orden inverso.*/
+let lenguajesDeProgramacion3  = ['JavaScript', 'C', 'C++', 'Kotlin', 'Python'];
+function lenguajes(lista){
+    for (let i = 0; i < lista.length; i++) {
+        console.log(lista[i]);
+    }
+}
+lenguajes(lenguajesDeProgramacion3);
+
+/*6. Crea una función que calcule el promedio de los elementos en una 
+lista de números.*/
+let numeros = [12, 18, 20, 27, 32];
+function promedio(lista) {
+    let suma = 0;
+    let largoLista = lista.length;
+    for (let i = 0; i < lista.length; i++) {
+        suma += lista[i];
+    }
+    let calculoPromedio = suma / largoLista;
+    return calculoPromedio
+    
+}
+console.log(promedio(numeros));
+
+/*7. Crea una función que muestre en la consola el número más grande y 
+el número más pequeño en una lista.*/
+let conjunto = [7, 5, 12, 24, 17];
+var maximo = conjunto.reduce(function (a,b){
+    return Math.max(a,b);
+}, -Infinity)
+console.log(maximo); //24
+
+let conjunto2 = [1,2,3,4];
+function maxMin (lista) {
+    let distancia = lista.length;
+    let extemoSuperior = lista[distancia-1];
+    let extremoInferior = lista[0];
+    return [extemoSuperior,extremoInferior]
+}
+let [x,y] = maxMin(conjunto2);
+console.log(x,y); //4 1
+
+/*8. Crea una función que devuelva la suma de todos los elementos en 
+una lista. */
+let listaSuma = [2, 4, 6, 8];
+function sumar(lista) {
+    let acumulado = 0;
+    for (let i = 0; i < lista.length; i++) {
+        acumulado += lista[i];
+    }
+    return acumulado
+}
+let suma = sumar(listaSuma);
+console.log(suma);
+
+/*9. Crea una función que devuelva la posición en la lista donde se 
+encuentra un elemento pasado como parámetro, o -1 si no existe en la 
+lista*/
+let varios = ['uno','dos','tres','cuatro'];
+function indice(valor) {
+    let posicion = varios.indexOf(valor);
+    return posicion;
+}
+console.log(indice("tres"))
+console.log(indice("cinco"))
+
+/*10. Crea una función que reciba dos listas de números del mismo tamaño
+y devuelva una nueva lista con la suma de los elementos uno a uno. */
+let lista1 = [2,4,6,8];
+let lista2 = [3,5,7,9];
+function crearLista (lista1,lista2) {
+    let lista3 = [];
+    for (let i = 0; i < lista1.length; i++) {
+        lista3.push(lista1[i]+lista2[i]); 
+    }
+    return lista3
+}
+console.log(crearLista(lista1,lista2));
+
+/*11. Crea una función que reciba una lista de números y devuelva una 
+nueva lista con el cuadrado de cada número.*/
+let listaNormal = [1,2,3,4,5];
+function cuadrado (lista) {
+    let doble = [];
+    for (let i = 0; i <= lista1.length; i++) {
+        doble.push(lista[i]**2); 
+    }
+    return doble;
+}
+console.log(cuadrado(listaNormal));
 

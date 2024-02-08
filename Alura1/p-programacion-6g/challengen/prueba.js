@@ -1,4 +1,4 @@
-//DESAFIOS: INTERACTUANDO CON HTML: 08
+/*//DESAFIOS: INTERACTUANDO CON HTML: 08
 /*1. Descarga otro proyecto haciendo clic en este enlace y ábrelo en 
 Visual Studio Code.*/
 /*2. Cambia el contenido de la etiqueta h1 con document.querySelector
