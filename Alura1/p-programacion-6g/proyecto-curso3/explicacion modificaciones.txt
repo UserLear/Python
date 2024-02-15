@@ -1,0 +1,34 @@
+seccion 05: lista y divisiones del contenido
+objetivo: colocar la imagen diferenciales.jpg a la par de la lista
+1. para eso creamos una clase (class="imagenDiferenciales") para darle modifiacion en el archivo css.
+2. le damos el nombre y le hacemos referencia en el archivo css con el selector de clase (.imagenDiferenciales{})
+modificamos el tamaño con (with; 50%;)
+3. buscamos poner la imagen a la par de la lista para eso hacemos modificacion en la lista como solo tenemos una le 
+hacemos referencia en el documento css (ul{}) y le añadimos la propiedad.
+4. la propiedad (display :inline-block;) le dice a la lista que ocupe solo el espacio de su contenido y los espacios
+de arriba, abajo, y laterales puedan ser ajustables.
+5. nuestra lista queda alineada con la linea inferior de la imagen y eso se puede modificar con (vertical-aling: top;) 
+esto eleva la lista a la parte superior.
+6. ahora aumentaremos un espacio entre la lista y la imagen, y correremos la imagen mas a la derecha con (width: 20%;) 
+le dice a la lista ocupame el 20% de la anchura de la pantalla y con (margin-right: 15%;) margen derecho del 15% y 
+define la anchura entre nuestra lista y la imagen.
+7. añadiremos un pading (espaciamiento) que es el espaciamiento interno de los elementos de cada bloque, con(.principal{}) 
+le añadimos (padding: 20px), espaciamiento de todos los lados.
+8. ahora lo hacemos en el bloque de los diferenciales (.diferenciales{}) y le añadimos (padding: 30px).
+
+seccion 06: encabezado
+objetivo: colocar un encabezado o titulo principal (sobre la imagen).
+1. utilizamos la etiqueta (<header></header>) que se refiere al encabezado y le asignamos el (<h1></h1>) como titulo
+y le cambiamos a (<h2></h2>) y (<h3></h3>) los de abajo sucesivamente, al guardarlo se pierde el formato que tenia.
+eso paso porque ya teniamos en el archivo css la modificacion de la etiqueta (<h1>) pero no para el (<h3>)
+para eviar esto es mejor el uso de clases.
+2. para centralizar (<h2> y <h3>) creamos una clase para centralizarlo (class="titulo-centralizado;") y hacemos uso de 
+(.titulo-centralizado{}) que es la sintaxis de selector de clase y le asignamos la propiedad (text-align: center;) 
+para centralizar una vez mas esos titulos.
+3. ahora le daremos un espacio entre el encabezado y el borde izquierdo, para eso creamos una clase (class="titulo-principal")
+y luego creamos el selector de clase en el archivo css (.titulo-principal{}), y usamos el (padding-left: 30px;) que es el 
+espaciamiento interno de la izquierda.
+ 
+
+
+
