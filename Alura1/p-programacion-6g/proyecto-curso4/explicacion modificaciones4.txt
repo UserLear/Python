@@ -1,0 +1,107 @@
+seccion 01: nueva pagina
+objetivo: crear nuevos archivos html de productos y css de esos productos
+1. creamos un nuevo archivo y lo guardamos con un nombre y con una extencion (productos.html).
+2. creamos un nuevo archivo css y lo guardamos con un nombre y con la extencion (productos.css).
+3. le damos estructura al archivo html con las etiquetas que si debe llevar (<!DOCTYPE html>) que hace referencia
+a la ultima version de html que estamos utilizando (HTML5).
+4. creamos la etiqueta html que contendra toda la estructura html (<html></html>).
+5. dentro de la etiqueta html creamos la etiqueta cabeza (<head></head>) y la de cuerpo (<body></body>).
+6. la etiqueta cuerpo contendra la etiqueta de lenguaje que contendra todos los caracteres disponibles con todos 
+(<meta charset="UTF-8">).
+7. dentro de la etiqueta cabeza creamos la etiqueta de titulo (<title>Proructos - Barberia Alura</title>).
+8. dentro de la etiqueta cabeza creamos la etiqueta de enlaze al archivo css (<link rel="stylesheet" href="productos.css">).
+
+seccion 01: encabezado
+objetivo: construir el encabezado de la pagina
+1. utilizamos la etiqueta C</header>) para crear el encabezado dentro de la etiqueta cuerpo.
+2. en nuestra pagina ejemplo el encabezado tiene los elementos: 
+2.1 fondo color plomo. 
+2.2 una imagen.
+2.3 un panel de menu de navegacion.
+3. dentro de (<header>) vamos a hacer referencia a la imagen y la colocaremos dentro de un (<h1>) para darle la importancia
+porque va ser la parte principal de nuestra pagina y encabezado.
+4. creamos (<h1> <img src="imagenes/logo.png"></h1>).
+5. creamos el contenido del panel de navegacion en (<header>) para esto utilizamos las listas, (<ul></ul>) y dentro de este
+creamos cada item de lista con la etiqueta (<li>Home</li>), etc...
+6. ahora debemos ajustar esa lista en el encabezado a la par de la imagen y hacer los links para navegar por esos botones.
+
+seccion 02: estructurando la navegacion
+objetivo: crear los vinculos a cada boton de navegacion
+1. para crear vinculos a los items del panel de navegacion utilizamos la etiqueta (<a></a>) entre la etiqueta de apertura 
+y cierre colocaremos el nombre del boton (<a>Home</a>) y dentro de la etiqueta de apertura (<a>) colocaremos definimos la 
+propiedad (href="index.html").
+2. se repite lo mismo para los otros botones.
+3. se puede enlazar a paginas externas de nuestro proyecto por medio de (href="http://www.google.com").
+
+seccion 02: ajustando la lista
+objetivo: darle formato a nuestro panel de navegacion
+1. observar el panel de navegacion ejemplo:
+1.1 panel de navegacion es horizontal.
+1.2 estan en mayuscula.
+1.3 no esta subrayado.
+1.4 espaciamiento interno
+1.5 resaltador al poner el puntero sobre.
+2. modificamos en el archivo css el fondo del encabezado (header{}) y le anadimos (background-color: #BBB;) para dar el 
+color plomo de fondo.
+3. creamos una clase en la lista para diferenciar una lista de las otras que podriamos crear mas a futuro, pero creamos
+la etiqueta (<nav></nav>) como panel de navegacion, asi encerramos toda la lista (<ul></ul>) dentro de esta.
+4. (<nav>) esta etiqueta fue creada para el panel de navegacion que puede tener una pagina.
+5. (nav li{}) se crea un modificador en el documento css y se utiliza (li{}) porque las listas por defecto vienen con el 
+(display: block;) y ocupan todo el espacio disponible en pantalla y por tanto se coloca un item debajo del otro.
+6. para eliminar esto utilizamos (display: inline-block;) y le dice que ocupe el tamaño de su contenido que serian las los 3
+botones de navegacion.
+7. ahora modificaremos para hacerlos en mayuscula y quitar los subrrayados por defecto, para esto nos referiremos a la etiqueta
+(<a>) en el documento css (text-transform: uppercase;) para transformarlos en mayuscula, (color: #000000;) para cambiarles el
+color, (font-weight: bold;) para convertirlos en negrita, (font-size: 22px;) para alterar el tamaño de la pagina, (text-decoration: none;)
+para retirar el subrrayado del texto por defecto cuando se trata de vinculos.
+8. colocarle un esparciamiento interno entre los enlaces utilizamos la etiqueta (nav li{}) en el archivo css, y le añadimos
+(margin: 0 0 0 15px;) donde el primer 0 es el esparciamiento interno hacia arriba, el segundo 0 es hacia la derecha, el tercer 0 es
+hacia abajo y el cuarto es hacia la izquierda y le colocamos 15px.
+
+seccion 03: limpiando el css
+objetivo: modificar los bordes superiores y laterales del recuadro del encabezado
+1. los bordes del encabezado se dan por defecto, los modificaremos, en el archivo reset.css muestra una lista de etiquetas que estan
+siendo receteadas, en el link superior se puede saber quien creo el archivo y con que objetivo. 
+2. vamos a referencial en el archivo html, el archivo reset.css, este archivo debe ir sobre el archivo css que nosotros ya creamos 
+con anterioridad para no afectar los que ya hicimos.
+
+seccion 03: como funciona el posicionamiento
+objetivo: posicionaremos el panel de navegacion donde se ubica en la pagina modelo
+1. entramos en la consola para probar styles, seleccionalos en el documento html la etiqueta que necesitamos modificar (<nav>) y en
+styles ponemos (position: absulute) esto significa que va ser absoluta en relacion a los valores que el diseñador de la pagina web
+defina, luego (top:0;) osea que superior sea 0 y (right:0;) que es a la derecha 0, que significa ningun espacio en le borde superior
+y ningun espacion en el borde derecho, a partir de alli lo haremos llegar a su pocision, esta opcion funciona con cualquier elemento
+(imagen, h1, u otro elemento).
+
+seccion 03: posicionando encabezado
+objetivo: posicionar el panel de navegacion utilizando (position: static, relative o absolute)
+1. utilizamos la etiqueta (<nav>) en el archivo css para añadirle las propiedades (position: absolute;), (top: 0;) que significa 
+borde superior 0 y (right: 0;) que significa borde derecho 0.
+2. modificaremos el panel de navegacion que quede casi en medio del tamaño de la imagen (el tamaño de la imagen lo miramos en la 
+consola y de alli tomamos una idea).
+3. modificamos la propiedad (top: 110px;) para bajarlo, (110px) debe ir pegado, si no devuelve algo no deseado.
+4. debemos mover casi al centro la imagen y el panel de navegacion para igualarlo a la pagina ejemplo, para eso vamos a crear 
+un bloque (<div>) dentro del (<header>) y pasaremos todo dentro de (<div>) para crear una clase que mueva ambas secciones mas al
+centro.
+5. creamos la clase (class="caja"), asi creamos nuestro selector de clase en css y le añadimos las propiedades, asi añadimos 
+(width: 940px;) y si no cocurre nada hay que revisar en la consola (<header>) al ver la seccion (<div>), al poner el cursor sobre
+miramos que el (<div class="caja">) esta en posicion estatica y hace la posicion estatica a la posicion absoluta que se definio 
+en el menu.
+6. en la caja hay que hacer hay que hacer el posicionamiento para relativo (position: relative;) pero continua alineado al lado
+izquierdo, para eso creamos la propiedad (margin: 0 auto;) 0 se asigna a superior e inferior y auto a los bordes, este auto el 
+navegador calcula en funcion de la resolucion con que se abre el sistema el calcula automatico cuanto va colocar a la izquierda
+y cuanto a la derecha.
+7. hay que definir el espaciado externo con la propiedad (padding: 20px 0;) los (20px) es para lo superior e inferior y (0) es
+para los laterales. 
+
+
+
+
+ 
+
+
+
+
+
+
+
