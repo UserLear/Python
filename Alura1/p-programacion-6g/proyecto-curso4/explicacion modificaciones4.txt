@@ -13,7 +13,7 @@ a la ultima version de html que estamos utilizando (HTML5).
 
 seccion 01: encabezado
 objetivo: construir el encabezado de la pagina
-1. utilizamos la etiqueta C</header>) para crear el encabezado dentro de la etiqueta cuerpo.
+1. utilizamos la etiqueta (</header>) para crear el encabezado dentro de la etiqueta cuerpo.
 2. en nuestra pagina ejemplo el encabezado tiene los elementos: 
 2.1 fondo color plomo. 
 2.2 una imagen.
@@ -93,6 +93,22 @@ navegador calcula en funcion de la resolucion con que se abre el sistema el calc
 y cuanto a la derecha.
 7. hay que definir el espaciado externo con la propiedad (padding: 20px 0;) los (20px) es para lo superior e inferior y (0) es
 para los laterales. 
+
+seccion 04: divisiones semanticas
+objetivo: crear la seccion donde se mostraran los productos y servicios que son ofrecios que son tres
+1. creamos la etiqueta especifica para el cuerpo de la pagina (<main></main>) que es donde colocaremos nuestros productos, y aqui
+escribiremos (cabello, barba y cabello + barba).
+
+seccion 04: creando listas complejas
+objetivo: crear la linea de seleccion de nuestros productos segun el ejemplo
+1. como cada producto se estructura de forma parecida (nombre del producto parte superior, area central imagen, parte inferior
+la descripcion y el precio), al identificar que se componen de la misma forma creamos una lista (<ul></ul>) para los 3 tipos de 
+producto (<li></li>).
+2. para cada item de lista se colocara un (<h2></h2>) la etiqueta titulo que tendra el nombre del servicio, (<img>) esta etiqueta
+hara el llamado de la imagen, (<p></p>) esta etiqueta contendra el detalle y esta (<p></p>) contendra el precio del servicio.
+3. creamos el titulo de cada item de lista (<h2>Cabello</h2>) etc...
+4. creamos el enlaze a cada imagen 
+
 
 
 
