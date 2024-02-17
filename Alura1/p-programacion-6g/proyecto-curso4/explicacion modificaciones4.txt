@@ -107,8 +107,38 @@ producto (<li></li>).
 2. para cada item de lista se colocara un (<h2></h2>) la etiqueta titulo que tendra el nombre del servicio, (<img>) esta etiqueta
 hara el llamado de la imagen, (<p></p>) esta etiqueta contendra el detalle y esta (<p></p>) contendra el precio del servicio.
 3. creamos el titulo de cada item de lista (<h2>Cabello</h2>) etc...
-4. creamos el enlaze a cada imagen 
+4. creamos el enlaze a cada imagen (<img src="imagenes/cabello.jpg">) etc...
+5. creamos el la descripcion de cada servicio (<p>Con tijera o maquina, agusto del cliente</p>) etc...
+6. le ponemos el precio a cada servicio (<p>$ 10</p>) etc...
 
+seccion 04: reforzando el inline-block
+objetivo: poner los productos en formato horizontal 
+1. cambiamos el valor por defecto de ocupar toda la linea completa de la pantalla que tiene cada elemento de la lista, visitamos
+la pagina (w3schools.com) para aprender mas.
+2. como tenemos 2 (<ul>) debemos crear una clase (class="productos") en nuestra lista de productos para poder identificarla y 
+creamos el selector de clase (.productos li{}) donde el (li{}) hace referencia a los items de la lista y le añadimos la propiedad
+(display: inline-block;).
+3. ahora centraremos la lista de productos segun el ejemplo utilizando (.productos {}) que toma todos los elementos de la lista y
+les aplica la propiedad que nosotros asignemos, en este caso (width: 940px;) que le dice a nuestra lista que ocupe (940px) pixeles
+del tamaño de la ventana y (margin: 0 auto;) que le dice, superior e inverior 0 y laterales automatico (esto significa que los
+laterales se distribuyen de manera automatica), el resultado se ve con mayor inclinacion hacia la derecha.
+4. ahora modificaremos el titulo (<h2>Cabello</h2>) etc... para esto creamos un selector del (.productos h2{}) que es el
+encabezado de cada producto, modificamos el tamaño (font-size: 30px;) y le damos negrita (font-weight: bold;).
+5. ahora debemos centrar los elementos entre si y dar el espacio entre los items y el encabezado, en (.productos li{}) añadimos una
+propiedad (text-align: center;) esto en relacion al espacio que ocupa cada itemn individualmente.
+6. ahora separar cada uno de los elementos entre si, en (.productos li{}) añadimos la propiedad (width: 30%;) esto le dice que cada 
+elemento ocupe un (30%) del espacio disponible, los 3 items sumarian (90%) y el otro (10%) se dividiria entre los espacios en blanco
+7. vamos a hacer la alineacion de los items con la linea vertical del encabezado con (vertical-align: top;).
+8. vamos a configurar el espacio entre (<main>) y el encabezado (<header>), en el selector de la lista (.productos {}) colocamos
+(padding: 50px;) de espaciamiento.
+9. configurar la descripcion y el precio, en el documento html tenemos la descripcion y el precio con la etiqueta (<p>) esto va a 
+representar un problema al darle propiedades individuales, para resolverlo crearemos clases a cada etiqueta, 
+(<p class="producto-descripcion">Con tijera o maquina, agusto del cliente</p>) etc... para la descripcion y   
+(<p class="producto-precio">$ 10</p>) para el precio, luego creamos los respectivos selectores de clase (.producto-descripcion {})
+para la descripcion y (.producto-precio{}) para el precio.
+10. al selector (.producto-descripcion {}) le añadimos la propiedad cambio de tamaño (font-size: 18px;) y al selector del precio
+(.producto-precio{}) le añadimos las propiedades (font-size: 20px;) de tamaño y (font-weight: bold;) de negrita.
+11. ahora creamos un espaciamiento entre el precio y la descripcion utilizando (margin-top: 10px;). 
 
 
 
