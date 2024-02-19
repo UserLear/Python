@@ -1,0 +1,74 @@
+seccion 01: comenzando la pagina de contacto
+objetivo: definir formulacios
+1. hacemos una copia del documento (productos.html) del (<head>), (<body>), (<header>), (<main>), (<footer>).
+2. cambiamos el texto del titulo a (<title>Contacto - Barberia Alura</title>).
+3. renombrar los archivos de estilo como buenas practicas, cambiar el archivo (style.css) a (style-home.css) y el archivo 
+(productos.css) a (style-productos.css).
+4. cambiar las referencias que hacemos en la etiqueta (<head>) de cada archivo html.
+
+seccion 02: campos basicos
+objetivo: construir los primeros items del formulario (area de nombre y apellido, correo, telefono)
+1. dentro de la etiqueta (<main>) utilizaremos la etiqueta especial (<form></form>) que se utiliza para crear formularios 
+que hacer referencia a un formulario dentro creamos la etiqueta (<input type="text">) que crea una cajita de texto para que
+el usuario introduzca sus datos. 
+2. colocar a que se refiere la caja de texto, una etiqueta a esa etiqueta (<label>Nombre y Apellido</label>) que dice de
+que se trata y por defecto se ubica a la izquierda de la caja.
+3. al colocal un input de tipo texto siempre debemos poner un (<label>) para asociar a que se refiere ese (<input>) y para
+relacionarlos aun mas podemos colocar en la etiqueta (<input>) un identificador (<input type="text" id="nombreapellido">)
+y en el (<label>) un (for) que contiene el identificador del (<label for="nombreapellido">Nombre y Apellido</label>), esto
+le dice referite al (<input>) nombre y apellido.
+4. al hacer click en la etiqueta nombre y apellido se activa la caja de texto para que el usuario ingrese el texto o se 
+puede hacer click en la caja de texto.
+5. creamos los (<input>) para los demas datos que se le pediran al usuario (<input type="text" id="correoelectronico">) y
+creamos su etiqueta de referencia (<label for="correoelectronico">Correo electronico</label>) etc...
+6. crear el boton de enviar o guardar los datos del formulario con la etiqueta (<input type="submit">) en este caso html le
+creara ese boton, el boton se crea con la palabra (enviar) porque el navegador reconoce el idioma porque esta configurado
+en espanol.
+7. le podemos asignar un nombre a ese boton con (<input type="submit" value="Enviar Formulario">).
+
+seccion 02: estilos para formulario
+objetivo: darle estilo a los elementos creados en html
+1. vamos a reutilizar el archivo css (style-productos.css).
+2. primero centralizar los elementos utilizando (width: 940px;) esto a razon que una pantalla padron tiene (1270px) y
+como buena practica se utilize (940px) para centrar, y (margin: 0 auto;) es 0 para arriba y para abajo y automatico a los
+costados.
+3. el boton hizo un saldo de linea porque no entro en la definicion de los (940px).
+4. colocar en formato vertical los elementos utilizando (form label{}) utilizaremos la propiedad (display: block;), y
+creamos otro (form input {}) con la misma propiedad (display: block;).
+5. colocar un espacio entre los (<input>), creamos (form {}) y le anadiremos la propiedad (margin: 40px 0;), donde (40px)
+es para arriba y para abajo, y (0) a los costados.
+6. ahora debemos mejorar el visual de los (<label>) y de los (<input>), en css en (form label{}) anadimos (font-size: 20px;)
+que significa un tamano de (20px) y (margin: 0 0 10px;) que significa, coloca (0) para arriba, (0) a la derecha, (10px) a la
+derecha, anadimos a (form input {}) la propiedad (margin: 0 0 20px;).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+
+
+

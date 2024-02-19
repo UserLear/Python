@@ -114,7 +114,11 @@ hara el llamado de la imagen, (<p></p>) esta etiqueta contendra el detalle y est
 seccion 04: reforzando el inline-block
 objetivo: poner los productos en formato horizontal 
 1. cambiamos el valor por defecto de ocupar toda la linea completa de la pantalla que tiene cada elemento de la lista, visitamos
-la pagina (w3schools.com) para aprender mas.
+la pagina (w3schools.com) para aprender mas, (display: inline;) lo que hace es usar el tamano que ocupa cada uno de los elementos
+tanto vertical como horizontal en esta no puedo configurar los espaciamientos ni los tamanos va a ocupar el 100% del elemento (solo
+el espacio del elemento), (display: inline-block;) nos permite configurar los elementos en formato horizontal (uno al lado de otro
+y configurar los espacios y las propiedades internas del elemento (display: block;) coloca los elementos ocupando el 100% del espacio
+horizontal de la pagina.
 2. como tenemos 2 (<ul>) debemos crear una clase (class="productos") en nuestra lista de productos para poder identificarla y 
 creamos el selector de clase (.productos li{}) donde el (li{}) hace referencia a los items de la lista y le añadimos la propiedad
 (display: inline-block;).
@@ -140,6 +144,86 @@ para la descripcion y (.producto-precio{}) para el precio.
 (.producto-precio{}) le añadimos las propiedades (font-size: 20px;) de tamaño y (font-weight: bold;) de negrita.
 11. ahora creamos un espaciamiento entre el precio y la descripcion utilizando (margin-top: 10px;). 
 
+seccion 04: ajustando el tamano de los elementos
+objetivo: configurar los espacios entre cada producto, el tamano de cada item
+1. colocar en (.productos li{}) un () que nos ayude a hacer las configuraciones.
+2. primero modificar el margen lateral que existe entre de cada elemento con los demas (margin: 0 1.5%;) dice colocar (0) en 
+vertical y horizontal y (1.5%) en los laterales.
+3. segundo agregar mas borde en la parte superior e inferior de cada item utilizando (padding: 30px 20px;) le dice agregar 
+(30px) en la vertical y (20px) en la horizontal. 
+4. tercero al bajar uno de los items debemos utilizar la propiedad (box-sizing: border-box;) lo que hace es definir el borde 
+de cada item sera el limite del espacio que va ser definido, aqui los (20px) de espaciamiento interno no van a sobrepasar los 
+(10%) que tenemos disponibles sobrantes de (90%) que utilizan los items del (width: 940px;) total.
+5. cuarto quitamos el (background: #CCCCCC;).
+
+seccion 05: aplicando bordes 
+objetivo: aplicar los bordes de los items
+1. definimos 3 propiedades (border-color: #000000;) para el color, (border-width: 2px;) para el grosor del borde, 
+(border-style: solid;) para definir una sola linea.
+2. probando propiedades (border-top-width:10px) se modifica el grosor del borde superior.
+3. forma resumida de definir las 3 propiedades (border: 2px solid #000000;) donde el orden es importante.
+
+seccion 05: bordes redondeados
+objetivo: redondear los 4 vertices del paralelogramo
+1. (border-radius: 10px 25px 40px 50px;) se utiliza para definir los bordes el primero (10px) borde superior derecho, (25px)
+borde inferior derecho, (40px) borde inferior izquierdo, (50px) borde superior izquierdo, al sentio del giro del reloj, pero
+para el ejemplo lo definimos en (border-radius: 10px;) para todos los bordes.
+
+seccion 06: capturando el movimiento del mouse
+objetivo: definir los efectos sobre cada item y sobre el panel de navegacion (el resaltado cambio de color y tamano)
+1. demebos capturar el movimiento del mouse al colocarse en algun link del panel de navegacion o en alguno de los procutos
+al igual que al hacer un clip se cambia de color.
+2. utilizamos (nav a:hover{}) para capturar ese movimiento del mouse (el comportamiento del mouse) y dentro del colocamos 
+la propiedad (color: #c78c19;).
+3. para colocarle la propiedad de subrrayado le anadimos la propiedad (text-decoration: underline;).
+
+seccion 06: capturando el clik del raton
+objetivo: aplicar los efectos a los productos (resaltado cambio de color y el verde al click)
+1. creamos (.productos li:hover{}) anadimos la prodiedad (text-decoration: underline;) que pintara los bordes si utilizamos
+(color: #c78c19;) cambiaremos el color de los elementos dentro de cada item.
+2. creamos (.productos li:active{}) que se utiliza para capturar el click del mouse.
+3. para modificar el cambio de tamano como evento del mouse anadimos (font-size: 33px;), pero este cambio no es perceptible
+a razon que definimos en (.productos h2{font-size: 30px;}) los (30px) y el css da prioridad a esto, para modificar esto 
+debemos crear un selector de clase (.productos li:hover h2 {}) que llegue a ese nivel y le dice: cuando se posicione en
+cualquier superficie del elemento (.productos li) y aplicale al (<h2>) el  (font-size: 33px;).
+
+seccion 07: pie de pagina
+objetivo: crear el pie de pagina
+1. observando el ejemplo:
+1.1 el fondo negro
+1.2 la imagen central
+1.3 el texto debajo de la imagen de derechos reservados
+2. en el documento (<html>) creamos la etiqueta (<footer></footer>) que fue creada para el pie de pagina especificamente y 
+anadimos (<img src="imagenes/logo-blanco.png">) y (<p>Copyright Barberia Alura - 2023</p>).
+3. asi creamos el selector de clase (footer {}) y le anadimos la propiedades (text-align: center;) para alinear el texto y
+(background: #CCCCCC;) para cambiar el color.
+4. anadimos la imagen que se define como (background: #CCCCCC;) anadimos la imagen en el documento css, cambiamos a 
+(background: url(imagenes/bg.jpg);).
+5. colocamos un espaciamiento sobre con la propiedad (padding: 40px;). 
+
+seccion 07: caracteres especiales
+objetivo: modificamos la etiqueta parrafo del pie de pagina para que sea visible, colocar un caracter especial (©) 
+1. creamos una clase en la etiqueta (<p>) del elemento (<footer>) como (<p class="copyright">) y creamos en nuestro documento
+css el selector de clase (.copyright {}) y le anadimos la propiedad (color: #FFFFFF;) que es el blanco.
+2. ahora cambiamos el tamano del texto, por defecto esta en (16px) y lo cambiaremos a (font-size: 13px;).
+3. anadimos el caracter especial de derechos de autor, este caracter lo encontramos en el diccionario UNICODE que contiene 
+todos los caracteres especiales de todos los idiomas que se hablan en la parte occidental del planeta.
+4. buscamos en la pagina (unicode-table.com) en el buscador colocamos (copyright) y devuelve (&copy) y lo colocamos dentro 
+del texto del documento html.
+5. para finalizar anadimos el espacio entre la imagen y el texto (margin: 20px;) en (.copyright {}). 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 
 
 
