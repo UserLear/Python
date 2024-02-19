@@ -40,6 +40,40 @@ es para arriba y para abajo, y (0) a los costados.
 6. ahora debemos mejorar el visual de los (<label>) y de los (<input>), en css en (form label{}) anadimos (font-size: 20px;)
 que significa un tamano de (20px) y (margin: 0 0 10px;) que significa, coloca (0) para arriba, (0) a la derecha, (10px) a la
 derecha, anadimos a (form input {}) la propiedad (margin: 0 0 20px;).
+7. ahora debemos aumentar el tamaño de los (<input>) por si el nombre o apellidos son muy grandes, vamos a inspeccionar y
+revisamos el tamaño del elemento que en este caso es (169x15) lo siguiente es el padding con (1 arriba y abajo, 2 a los lados)
+que es el esparciamiento interno, lo siguiente es el borde (border con 2 cada lado) y luego el margen (margin sin medida), 
+8. el que queremos modificar es el (padding) y le damos los valores (padding: 10px 25px;).
+9. ahora definiremos el ancho de los (<input>) para que ocupen el (50%) del total de la pantalla de (940px), para eso añadimos
+la propiedad (width: 50%;).
+
+seccion 03: formulario mas completo
+objetivo: crear una caja de texto con su tamaño manipulabre, y crear las seccion de seleccion
+1. utilizamos la etiqueta (<textarea></textarea>) que es especial para introducir texto.
+2. definir el tamaño de la etiqueta (<textarea>) para que casi se iguale al area de los (<input>) anteriores, para eso utilizamos
+en la etiqueta de inicio (<textarea cols="70", rows="10" id="mensaje">) donde (cols="70") significa añade 70 columnas y (rows="10")
+de dice añade 10 filas, añadimos el (id="mensaje") para crear la etiqueta (<label>) asociada a ese (<input>).
+3. añadir el (<input>) seleccion, para esto creamos la etiqueta (<input type="radio">) que nos permite ese comportamiento
+4. a este le damos el (<label>) y como primero crearemos la seleccion de email ponemos (<label for="radio-email">Email</label>)
+luego a (<input type="radio">) le añadimos (value="email") que define que tipo de valor tendra y añadimos el identificador 
+(id="radio-email") para enlazar al (<label>).
+5. de la misma forma creamos la seleccion para el telefono y el whatapp.
+6. ahora modificar la seleccion para que sea una sola vez, para eso añadimos a (<input>) la propiedad (name="contacto"), añadir esa
+propiedad en los 3 (<input>) le dice al html que no los considere por separado sino como uno solo.
+7. añadir el titulo a esta seleccion con (<p>¿Como le gustaria que lo contactemos?</p>).
+8. separaremos el contenido desde la etiqueta (<p>) hasta el (<input type="radio" name="contacto" value="whatapp" id="radio-whatapp">) 
+esto para organizar utilizamos la etiqueta (<div></div>).
+9. creamos el (<label><input type="checkbox">Le gustaria recibir novedades de la barberia Alura</label>) que habilitara una cajita de
+seleccion para la pregunta de recibir notificaciones.
+ 
+
+
+
+ 
+
+
+
+
 
 
 
