@@ -51,8 +51,8 @@ seccion 03: formulario mas completo
 objetivo: crear una caja de texto con su tamaño manipulabre, y crear las seccion de seleccion
 1. utilizamos la etiqueta (<textarea></textarea>) que es especial para introducir texto.
 2. definir el tamaño de la etiqueta (<textarea>) para que casi se iguale al area de los (<input>) anteriores, para eso utilizamos
-en la etiqueta de inicio (<textarea cols="70", rows="10" id="mensaje">) donde (cols="70") significa añade 70 columnas y (rows="10")
-de dice añade 10 filas, añadimos el (id="mensaje") para crear la etiqueta (<label>) asociada a ese (<input>).
+en la etiqueta de inicio (<textarea cols="70", rows="10" id="mensaje"></textarea>) donde (cols="70") significa añade 70 columnas y 
+(rows="10") de dice añade 10 filas, añadimos el (id="mensaje") para crear la etiqueta (<label>) asociada a ese (<input>).
 3. añadir el (<input>) seleccion, para esto creamos la etiqueta (<input type="radio">) que nos permite ese comportamiento
 4. a este le damos el (<label>) y como primero crearemos la seleccion de email ponemos (<label for="radio-email">Email</label>)
 luego a (<input type="radio">) le añadimos (value="email") que define que tipo de valor tendra y añadimos el identificador 
@@ -65,6 +65,69 @@ propiedad en los 3 (<input>) le dice al html que no los considere por separado s
 esto para organizar utilizamos la etiqueta (<div></div>).
 9. creamos el (<label><input type="checkbox">Le gustaria recibir novedades de la barberia Alura</label>) que habilitara una cajita de
 seleccion para la pregunta de recibir notificaciones.
+
+seccion 03: css para inputs mas complejos
+objetivo: trabajar con los estilos de los inputs mas complejos
+1. añadimos al selector (form input{}), (form textarea{}) y lo separamos con una coma (form input, form textarea {}) esto para replicar 
+el uso de propiedades sobre otros elementos, con eso ajustamos el area de escritura con las mismas propiedades de los inputs anteriores.
+2. ahora modificaremos la posicion de los nombres de botones con su respectiva casilla de seleccion en html, lo que queremos es que la 
+casilla se coloque antes del nombre, para eso modificaremos la posicion (<label for="radio-email" >Email</label>) y ahora añadiremos 
+(<label for="radio-email" ><input type="radio" name="contacto" value="email" id="radio-email">Email</label> y haremos esto con las demas
+etiquetas.
+3. ahora vemos que la casilla de seleccion queda en una sola linea, esto se debe a que tenemos modificados los inputs con la propiedad 
+(display: block;) que significa que ocupa el (100%) de la pagina, para resolver esto creamos una clase para los inputs padrones que 
+creamos iniciales (class="input-padron") de esa forma creamos una caracteristica solo para esos inputs y en el archivo css modificamos
+(form input, form textarea {}) por (.input-padron{}).
+4. ahora modificaremos la etiqueta de pregunta y dentro de (form label {}) le añadimos (form label, form p {}).
+5. ahora separaremos los espacio entre los (checkbox), (submit) y los input (radio), para eso creamos una clase (class="checkbox") y 
+creamos el selector de clase en el archivo css (checkbox {}) y le añadimos las propiedades (margin: 20px 0;) que significa añade (20px)
+para la vertical y horizontal y (0) para los costados.
+
+seccion 03: jerarquia en el css
+objetivo: entender el comportamiento de css en relacion a los diferentes marcadores que utilizamos
+1. un item puede ser llamado por un identificador (id), selector de clase (.nombre) y por su etiqueta (p), entonces css va hacer caso 
+primero.
+2. para ejemplo utilizaremos la etiqueta (<p>) de la pregunta.
+3. le creamos una clase (clase="test") y un identificador (id="test").
+4. luego en css creamos el selector (p {}) y le cambiamos el color (color: red;), luego creamos un selector (form p{}) y le añadimos
+(color: blue;) y observamos cual color prevalece, en este caso se convierte en azul sea que este arriba o abajo, esto pasa porque existe
+una jerarquia en que css se comporta en relacion a los distintos marcadores que se pueden utilizar.
+5. el (id) es primero, el segundo (class) y tercero la (<p>), lo que hace css es sumar el numero de etiquetas que estan juntas por ejemlo
+le damos un valor de peso a cada una (id = 100), (class = 10) y (<p> = 1) y si tememos la etiqueta (form p) y la etiqueta (p) tenemos que 
+(form p = 2) por estar compuesto de (form) y (p) mientras (p = 1) por ser solo (p), si probamos ahora con el selector de clase 
+(.test {color: yellow}) el color cambia a amarillo, porque el selector de clase pesa (10) y si usamos (p.test {color: orange}) el color 
+cambia a naranga esto porque (p.test = 1 + 10), ahora si usamos el identificador (#test {color: pink}) esto se cambia a rosado puesto 
+que (id) pesa (100) sin importar la posicion.
+6. existe una configuracion que es mucho mas fuerte que las anteriores y es la configuracion en la misma linea por ejemplo (<p clase="test" 
+id="test" style="color: purple">¿Como le gustaria que lo contactemos?</p>) esto hara que cambie a color purpura.
+
+seccion 03: seleccionando opciones de lista
+objetivo: eliminar anteriormente hechas + añadir el input lista de horario
+1. creamos la etiqueta (<select>) que es especial para hacer una lista de opciones, y cada opcion la encerramos en la etiqueta (<option>Mañana</option>)
+y creamos una etiqueta (<opcion>) por cada opcion y todo esto lo encerramos en la etiqueta (<div></div>).
+
+
+seccion 04: inputs para celulares
+objetivo: pensar un poco en la experiencia del usuario
+1. añadir configuraciones padron para que al entrar desde un celular la pagina tenga buena presentacion.
+2. en la pagina (mobileinputtypes.com) para ver los diferentes tipos de inputs.
+3. corregimos los inputs del html con su respectiva opcion al tipo de dato que necesitamos se introduzca, en la etiqueta (<input type="text" 
+id="correoelectronico" class="input-padron">) cambiamos a (<input type="email" id="correoelectronico" class="input-padron">) y vamos cambiando los demas
+inputs respectivamente a (type="tel").
+
+seccion 04: datos importantes en los inputs
+objetivo: definir algunos campos como obligatorios
+1. en (<input type="text" id="nombreapellido" class="input-padron">) definir (required), ((<input type="text" id="nombreapellido" class="input-padron" required>)).
+2. ahora daremos una guia a cada input que le dira al usuario que tipo de dato necesitamos añadimos (placeholder="mensaje") ya añadido en la etiqueta se veria
+(<input type="email" id="correoelectronico" class="input-padron" required placeholder="emal@domimio.com">) etc...
+3. definir un valor por defecto en la lista de opciones utilizando (<label for="radio-whatapp"><input type="radio" name="contacto" value="whatapp" id="radio-whatapp" 
+checked>Whatapp</label>).
+4. 
+
+
+
+
+
  
 
 
