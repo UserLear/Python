@@ -122,8 +122,31 @@ objetivo: definir algunos campos como obligatorios
 (<input type="email" id="correoelectronico" class="input-padron" required placeholder="emal@domimio.com">) etc...
 3. definir un valor por defecto en la lista de opciones utilizando (<label for="radio-whatapp"><input type="radio" name="contacto" value="whatapp" id="radio-whatapp" 
 checked>Whatapp</label>).
-4. 
 
+seccion 04: mejorando la semantica del formulario
+objetivo: mejorar la estructura del codigo en html
+1. por conveniencia utilizamos la etiqueta (<div>) para separar el contenido, pero existe otra etiqueta especifica que se llama (<fieldset></fieldset>) que agrupa
+etiquetas que pertenecen al mismo grupo, que en el primer caso seria las etiquetas de contacto y en el segundo caso serian las etiquetas de lista de opciones, esto 
+le dice al navegador todo lo que te estoy pasando esta relacionado.
+2. esta etiqueta (<fieldset>) no utiliza la etiqueta (<p>) para el titulo sino que utiliza la etiqueta (<legend></legend>) pero al guardar el estilo de mi texto se
+modifica, esto a razon que utilizabamos la etiqueta (<p>) para esta modificacion, para resolverlo debemos incluir la etiqueta (<legend>) en el selector donde se 
+encontraba la etiqueta (<p>) que seria (form label, form p {}) por (form label, form legend {}).
+3. ahora en html en las imagenes le anadimos la propiedad (alt="descripcion") donde indicamos de que se trata esa imagen, tenemos (<h1> <img src="imagenes/logo.png"></h1>)
+y le anadimos (<h1> <img src="imagenes/logo.png" alt="logo de la barberia Alura"></h1>) esto lo hacemos para crear una descripcion por si la imagen no carga en la pagina
+el usuario sepa de que trata, esto lo repetimos en las demas imagenes.
+
+seccion 05: que son las transiciones
+objetivo: mejorar el boton de enviar formulario (sumit) 
+1. en html, en la etiqueta  creamos una clase (<input type="submit" value="Enviar Formulario">) le agregamos una clase (<input type="submit" value="Enviar Formulario" class="enviar">),
+luego en nuestro archivo css creamos el selector de clase (.enviar {}) y le anadimos la propiedad (width: 40%;) primero para definir el tamano, esto es el (40%) del area disponible que
+tenemos, luego (padding: 15px 0;) que es el espaciamiento interno para que el boton tenga un formato mas grande donde (15px) es el espacio de arriba y abajo y (0) el el valor para los
+laterales, luego (font-size: 18px;) para aumentar el tamano de la letra, (font-weight: bold;) para convertir en negrita, (color: white;) para cambiar el color de la letra,
+(background: orange;) para cambiar el color de la caja.
+2. ahora quitaremos el borde con (border: none) que significa que no queremos ningun borde y luego haremos puntas redondeadas con (border-radius: 5px;).
+3. ahora le daremos que destaque el boton cuando nuestro mouse se posicione sobre el, en css creamos (.enviar:hover {}) y le asignamos la propiedad (background: red;).
+4. ahora anadiremos la propiedad (transition: 1s background;) donde (1s) es el tiempo que tardara y (background;) es donde se ejecutara ese cambio de color, todo esto lo anadimos en 
+(.enviar {}).
+5. ahora modificaremos el cursor con la propiedad (cursor: pointer;) que cambia el icono del mouse al posicionarse sobre el boton a un manito, esto lo anadimos a (.enviar {}).
 
 
 
