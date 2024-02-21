@@ -1,0 +1,71 @@
+seccion 01: rehaciendo la pagina inicial
+objetivo: modificaremos la pagina inicial
+1. cambiar el llamado del archivo css (<link rel="stylesheet" href="style-home.css">) por (<link rel="stylesheet" href="style-productos.css">).
+2. llamar al css (<link rel="stylesheet" href="reset.css">).
+3. al asignar eso la configuracion anterior se pierde.
+4. copiar en la etiqueta (<header></header>) que tenemos en nuestro archivo (contacto.html), todo el contenido que tenemos en la etiqueta 
+(<header></header>) del archivo (style-productos.css).
+5. hacemos lo mismo con el pie de pagina (<footer></footer>), copiamos lo que tenemos en el archivo (style-productos.css) y lo pegamos en 
+nuestro archivo (index.html) y debe quedar dentro del (<body></body>).
+6. añadimos la etiqueta (<main></main>) que representa el centro, el contenido de nuestra pagina, creamos la etiqueta y le añadimos todo el 
+contenido que ya tenemos en la pagina, dejando fuera (<img id="banner" src="banner/banner.jpg">).
+7. recordamos que utilizamos la etiqueta (<div></div>) para dividir el contenido y para que sea mas facil darle mantenimiento o actualizacion,
+pero utilizaremos la etiqueta (<section></section>) que lo que hace es separar el contenido por secciones y le dice a la pagina que ese contenido esta relacionado
+entre si, y la cambiamos en las dos etiquetas (<div></div>).
+8. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+
+
+

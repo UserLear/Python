@@ -148,6 +148,51 @@ laterales, luego (font-size: 18px;) para aumentar el tamano de la letra, (font-w
 (.enviar {}).
 5. ahora modificaremos el cursor con la propiedad (cursor: pointer;) que cambia el icono del mouse al posicionarse sobre el boton a un manito, esto lo anadimos a (.enviar {}).
 
+seccion 05: entendiendo transformaciones
+objetivo: darle un destaque de aumento de tamaño al boton de enviar formulario
+1. en el selector de clase (enviar:hover {}) del documento css añadimos (transform: scale(1.20);) que le dice aumentame (1.2) cuando el mouse se posicione sobre el elemento.
+2. ahora vamos a cambiar el tiempo de transicion de ese cambio de tamaño hay que modificar la propiedad (transition: 1s background;) porque este solo aplicaba al color y 
+cambiarlo por (transition: 1s all;) que le dice que aplique la transicion para todas las caracteristicas. 
+3. ahora probaremos la rotacion del boton y añadimos en (.enviar:hover {}) la propiedad (transform: rotate(70deg)) pero al ejecutarlo la propiedad (transform: scale(1.20);)
+se omite, esto pasa porque css toma en cuenta la ultima propiedad asignada y olvida las anteriores, para corregir esto basta con colocar la propidedad (rotate(70deg)) en la 
+misma linea de (transform: scale(1.20);) y quedaria (transform: scale(1.20) rotate(70deg);).
+4. eliminamos la rotacion añadida en la opcion anterior.
+
+seccion 06: tabla basica
+objetivo: construir la tabla de horarios de funcionamiento de la barberia
+1. en el documento html despues de la etiqueta (</form>) pero antes de (</main>) creamos la etiqueta (<table></table>) y dentro de esta etiqueta definimos la etiqueta 
+(<tr></tr>) que nos ayudan a definir las lineas de la tabla y dentro de esta definimos (<td></td>) que son las celdas de la tabla, definimos 2 (<td>) porque tenemos 2
+columnas, dentro de la primer (<td>) colocamos el encabezado (<td>Dia</td>) y dentro de la otra colocamos (<td>Horario</td>), asi creamos los demas (<tr>) para las demas
+casillas que representarian los dias y horarios (<tr><td>Lunes</td><td>08h - 20h</td></tr>) etc...
+
+seccion 06: etiquetas semanticas para tablas
+objetivo: estructurar la tabla con las etiquetas especiales
+1. el titulo de la tabla puede ser colocado dentro de (<thead></thead>) donde (t) es de tabla y (head) de encabezado.
+2. existe una etiqueta especifica para las celdas que pertenecen a ese encabezado (<th></th>) y cambiamos (<td>Dia</td>) y (<td>Horario</td>) por (<th>Dia</th>) y 
+(<th>Horario</th>).
+3. tenemos la etiqueta (<tbody></tbody>) que debe contener el cuerpo de la tabla que son las celdas relacionadas a ese encabezado y tenemos la etiqueta (<tfoot>) como 
+el pie de la pagina.
+
+seccion 06: estilos en las tablas
+objetivo: trabajar la parte visual los estilos de la tabla
+1. primero colocaremos un espaciamiento superior e inferior y los laterales en la tabla, utilizamos (table {}) y le asignamos la propiedad (margin: 40px 40px;) 
+que es (40px) superior e inferior y (40px) los laterales.
+2. segundo modificamos el encabezado utilizando (thead {}) y le damos la propiedad (background: #555555;) le damos un color plomo, (color: white;) le damos un color
+blanco a la letra y (font-weight: bold;) le damos un aspecto de negrita.
+3. tercero dibujamos las lineas, creamos (td {}) y le añadimos la propiedad (order: 1px solid #000000;) donde (1px) es el grosor de la linea, (solid) es una linea
+continua, (#000000) es el color negro de la linea.
+4. cuarto le ponemos al encabezado las lineas modificando (td {}), le agregamos (td, th {}). 
+5. quisto colocamos un espaciamiento interno en (td, th {}) y la propiedad es (padding: 8px 15px;) y le dice asignale (8px) superior e inferior y (15px) laterales.
+
+
+
+
+
+
+
+
+
+
 
 
 
