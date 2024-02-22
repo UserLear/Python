@@ -24,16 +24,36 @@ de la imagen para que ocupe el (100%) de la pantalla.
 3. trabajaremos en el bloque sobre la barberia alura, alteramos el nombre de la clase (<h2 class="titulo-centralizado">Sobre la Barbería Alura</h2>) y queraria como
 (<h2 class="titulo-principal">Sobre la Barbería Alura</h2>), luego en css creamos el selector de clase (.titulo-principal {}) y le cambiamos el alineamiento con
 la propiedad (text-align: center;) esto movera el titulo al centro y anadimos (font-size: 2em;) donde (2m) significa que el tamano sea 2 veces el tamano por defecto 
-de la fuente que tiene el navegador, en este caso es de (15px) y al colocarle (2m) le decimos que queremos que sea 2 veces ese tamano.
+de la fuente que tiene el navegador, en este caso es de (15px) y al colocarle (2m) le decimos que queremos que sea 2 veces ese tamano que seria (30px).
 4. anadimos un margen para que el titulo se separe de los parrafos, utilizamos en (.titulo-principal {}) la propiedad (margin: 0 0 1em;) que significa (0) arriba, 
 (0) a la derecha y (1em) abajo que es 1 vez el tamano de fuente padron.
 5. ahora demosle un espacio a los parrafos que estan super pegados, para eso en el archivo css (.principal p{}) le anadimos la propiedad (margin: 0 0 1em;) que 
 significa (0) arriba, (0) a la derecha y (1em) abajo que es 1 vez el tamano de fuente padron.
-6. darle el formato a la mision, para eso creamos (.principal strong {}) esto para hacela negrita, luego creamos (.principal em {}) y le damos la propiedad
-(font-style: italic;) que es la inclinacion del texto.
+6. darle el formato a la mision, para eso creamos (.principal strong {}) y le damos la propiedad (nt-weight: bold;) esto para hacela negrita y luego creamos 
+(.principal em {}) y le damos la propiedad (font-style: italic;) que es la inclinacion del texto.
 7. ahora trabajamos con los diferenciales, primero configuramos la etiqueta (<h3 class="titulo-centralizado">Difereciales</h3>) por la etiqueta 
-(<h3 class="titulo-principal">Difereciales</h3>) y modificamos el estilo de la imagen, para eso creamos (.imagenDiferenciales {}) en css y le damos la propiedad
-(width: 60%;) para que la imagen tenga una anchura del (60%).
+(<h3 class="titulo-principal">Difereciales</h3>) y le modificamos el estilo de la imagen, para eso creamos (.imagenDiferenciales {}) en css y le damos la propiedad
+(width: 60%;) para que la imagen tenga una anchura del (60%) del tamaño de la pantalla.
+
+seccion 01: usando el float
+objetivo: modificar el bloque que trata sobre la barberia alura (<section class="principal"></section>)
+1. en la pagina ejemplo este texto contiene una imagen al lado izquierdo, para eso importamos la imagen despues de nuestro titulo principal 
+(<h2 class="titulo-principal">Sobre la Barbería Alura</h2>) y colocamos (<img class="utensilios" src="imagenes/utensilios.jpg" alt="utencilios de un barbero.">).
+2. ajustamos el tamaño de la imagen en el archivo css para eso creamos el selector (.utencilios {}) y le damos la propiedad (width: 120px;) donde le decimos que
+nuestra imagen tenga un tamaño de (120px) esta la colocamos antes de la imagen de los diferenciales (.imagenDiferenciales {}) porqu el el html asi esta.
+3. ahora vemos en el ejemplo que el texto bordea a la imagen, esto lo podriamos intentar alterando la propiedad display (display: inline;) que pondria el texto a 
+la par de la imagen o podriamos utilizar la propidad (position: relative o relativa;) podriamos posicionar la imagen en cualquier lugar pero tampoco lograriamos
+el efecto de borde.
+4. para esto añadimos en (.utensilios {}) la propiedad (float: left;) donde (left) es el posicionamiento de una sombra al lado derecho de la imagen, que funciona 
+como si la imagen se despegara de nuestra hoja y dejara una sombra y esta sombra es el espacio que no podra ocupar el texto.
+5. los diferenciales tambien se movilizo hacia arriba, esto lo modificamos en (.titulo-principal {}) le añadimos la propiedad (clear: left;) que le dice cualquier
+configuracion que venga despues del titulo de la izquierda que la limpie.
+6. visualmente no altera nada pero le decimos a la pagina que esta imagen (imagenes/utensilios.jpg) solo aplica para este bloque (<section class="principal"></section>).
+7. ahora colocaremos margenes en (.utensilios {}) añadimos la propiedad (margin: 20px;).
+8. al guardar los cambios, la imagen se ve desalineada con relacion al texto, para corregir eso en (.utensilios {}) modificamos la propiedad (margin: 20px;) por
+(margin: 0 20px 20px 0;) que le dice (0) arriba, (20px) derecha, (20px) inferior y (0) izquierda.
+
+ 
  
 
 
