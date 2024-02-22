@@ -12,7 +12,29 @@ contenido que ya tenemos en la pagina, dejando fuera (<img id="banner" src="bann
 7. recordamos que utilizamos la etiqueta (<div></div>) para dividir el contenido y para que sea mas facil darle mantenimiento o actualizacion,
 pero utilizaremos la etiqueta (<section></section>) que lo que hace es separar el contenido por secciones y le dice a la pagina que ese contenido esta relacionado
 entre si, y la cambiamos en las dos etiquetas (<div></div>).
-8. 
+
+
+seccion 01: adaptando el css
+objetivo: configuracion de los estilos
+1. comenzaremos con el banner, queremos que ocupe el (100%) del ancho de la pagina, para eso modificamos (<img id="banner" src="banner/banner.jpg">) y le cambiamos
+el (id) por una clase (<img class="banner" src="banner/banner.jpg">), como buena practica utilizamos el (id) cuando queremos alterar comportamientos y usamos clases
+cuando queremos modificar el estilo.
+2. vamos al archivo css (style-productos.css) y le anadimos el selector de clase (.banner {}) y creamos la propiedad (width: 100%;) con esto modificamos el tamano 
+de la imagen para que ocupe el (100%) de la pantalla.
+3. trabajaremos en el bloque sobre la barberia alura, alteramos el nombre de la clase (<h2 class="titulo-centralizado">Sobre la Barbería Alura</h2>) y queraria como
+(<h2 class="titulo-principal">Sobre la Barbería Alura</h2>), luego en css creamos el selector de clase (.titulo-principal {}) y le cambiamos el alineamiento con
+la propiedad (text-align: center;) esto movera el titulo al centro y anadimos (font-size: 2em;) donde (2m) significa que el tamano sea 2 veces el tamano por defecto 
+de la fuente que tiene el navegador, en este caso es de (15px) y al colocarle (2m) le decimos que queremos que sea 2 veces ese tamano.
+4. anadimos un margen para que el titulo se separe de los parrafos, utilizamos en (.titulo-principal {}) la propiedad (margin: 0 0 1em;) que significa (0) arriba, 
+(0) a la derecha y (1em) abajo que es 1 vez el tamano de fuente padron.
+5. ahora demosle un espacio a los parrafos que estan super pegados, para eso en el archivo css (.principal p{}) le anadimos la propiedad (margin: 0 0 1em;) que 
+significa (0) arriba, (0) a la derecha y (1em) abajo que es 1 vez el tamano de fuente padron.
+6. darle el formato a la mision, para eso creamos (.principal strong {}) esto para hacela negrita, luego creamos (.principal em {}) y le damos la propiedad
+(font-style: italic;) que es la inclinacion del texto.
+7. ahora trabajamos con los diferenciales, primero configuramos la etiqueta (<h3 class="titulo-centralizado">Difereciales</h3>) por la etiqueta 
+(<h3 class="titulo-principal">Difereciales</h3>) y modificamos el estilo de la imagen, para eso creamos (.imagenDiferenciales {}) en css y le damos la propiedad
+(width: 60%;) para que la imagen tenga una anchura del (60%).
+ 
 
 
 
