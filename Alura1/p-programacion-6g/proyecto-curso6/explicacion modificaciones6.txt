@@ -65,7 +65,54 @@ la referencia de forma correcta.
 6. ahora debemos usarlo y para eso indicamos en que elemento o etiqueta vamos a utilizar ese elemento y lo haremos en nuestro documento css para eso creamos
 (body{}) al inicio del documento css y con esto lo aplicaremos a todas la paginas que tenemos (<body></body>) y le anadimos la propiedad (font-family: "Montserrat", sans-serif;)
 7. esto nos permitira una ventaja de padronizar independientemente del sistema operativo, o navegador la pagina mantendra la misma vistosidad que le hemos asignado.
-8. 
+
+seccion 02: trabajando con mapas
+objetivo: la incrustacion del mapa
+1. primero debemos crear la estructura en (index.html) en la etiqueta (<main>) antes de la etiqueta (<section class="diferenciales">) creamos una etiqueta (<section></section>)
+a esta le añadimos una clase (<section class="mapa">) y dento de esta (<section>) creamos un titulo (<h3></h3>) y le asignamos la 
+clase que ya tenemos de (class="titulo-principal") y quedaria como (<h3 class="titulo-principal">Nuestra Ubicacion</h3>) y le añadimos una etiqueta de parrafo como
+descripcion (<p></p>).
+2. ahora importamos el mapa por medio del servicio gratuito de google, vamos a google maps, una vez alli nos ubicamos en la direccion que necesitamos mostrar y al encontrarla
+buscamos la opcion (compartir o incorporar mapa) luego hacemos click en (incorporar mapa) una vez alli podemos modificar el tamaño, una vez acordado el tamaño hacemos click en 
+(copiar html) y nos dirigimos al codigo y lo copiamos.
+3. ahora explicaremos el codigo que se muestra en nuestro html, (<iframe>) es una etiqueta que se utiliza para crear tipos de ventanas, espacios o areas donde podemos colocar
+cualquier tipo de imagen, mapa, gifs o videos, el (src) es donde colocamos la direccion web de nuestra barberia, (width) el ancho, (heigth) la altura, etc...
+4. vamos a ajustar el tamaño cambiando el (width="600") a (width="100%") y la altura de (height="450") a (height="300").
+5. ahora vamos a agregar un margen interno, creamos en css nuestro selector de clase (.mapa {}) antes de (.imagenDiferenciales {}) para guardar el orden de creacion y le 
+añadimos la etiqueta (padding: 3em 0;) donde (3em) significa 3 veces el tamaño de la fuente que viene por defecto.
+6. ahora configuraremos el parrafo superior del mapa, creamos en css el selector (.mapa p{}) y le asignamos la propiedad (margin: 0 0 2em;) que le dice (0) en la parte superior,
+(0) en la derecha y (2em) en la parte inferior, tambien le añadimos la propiedad (text-align: center;) que es pocisionar el texto en el centro.
+
+seccion 02: importando un video
+objetivo: vamos a incrustar un video en la pagina
+1. ubicamos el video, buscamos la opcion (compartir), seleccionamos (insertar), seleccionamos (copiar) y copiamos ese codigo despues de la etiqueta (<section class="diferenciales"></section>)
+2. ahora le daremos la configuracion de estilos en el archivo css, creamos (<div></div>) le creamos una clase (<div class="video">) y colocamos el (<iframe>) dentro de esa etiqueta
+3. ahora en css creamos (.video {}) y le añadimos la propiedad (width: 560px;) que es el mismo tamaño que tiene nuestro video en (<iframe>) y le asignamos la etiqueta (margin: 1em auto;)
+que le dice (1em) una vez el tamaño padron y (auto) a los laterales.
+
+seccion 03: ajustando los diferenciales
+objetivo: ajustar el tamaño de la imagen y darle formato a los diferenciales
+1. en (index.html) colocaremos la lista y la imagen dentro de una (<div></div>) recordando que esta etiqueta nos ayuda a separar para poder crear clases, creamos la clase 
+(<div class="contenido-diferenciales">), ahora a (<ul></ul>) le colocamos una clase (<ul class="lista-diferenciales">), ahora modificaremos la clase de nuestra imagen de (<img 
+src="diferenciales/diferenciales.jpg" class="imagenDiferenciales">) a (<img src="diferenciales/diferenciales.jpg" class="imagen-diferenciales">)
+2. ahora debemos ir al archivo css y modificar el selector de imagen de (.imagenDiferenciales {}) a (.imagen-diferenciales {}).
+3. ahora en (<div class="contenido-diferenciales">) vamos a ajustar el ancho en el documento css creando (.contenido-diferenciales {}) y asignandole la propiedad
+(width: 640px;) y la propiedad (margin: 0 auto;) donde el (0) es para arriba y abajo y (auto) a los laterales.
+4. colocamos (.contenido-diferenciales {}) despues del mapa porque asi se encuentra en el archivo html.
+5. ahora creamos en css (.lista-diferenciales {}) y ajustamos su anchura con (width: 40%;) ya que la imagen tiene (60%) que la lista ocupe los otros (40%) que hacen falta
+de los (640px) que estamos definiendo para todo ese bloque.
+6. ahora alinearemos la lista y la imagen sobre la horizontal, para eso en (.lista-diferenciales {}) añadimos (display: inline-block;), pero el ajuste aun no es visible esto
+pasa porque en (index.html) tenemos un espacio entre (</ul>) y (<img src="diferenciales/diferenciales.jpg" class="imagen-diferenciales">) y html lo toma como partes separadas
+para eso hay que unirlas, hasta con ponerlas en la misma linea (</ul><img src="diferenciales/diferenciales.jpg" class="imagen-diferenciales">).
+7. ahora la lista la pondremos en la parte vertical superior junto con el borde superior de la imagen en (.lista-diferenciales {}) y añadimos (vertical-align: top;).
+8. ahora el texto esta muy pegado y nos faltan 2 items, ya que la lista tiene (class="items") aprovechamos esta para crear un selector de clase (.items {}) y a esta le damos la
+propiedad (line-height: 1.5;) donde el (1.5) le dice aumentame el tamaño de las letras en esa cantidad, 
+,luego en el html en la lista añadimos (<li class="items">Puntualidad.</li>) y (li class="items">Limpieza.</li>).
+
+
+ 
+ 
+ 
  
  
 
