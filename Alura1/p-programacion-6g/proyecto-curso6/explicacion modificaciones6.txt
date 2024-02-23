@@ -13,7 +13,6 @@ contenido que ya tenemos en la pagina, dejando fuera (<img id="banner" src="bann
 pero utilizaremos la etiqueta (<section></section>) que lo que hace es separar el contenido por secciones y le dice a la pagina que ese contenido esta relacionado
 entre si, y la cambiamos en las dos etiquetas (<div></div>).
 
-
 seccion 01: adaptando el css
 objetivo: configuracion de los estilos
 1. comenzaremos con el banner, queremos que ocupe el (100%) del ancho de la pagina, para eso modificamos (<img id="banner" src="banner/banner.jpg">) y le cambiamos
@@ -53,6 +52,20 @@ configuracion que venga despues del titulo de la izquierda que la limpie.
 8. al guardar los cambios, la imagen se ve desalineada con relacion al texto, para corregir eso en (.utensilios {}) modificamos la propiedad (margin: 20px;) por
 (margin: 0 20px 20px 0;) que le dice (0) arriba, (20px) derecha, (20px) inferior y (0) izquierda.
 
+seccion 02: fuentes externas
+objetivo: importar o trabajar con fuentes externas
+1. identificamos que estamos utlizando 3 tipos de fuentes externas: 1. el tipo de letra (del menu de navegacion), 2. el mapa que es la ubicacion de la barberia, 
+3. es el video.
+2. existen fuentes privadas o publicas, las privadas son llamadas propietarias (microsof, apple) que utilizan esos tipos de fuente y los usan en sus sistemas 
+operativos, sistemas, aplicaciones, software, el otro tipo de fuente es las publicas que todos podemos utilizar de forma gratuita, unicamente debe importarse y hacer 
+la referencia de forma correcta.
+3. en (fonts.google.com) de google nos ofrece diferentes tipos de letra.
+4. si escogemos el tipo de letra (montserrat), para usarla debemos buscar la seccion donde nos da los links para incrustar en nuestro html y en nuestro css
+5. copiar el link y pegarlo, en html lo pegamos al final de la etiqueta (<head></head>).
+6. ahora debemos usarlo y para eso indicamos en que elemento o etiqueta vamos a utilizar ese elemento y lo haremos en nuestro documento css para eso creamos
+(body{}) al inicio del documento css y con esto lo aplicaremos a todas la paginas que tenemos (<body></body>) y le anadimos la propiedad (font-family: "Montserrat", sans-serif;)
+7. esto nos permitira una ventaja de padronizar independientemente del sistema operativo, o navegador la pagina mantendra la misma vistosidad que le hemos asignado.
+8. 
  
  
 
