@@ -109,6 +109,100 @@ para eso hay que unirlas, hasta con ponerlas en la misma linea (</ul><img src="d
 propiedad (line-height: 1.5;) donde el (1.5) le dice aumentame el tamaño de las letras en esa cantidad, 
 ,luego en el html en la lista añadimos (<li class="items">Puntualidad.</li>) y (li class="items">Limpieza.</li>).
 
+seccion 03: pseudo classes
+objetivo: colocar negrito al primer item de la lista de diferenciales
+1. para esto utilizamos las pseudo-clases, creamos debajo de (.items {}) el selector (.items:first-child {}) donde le decimos al primer elemento o hijo de ese boque de elementos
+que en este caso es la (class="items") pintamelo de negrita con la propiedad (font-weight: bold;) y queremos pintar el ultimo utilizamos (.items:last-child {}), tambien tenemos
+(.items:nth-child (3){}) donde le podemos indicar el numero del item queremos que se pinte de negrito o aplicarle el efecto seleccionado, si le ponemos (2n) se pintaran los items
+pares o si colocamos (3m) pintara los impares.
+
+seccion 03: aplicando gradientes
+objetivo: aplicar la trancision de colores (degradado que pasa de blanco a oscuro)
+1. para eso trabajaremos por bloques (<section class="principal">), (<section class="mapa">) y (<section class="diferenciales">), para trabajar con el primero vamos a css y creamos
+(.principal {}) que nos sirve para alterar el bloque completo y le asignamos la propiedad (background: #FEFEFE;) que es un color parecido al que necesitamos, luego creamos la propiedad
+(padding: 3em 0;) que le da un espaciamiento de (3em) arriba y abajo y (0) laterales.
+2. ahora trabajaremos en el siguient bloque (<section class="mapa">) para darle ese color plomo, para eso debajo de (.utensilios {}) creamos el selector de clase (.mapa {}) y le 
+asignamos la propiedad ()
+3. luego para el tercer bloque debajo de (.mapa p{}) creamos (.diferenciales {}) y le asignamos la propiedad (padding: 3em 0;) para darle espaciamiento a lo vertical y laterales y la 
+propiedad (background: #888888;) que da el color plomo, pero tenemos un error que tenemos un centralizado en el (<main>) que obliga a que ese centralizado sea en todos nuestros bloques
+para eso buscamos (main {}) que tiene las propiedades (width: 940px; margin: 0 auto;) las sacamos y lo colocamos en nuestro bloque principal (.principal {}) y vemos que el bloque de los 
+diferenciales tiene el aspecto correcto porque el (background: #FEFEFE;) se esta aplicando al 100% de la pagina y nuestro contenido esta centralizado. 
+4. nuestro mapa se desconfiguro y para esto encapsulamos el mapa en (index.html) para configurar exclusivamente el mapa, para eso en html creamos (<div></div>) y le asignamos la clase 
+(class="mapa-contenido") y usamos esta clase en css creamos despues el selector (.mapa-contenido {}) y configuramos el tamano con (width: 940px;) y modificamos los margenes con (margin: 0 auto;).
+5. si queremos aplicar el (background: orange;) en todo nuestro bloque de mapa debemos hacerlo en (.mapa{}) y ocupara todo el espacio de pantalla.
+6. para hacer pruebas de transcision de colores en (.mapa{}) creamos (background: orange;) luego le anadimos (background: linear-gradient(orange, blue);) donde le decimos que pase del 
+naranja al azul, podemos colocar mas colores para hacer una transicion mayor (background: linear-gradient(orange, blue, red, black);), pero vemos que por defecto el color es aplicado en la 
+horizontal y para modificar eso podemos utilizar (background: linear-gradient( 45 deg, orange, blue, red, black);) que le dice degrada los colores en un angulo de 45 grados.
+7. podemos decirle que el primer color ocupe cierto porcentaje de toda el area disponible con ( background: linear-gradient( 45deg, orange 50%, blue, red, black);) donde le decimos que el naranja
+ocupe el 50% de ese espacio, css automaticamente divide todos los demas colores en el otro 50% disponible.
+8. existe la opcion de usar (background: radial-gradient(orange 50%, blue, red, black);) y estos colores tendran un efecto eliptico.
+9. ahora modificaremos esto para que quede con la configuracion que necesitamos (background: linear-gradient(#fefefe, #888888);) donde le decimos que se degrade de ese casi blanco hasta el color
+plomo.
+
+seccion 03: pseudo-elementos
+objetivo: como aplicar pseudo elementos
+1. los pseudo elementos nos permiten seleccionar elementos especificos y poder configurarlos.
+2. introducir el video dentro del bloque de los diferenciales para eso cortamos todo el bloque (<div class="video">) y lo pegamos dentro del bloque (<section class="diferenciales">)
+3. debajo de (.titulo-principal {}) creamos (.titulo-principal::first-letter {}) y le anadimos la propiedad (font-weight: bold;).
+4. podemos tambien alterar lineas con (p:first-line {}) y anadimos la propiedad (font-style: italic;).
+5. podemos tambien modificar entre contenido si utilizamos (.titulo-principal:before {content: "["}) que indica donde comienza y (.titulo-principal:after {content: "]"}) que indica donde termina, 
+sin embargo vemos que la propiedad que se coloco con anterioridad ((p:first-line {font-style: italic;})) no se aplica, esto se debe a que css hace un barrido secuencial y si colocamos este cambio
+entre ambos corchetes, el primer corchete se cambia a negrita.
+6. si vemos el ejemplo modelo tenemos una estrellita al inicio de cada item para eso vamos a la pagina (unicode star) y buscamos un codigo de un item y lo copiamos (U+2605), en css creamos
+despues (.items {}) a (.items:before {}) y le anadimos la propiedad (.items:before {content: "\2605"}).
+
+seccion 04: selectores avanzados
+objetivo: selectores avanzados para capturar elementos y modificar el estilo
+1. creamos al inicio de (<main>) un parrafo ejemplo (<p>parrafo ejemplo</p>) para modificarlo, ahora en el archivo css creamos (main p {}) le daremos un color rojo (background: red), asi css 
+convierte todas las etiquetas (<p></p>) en rojo, esto pasa css porque no distingue entre etiquetas hijas, nietas, bisnietas, pero para corregir esto se utiliza (main > p {}) que le dice a 
+css que solo actue sobre las etiquetas hijas.
+2. ahora si queremos ejecutar un estilo al primer parrafo que contiene la informacion de la barberia, si observamos el (index.html) esta etiqueta es una etiqueta nieta y para modificarla utilizamos 
+(img + p {}) que le dice seleccioname la etiqueta (<p></p>) que esta despues de una imagen y a esa seleccion aplicales un (background: yellow;).
+3. ahora si queremos aplicarle a todos los parrafos despues de la imagen para eso utilizamos (img ~ p {}) que le dice, aplicale a todos los parrafos que vienen despues de la imagen.
+4. otra alternativa si queremos hacer eso a un parrafo entre otros parrafos, para eso creamos (.principal p:not(#mision){}) que le dice aplica la propiedad a todos los parrafos menos al que tiene el 
+identificador (<p id="mision">).
+
+seccion 04: calculo con css
+objetivo: hacer calculos con css
+1. primero limpiamos los colores modificados anteriormente en el archivo css y tambien el parrafo que creamos en html.
+2. para explicar el calculo seleccionamos la imagen de los diferenciales y la inspeccionamos, en la seccion de composicion de la imagen que nos muestra las dimensiones de todos sus elementos
+nos dirigimos al (width: 120px) y lo cambiamos a (calc(40% - (26px))) lo que le esta haciendo es calcula el tamano de la pagina, esto es util cuando el usuario abre la pagina desde un computador,
+un dispositivo movil, una tablet esto se utiliza para que la imagen no quede distorcionada en la pantalla del dispositivo del usuario y lo que le dice es, usa el (40%) de la pantalla sin importar de
+que dimension sea y a eso restale (26px) en este monitor ese tamano queda en (350x350), incluso podemos colocar (width: calc(40% - (26px * 4);) que le pide que reste mas y con esta modificacion la
+imagen ocuparia (272x272) pixeles.
+3. esto permitira que nuestos elementos se ajusten mejor a diferentes dispositivos.
+
+seccion 05: opacidad en los elementos
+objetivo: aprender a trabajar con opacidad y con sombras
+1. opacidad es la capacidad que tienen los elementos de no dejar pasar la luz.
+2. en el archivo css en (.imagen-diferenciales {}) creamos la propiedad (opacity: 0%;) que le dice que pace (0) luz, esto hace que la imagen desaparezca, si ahora le asignamos (opacity: 0.3;) o (30%)
+ahora la imagen se mira casi transparente.
+3. pero si queremos que el comportamiento se active cuando el mouse pase por encima creamos (.imagen-diferenciales:hover {}) y le asignamos la propiedad (opacity: 0.3;), y para que se mira mucho mejor
+le daremos una transicion con (transition: 400ms;) esto permitira una transicion mas amigable (menos brusca).
+4. ahora probaremos como ejemplo a los titulos principales en (.titulo-principal {}) le asignamos (color: rgba(0,0,0,0.3)) donde (rgba) permite agregar un cuarto elemento que es la opacidad (0.3),
+podemos jugar con este elemento para aplicar opacidad y lo podemos utilizar en cualquier elemento.
+5. borramos la prueba que hicimos anteriormente hasta donde modificamos la opacidad de la imagen.
+
+seccion 05: sombra en los elementos
+objetivo: colocarle sombra a la imagen de diferenciales
+1. para eso utilizamos en css (.imagen-diferenciales {}) la propiedad (box-shadow: 10px 10px #000000;) donde el primer (10px) es la ubicacion de la sombra en el eje horizontal, el segundo (10px) es la 
+ubicacion de la sombra en el eje vertical y (#000000) es el color de la sombra.
+2. si incluimos un cuarto parametro (box-shadow: 10px 10px 30px #000000;) donde (30px) es el degradado o difumacion del elemento, y es en que proporcion va de un color solido a un color mas transparente.
+3. si incluimos un quinto parametro (box-shadow: 10px 10px 30px 15px #000000;) donde (15px) es la expancion, hasta donde queremos que esa sombra llegue.
+4. si queremos ponerle mas sombra a nuestro elemento ( box-shadow: 10px 10px 30px 15px #000000, -10px -10px yellow ;) donde el primer (-10px) coloca la sombra a la izquierda, el segundo (-10px) la coloca
+arriba y (yellow) le da el color amarillo.
+5. podemos colocar (box-shadow: 10px 10px 30px 15px #000000, -10px -10px yellow, -15px 10px rgba(50,50,50,0.5);) esto crea una opaciddad y sombra mas abajo.
+6. podemos colocar opacidad interna, en (.diferenciales {}) creamos la propiedad (box-shadow: inset 0 0 30px red;) esto crea en todo el boque diferenciales un recuadro rojo difuminado, con una sombra
+interna.
+7. ahora eliminamos lo hecho hasta el inciso 3.
+8. tambien podemos aplicar sombras a nuestros textos, en (.titulo-principal {}) creamos (text-shadow: 2px 2px red;) donde (2px) aplica al eje horizontal, (2px) en el eje vertical y (red) el color.
+9. podemos darle otro parametro (text-shadow: 2px 2px 10px red;) donde (10px) es el spread que es la espancion de la sombra.
+10. eliminamos hasta el inciso 8.
+11. pagina para entrenar en pagina (box shadow css generator mozilla) podemos practicar.
+
+
+
+ 
 
  
  
