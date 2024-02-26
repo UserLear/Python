@@ -1,0 +1,10 @@
+seccion 01: el punto central
+objetivo: crear una cuenta
+1. https://www.aluracursos.com/blog/como-escribir-un-readme-increible-en-tu-github
+articulo para escribir un exelente Readme para tu proyecto
+
+seccion 02: commit y vscode en github 
+seccion 02: agregando un colaborador
+
+seccion 03: 
+
