@@ -6,5 +6,8 @@ articulo para escribir un exelente Readme para tu proyecto
 seccion 02: commit y vscode en github 
 seccion 02: agregando un colaborador
 
-seccion 03: 
+capitulos gitgub
+Parte 1: https://www.aluracursos.com/blog/iniciando-repositorio-con-git
+Parte 2: https://www.aluracursos.com/blog/creando-repositorio-remoto-en-github?utm_source=gnarus&utm_medium=timeline
+Parte 3: https://www.aluracursos.com/blog/clonando-un-repositorio-remoto?utm_source=gnarus&utm_medium=timeline
 
